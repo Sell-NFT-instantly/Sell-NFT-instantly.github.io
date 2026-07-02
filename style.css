@@ -1,0 +1,307 @@
+:root{
+  --bg:#F8F5F0;
+  --surface:#FFFFFF;
+  --surface-soft:#FBFAF7;
+  --ink:#19151F;
+  --muted:#6D6674;
+  --faint:#A29AA8;
+  --line:rgba(25,21,31,.10);
+  --line-strong:rgba(25,21,31,.16);
+  --accent:#7C3AED;
+  --accent-soft:rgba(124,58,237,.11);
+  --shadow:0 30px 70px -38px rgba(25,21,31,.38);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  min-height:100dvh;
+  overflow:hidden;
+  color:var(--ink);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  line-height:1.5;
+  background:
+    radial-gradient(720px 420px at 50% -120px, rgba(124,58,237,.13), transparent 68%),
+    linear-gradient(180deg,#FFFCF7 0%,var(--bg) 100%);
+  display:flex;
+  flex-direction:column;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+h1,p{margin:0}
+
+.topbar{
+  flex:0 0 auto;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  width:100%;
+  padding:18px clamp(18px,4vw,44px) 10px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+  font-size:1rem;
+  font-weight:800;
+  letter-spacing:0;
+  white-space:nowrap;
+}
+.brand img{
+  width:28px;
+  height:28px;
+  border-radius:8px;
+  box-shadow:0 8px 18px -12px rgba(25,21,31,.45);
+  flex:none;
+}
+.nav{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  margin-left:8px;
+}
+.nav a{
+  color:var(--muted);
+  font-size:.93rem;
+  font-weight:600;
+  transition:color .16s ease;
+}
+.nav a:hover{color:var(--accent)}
+.spacer{flex:1}
+.ghost{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:40px;
+  padding:0 18px;
+  border:1px solid var(--line-strong);
+  border-radius:999px;
+  background:rgba(255,255,255,.56);
+  color:var(--ink);
+  font-size:.92rem;
+  font-weight:800;
+  box-shadow:0 14px 32px -26px rgba(25,21,31,.45);
+  transition:transform .14s ease,border-color .14s ease,color .14s ease;
+}
+.ghost:hover{
+  transform:translateY(-1px);
+  border-color:rgba(124,58,237,.34);
+  color:var(--accent);
+}
+
+.stage{
+  flex:1 1 auto;
+  min-height:0;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:28px;
+  padding:8px clamp(18px,4vw,44px) 10px;
+  text-align:center;
+}
+.hero{
+  max-width:760px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+h1{
+  font-size:clamp(3rem,7vw,5.1rem);
+  line-height:1.02;
+  font-weight:850;
+  letter-spacing:0;
+}
+.sub{
+  max-width:650px;
+  margin-top:16px;
+  color:var(--muted);
+  font-size:clamp(1.02rem,1.45vw,1.19rem);
+}
+.sub strong{
+  color:var(--ink);
+  font-weight:850;
+  box-shadow:inset 0 -.46em 0 var(--accent-soft);
+}
+
+.app-card{
+  width:min(572px,100%);
+  padding:20px;
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,255,255,.86));
+  box-shadow:var(--shadow);
+}
+.flow{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+  align-items:stretch;
+  gap:12px;
+}
+.asset{
+  min-width:0;
+  padding:16px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:var(--surface-soft);
+  text-align:left;
+}
+.label{
+  display:block;
+  color:var(--faint);
+  font-size:.72rem;
+  font-weight:850;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.chip{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  margin-top:11px;
+  color:var(--ink);
+  font-size:1.12rem;
+  font-weight:850;
+  white-space:nowrap;
+}
+.chip img{
+  width:44px;
+  height:44px;
+  border-radius:12px;
+  border:1px solid rgba(25,21,31,.08);
+  background:#fff;
+  flex:none;
+}
+.instant{
+  align-self:center;
+  display:grid;
+  place-items:center;
+  min-width:82px;
+  height:42px;
+  padding:0 14px;
+  border:1px solid rgba(124,58,237,.22);
+  border-radius:999px;
+  background:var(--accent-soft);
+  color:var(--accent);
+  cursor:pointer;
+  font:inherit;
+  font-size:.82rem;
+  font-weight:850;
+  transition:transform .14s ease,background .14s ease,border-color .14s ease;
+}
+.instant:hover{
+  transform:translateY(-1px);
+  background:rgba(124,58,237,.15);
+  border-color:rgba(124,58,237,.35);
+}
+.primary{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  min-height:54px;
+  margin-top:16px;
+  border-radius:16px;
+  background:var(--accent);
+  color:#fff;
+  font-size:1.05rem;
+  font-weight:850;
+  box-shadow:0 20px 36px -24px rgba(124,58,237,.78);
+  transition:transform .14s ease,background .14s ease,box-shadow .14s ease;
+}
+.primary:hover{
+  transform:translateY(-1px);
+  background:var(--accent);
+  box-shadow:0 24px 42px -24px rgba(124,58,237,.86);
+}
+
+.foot{
+  flex:0 0 auto;
+  padding:10px 24px 20px;
+  color:var(--faint);
+  text-align:center;
+  font-size:.86rem;
+  font-weight:650;
+}
+
+@media (max-width:700px){
+  .nav{display:none}
+  .topbar{
+    gap:10px;
+    padding:14px 16px 8px;
+  }
+  .brand{
+    font-size:.94rem;
+    max-width:calc(100vw - 142px);
+  }
+  .brand span{
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .ghost{
+    min-height:36px;
+    padding:0 13px;
+    font-size:.86rem;
+  }
+  .stage{
+    gap:18px;
+    padding:4px 16px 8px;
+  }
+  h1{font-size:clamp(2.45rem,13vw,3.35rem)}
+  .sub{
+    margin-top:12px;
+    font-size:.98rem;
+    line-height:1.45;
+  }
+  .app-card{
+    padding:15px;
+    border-radius:20px;
+  }
+  .flow{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  .asset{
+    padding:12px 14px;
+    border-radius:14px;
+  }
+  .chip{
+    margin-top:8px;
+    font-size:1.02rem;
+  }
+  .chip img{
+    width:38px;
+    height:38px;
+  }
+  .instant{
+    justify-self:center;
+    width:86px;
+    height:34px;
+    min-width:0;
+    font-size:.76rem;
+  }
+  .primary{
+    min-height:48px;
+    margin-top:12px;
+    border-radius:14px;
+    font-size:1rem;
+  }
+  .foot{
+    padding:8px 16px 14px;
+    font-size:.82rem;
+  }
+}
+
+@media (max-height:720px) and (min-width:701px){
+  .topbar{padding-top:14px}
+  .stage{gap:20px}
+  h1{font-size:clamp(2.8rem,6vw,4.35rem)}
+  .sub{margin-top:12px}
+  .app-card{padding:18px}
+  .foot{padding-bottom:14px}
+}
