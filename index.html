@@ -1,317 +1,301 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sell NFT Instantly - Fast NFT Exit App</title>
-  <meta name="description" content="Sell NFT Instantly from a non-custodial app built for wallet-led NFT exits, live quotes, clear costs and safer review before signing.">
-  <meta name="theme-color" content="#FBFAF7">
-  <link rel="canonical" href="https://sell-nft-instantly.github.io/">
-  <meta name="robots" content="index,follow">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="prefetch" href="dashboard/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Sell NFT Instantly - Fast NFT Exit App">
-  <meta property="og:description" content="Sell NFTs from your own wallet with live app pricing, clear costs and non-custodial signing.">
-  <meta property="og:image" content="og-cover.png">
-  <meta property="og:url" content="https://sell-nft-instantly.github.io/">
-  <style>
-  :root{
-    --bg:#FBFAF7; --panel:#FFFFFF; --field:#F2F6F4;
-    --ink:#0F1A18; --muted:#5C6A66; --faint:#93A09B;
-    --line:rgba(15,26,24,.09); --line-2:rgba(15,26,24,.05);
-    --accent:#2081E2; --accent-ink:#175FA7; --accent-soft:rgba(32,129,226,.10);
-    --pos:#15A34A;
-    --radius:22px; --radius-sm:14px;
-    --shadow-card:0 1px 0 rgba(15,26,24,.03), 0 34px 64px -30px rgba(10,50,44,.28), 0 10px 24px -18px rgba(10,50,44,.16);
-    --shadow-soft:0 1px 0 rgba(15,26,24,.02), 0 20px 44px -32px rgba(10,50,44,.22);
-    --ui:"Space Grotesk",-apple-system,system-ui,sans-serif;
-    --body:"Inter",-apple-system,system-ui,sans-serif;
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0; overflow-x:hidden}
-  body{background:var(--bg); color:var(--ink); font-family:var(--body); line-height:1.55; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; position:relative}
-  a{color:inherit; text-decoration:none}
-  a.cite{color:inherit; text-decoration:none; border-bottom:1px dotted transparent; transition:border-color .15s ease}
-  a.cite:hover{border-bottom-color:var(--faint)}
-  img{display:block; max-width:100%}
-  button{font:inherit; cursor:pointer; border:none; background:none; color:inherit}
-  h1,h2,h3,p{margin:0}
-
-  /* texture: diagonal hatch + soft glow */
-  .bg{position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden}
-  .bg .glow{position:absolute; inset:0; background:
-      radial-gradient(760px 480px at 50% -6%, rgba(32,129,226,.11), transparent 62%),
-      radial-gradient(620px 520px at 90% 16%, rgba(32,129,226,.06), transparent 60%);}
-  .bg .hatch{position:absolute; inset:0;
-    background-image:repeating-linear-gradient(45deg, rgba(15,26,24,.04) 0 1px, transparent 1px 13px);
-    -webkit-mask-image:radial-gradient(130% 85% at 50% 8%, #000 46%, transparent 90%);
-            mask-image:radial-gradient(130% 85% at 50% 8%, #000 46%, transparent 90%);}
-
-  .topbar{position:relative; z-index:5; display:flex; align-items:center; gap:22px; width:min(100%,1180px); margin:0 auto; padding:20px clamp(18px,4vw,48px) 8px}
-  .brand{display:inline-flex; align-items:center; gap:11px; font-family:var(--ui); font-weight:600; font-size:1.05rem; letter-spacing:-.01em}
-  .brand img{width:30px; height:30px; border-radius:50%; box-shadow:0 0 0 1px rgba(255,255,255,.8), 0 8px 18px -12px rgba(32,129,226,.5)}
-  .spacer{flex:1}
-  .nav{display:flex; align-items:center; gap:clamp(16px,2.6vw,30px)}
-  .nav a{font-family:var(--ui); font-weight:500; font-size:.92rem; color:var(--muted); transition:color .16s ease}
-  .nav a:hover{color:var(--accent-ink)}
-
-  .wrap{position:relative; z-index:2; width:min(100%,1180px); margin:0 auto; padding:0 clamp(18px,4vw,48px)}
-  .sec{padding-top:clamp(50px,7vh,90px); padding-bottom:clamp(50px,7vh,90px)}
-  .sec-head{max-width:60ch; margin:0 0 clamp(26px,4vh,40px)}
-  .eyebrow{display:inline-flex; align-items:center; gap:9px; font-family:var(--ui); font-weight:600; font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-ink)}
-  .eyebrow .dot{width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px var(--accent-soft)}
-  .eyebrow svg{width:15px; height:15px}
-  .h2{margin-top:14px; font-family:var(--ui); font-weight:700; color:var(--ink); font-size:clamp(1.9rem,3.4vw,2.7rem); line-height:1.04; letter-spacing:-.02em}
-  .sec-head p{margin-top:14px; color:var(--muted); font-size:clamp(1rem,1.3vw,1.12rem); line-height:1.6}
-
-  /* hero - centered headline + WIDE route band */
-  .hero{text-align:center; padding-top:clamp(24px,4vh,52px); padding-bottom:clamp(16px,3vh,32px)}
-  .hero .eyebrow{margin:0 auto}
-  .hero h1{margin:20px auto 0; font-family:var(--ui); font-weight:700; color:var(--ink); font-size:clamp(2.9rem,6.6vw,5rem); line-height:.98; letter-spacing:-.035em; max-width:16ch}
-  .deck{max-width:50ch; margin:18px auto 0; color:var(--muted); font-size:clamp(1.04rem,1.5vw,1.2rem); line-height:1.58}
-  .deck strong{color:var(--ink); font-weight:600; box-shadow:inset 0 -.36em 0 var(--accent-soft)}
-  .cta-row{display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:14px; margin:26px 0 0}
-  .primary{display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:54px; padding:0 28px; border-radius:14px; background:var(--ink); color:#fff; font-family:var(--ui); font-weight:600; font-size:1.02rem; letter-spacing:-.01em; box-shadow:0 16px 30px -16px rgba(15,26,24,.7); transition:transform .18s ease, filter .18s ease}
-  .primary:hover{transform:translateY(-1px); filter:brightness(1.08)}
-  .primary svg{width:17px; height:17px}
-  .ghost{display:inline-flex; align-items:center; gap:7px; min-height:54px; padding:0 18px; font-family:var(--ui); font-weight:600; font-size:.98rem; color:var(--muted); transition:color .16s ease}
-  .ghost:hover{color:var(--accent-ink)}
-  .ghost svg{width:15px; height:15px}
-
-  /* WIDE route band */
-  .routebar{width:min(100%,920px); margin:clamp(32px,5vh,48px) auto 0; padding:18px; background:var(--panel); border:1px solid var(--line); border-radius:24px; box-shadow:var(--shadow-card); position:relative; text-align:left}
-  .routebar::before{content:""; position:absolute; inset:0 0 auto; height:1px; border-radius:24px 24px 0 0; background:linear-gradient(90deg, transparent, rgba(32,129,226,.4), transparent)}
-  .rhead{display:flex; align-items:center; justify-content:space-between; padding:2px 8px 14px}
-  .rhead .ct{font-family:var(--ui); font-weight:600; font-size:1.04rem}
-  .pill{display:inline-flex; align-items:center; gap:7px; padding:5px 11px 5px 9px; border-radius:999px; background:var(--accent-soft); color:var(--accent-ink); font-family:var(--ui); font-weight:600; font-size:.76rem}
-  .pill .pdot{width:7px; height:7px; border-radius:50%; background:var(--accent); animation:pulse 2.4s ease-out infinite}
-  .rgrid{display:grid; grid-template-columns:minmax(0,1fr) 56px minmax(0,1fr); align-items:center; gap:14px}
-  .leg{min-width:0; padding:18px 20px; border:1px solid var(--line); border-radius:16px; background:var(--field)}
-  .leg .lab{display:block; color:var(--muted); font-size:.78rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase}
-  .leg .legrow{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:12px}
-  .leg .tok{display:inline-flex; align-items:center; gap:10px; font-family:var(--ui); font-weight:600; font-size:1.16rem}
-  .leg .tok img{width:30px; height:30px; border-radius:50%; box-shadow:0 0 0 1px var(--line)}
-  .leg .tok .cv{color:var(--faint); font-size:.78em}
-  .leg .gv{color:var(--faint); font-size:.86rem; white-space:nowrap}
-  .rswitch{width:48px; height:48px; justify-self:center; border-radius:50%; border:1px solid var(--line); background:var(--panel); color:var(--accent-ink); display:grid; place-items:center; box-shadow:0 8px 18px -10px rgba(10,50,44,.4); transition:transform .25s ease}
-  .rswitch svg{width:18px; height:18px}
-  .rswitch:hover{transform:rotate(180deg)}
-  .rbar-foot{display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:12px}
-  .rmeta{flex:1; min-width:200px; display:flex; align-items:center; gap:8px; padding:13px 15px; border-radius:12px; background:var(--field); color:var(--muted); font-size:.84rem}
-  .rmeta svg{width:15px; height:15px; color:var(--accent-ink); flex:none}
-  .rcta{display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:52px; padding:0 30px; border-radius:14px; background:var(--ink); color:#fff; font-family:var(--ui); font-weight:600; font-size:1rem; box-shadow:0 14px 28px -16px rgba(15,26,24,.65); transition:transform .18s ease, filter .18s ease}
-  .rcta:hover{transform:translateY(-1px); filter:brightness(1.08)}
-  .rnote{margin:11px 4px 0; color:var(--faint); font-size:.78rem}
-
-  /* why - icon-left rows */
-  .rows{display:grid; gap:12px}
-  .frow2{display:flex; align-items:flex-start; gap:18px; padding:22px 24px; background:var(--panel); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow-soft)}
-  .frow2 .ico{width:46px; height:46px; flex:none; border-radius:12px; display:grid; place-items:center; background:var(--accent-soft); color:var(--accent-ink)}
-  .frow2 .ico svg{width:22px; height:22px}
-  .frow2 h3{font-family:var(--ui); font-weight:600; font-size:1.12rem; color:var(--ink); letter-spacing:-.01em}
-  .frow2 p{margin-top:6px; color:var(--muted); font-size:.95rem; line-height:1.55; max-width:70ch}
-
-  /* how it works */
-  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
-  .step{padding:24px 22px; background:var(--panel); border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow-soft)}
-  .step .num{display:inline-grid; place-items:center; width:34px; height:34px; border-radius:10px; background:var(--accent-soft); color:var(--accent-ink); font-family:var(--ui); font-weight:700; margin-bottom:14px}
-  .step h3{margin:0 0 8px; font-family:var(--ui); font-weight:600; font-size:1.12rem; color:var(--ink); letter-spacing:-.01em}
-  .step p{color:var(--muted); font-size:.94rem; line-height:1.55}
-
-  /* FAQ - 2-col cards */
-  .faq{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
-  .qa{padding:22px; background:var(--panel); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow-soft)}
-  .qa .qn{font-family:var(--ui); font-weight:700; font-size:.8rem; color:var(--accent-ink); letter-spacing:.04em}
-  .qa h3{margin:8px 0 8px; font-family:var(--ui); font-weight:600; font-size:1.08rem; color:var(--ink); letter-spacing:-.01em}
-  .qa p{color:var(--muted); font-size:.95rem; line-height:1.6}
-  .qa a:not(.cite){color:var(--accent-ink); font-weight:600; box-shadow:inset 0 -.34em 0 var(--accent-soft)}
-
-  /* related */
-  .related{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
-  .rel{display:flex; flex-direction:column; gap:7px; padding:22px; background:var(--panel); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow-soft); transition:transform .16s ease, border-color .16s ease}
-  .rel:hover{transform:translateY(-2px); border-color:rgba(32,129,226,.35)}
-  .rel .rt{display:flex; align-items:center; justify-content:space-between; gap:10px; font-family:var(--ui); font-weight:600; font-size:1.05rem; color:var(--ink); letter-spacing:-.01em}
-  .rel .rt svg{width:16px; height:16px; color:var(--accent-ink); flex:none}
-  .rel p{color:var(--muted); font-size:.9rem; line-height:1.5}
-
-  .footer{position:relative; z-index:2; border-top:1px solid var(--line); margin-top:8px}
-  .footer .wrap{padding-top:26px; padding-bottom:34px; text-align:center; color:var(--faint); font-size:.84rem}
-  .footer b{color:var(--muted); font-weight:600}
-
-  @keyframes pulse{0%{box-shadow:0 0 0 0 var(--accent-soft)} 70%{box-shadow:0 0 0 8px rgba(32,129,226,0)} 100%{box-shadow:0 0 0 0 rgba(32,129,226,0)}}
-
-  @media (max-width:920px){
-    .nav{display:none}
-    .rgrid{grid-template-columns:1fr; gap:9px}
-    .rswitch{transform:rotate(90deg)}
-    .rswitch:hover{transform:rotate(270deg)}
-    .steps,.faq,.related{grid-template-columns:1fr}
-  }
-  @media (max-width:430px){
-    .hero h1{font-size:clamp(2.5rem,12vw,3.5rem)}
-    .cta-row .primary,.cta-row .ghost{width:100%}
-    .rbar-foot{flex-direction:column; align-items:stretch}
-    .rcta{width:100%}
-  }
-  @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important; transition-duration:.01ms!important}}
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sell NFT — Instant NFT liquidity, in seconds</title>
+<meta name="description" content="Sell NFT turns any NFT into instant liquidity. Drop it into the appraisal engine, get a live offer in seconds, and cash out — no listing, no waiting, no gas." />
+<link rel="stylesheet" href="assets/site.css?v=2" />
 </head>
 <body>
-  <div class="bg" aria-hidden="true"><div class="glow"></div><div class="hatch"></div></div>
 
-  <header class="topbar">
-    <a class="brand" href="./">
-      <img src="favicon.png" width="30" height="30" alt="">
-      <span>Sell NFT Instantly</span>
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <svg class="gem" viewBox="0 0 32 32" fill="none"><defs><linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9C7BFF"/><stop offset="1" stop-color="#37E1EE"/></linearGradient></defs><path d="M16 2 30 12 16 30 2 12z" fill="url(#bg1)" opacity=".95"/><path d="M16 2 30 12 16 18 2 12z" fill="#fff" opacity=".28"/><path d="M2 12 16 18 16 30z" fill="#000" opacity=".22"/></svg>
+      Sell NFT
     </a>
-    <span class="spacer"></span>
-    <nav class="nav" aria-label="Main Navigation">
-      <a href="how-it-works/">How it works</a>
-      <a href="faq/">FAQ</a>
-      <a href="about/">About</a>
-      <a href="security/">Security</a>
-      <a href="supported-chains/">Supported Chains</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="wrap hero">
-      <span class="eyebrow"><span class="dot"></span>NFT Exit App</span>
-      <h1>Sell NFT Instantly</h1>
-      <p class="deck">Sell NFT Instantly is a <strong>non-custodial</strong> DeFi app for turning eligible NFTs into wallet-ready liquidity with live pricing, clear costs and approval review before you sign.</p>
-      <div class="cta-row">
-        <a class="primary" href="dashboard/">Open App
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a class="ghost" href="how-it-works/">How it works
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
-        </a>
-      </div>
-
-      <section class="routebar" aria-label="NFT sale preview">
-        <div class="rhead">
-          <span class="ct">NFT sale</span>
-          <span class="pill"><span class="pdot"></span>Preview</span>
-        </div>
-        <div class="rgrid">
-          <div class="leg">
-            <span class="lab">You sell</span>
-            <div class="legrow">
-              <button class="tok" type="button"><img src="nft.png" alt="NFT">NFT <span class="cv" aria-hidden="true">&#9662;</span></button>
-              <span class="gv">Asset in app</span>
-            </div>
-          </div>
-          <button class="rswitch" type="button" data-switch aria-label="Switch direction">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4v13M4 14l3 3 3-3M17 20V7M14 10l3-3 3 3"/></svg>
-          </button>
-          <div class="leg">
-            <span class="lab">You receive</span>
-            <div class="legrow">
-              <button class="tok" type="button"><img src="eth.png" alt="ETH">ETH <span class="cv" aria-hidden="true">&#9662;</span></button>
-              <span class="gv">Live quote in app</span>
-            </div>
-          </div>
-        </div>
-        <div class="rbar-foot">
-          <div class="rmeta">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 5v5l3 3"/></svg>
-            Sale route, liquidity and network costs are shown live in the app.
-          </div>
-          <a class="rcta" href="dashboard/">Open App
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-        <p class="rnote">Preview only &middot; non-custodial &middot; connect your wallet in the app</p>
-      </section>
-    </section>
-
-    <!-- WHY (icon-left rows) -->
-    <section class="wrap sec" id="why">
-      <div class="sec-head">
-        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg>Why sell here</span>
-        <h2 class="h2">Built for NFT sellers who want speed without surrendering custody</h2>
-      </div>
-      <div class="rows">
-        <div class="frow2">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
-          <div><h3>Non-custodial selling flow</h3><p>You keep the NFT in your wallet until you approve and sign. The <a class="cite" href="https://sell-nft-instantly.github.io/" rel="nofollow noopener noreferrer">Sell NFT Instantly app</a> is designed around wallet confirmation, not deposits or hosted accounts.</p></div>
-        </div>
-        <div class="frow2">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
-          <div><h3>Built for recognizable NFT assets</h3><p>Use the app to review supported NFT collections, wallet assets and chain availability. It fits <a class="cite" href="https://ethereum.org/en/nft/" rel="nofollow noopener noreferrer">NFT ownership</a> patterns where the asset, approval and sale transaction stay visible before confirmation.</p></div>
-        </div>
-        <div class="frow2">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9 9 0 0 1 9 9 9 9 0 0 1-9 9"/><path d="M3 12h6l2-3 2 6 2-3h2"/></svg></span>
-          <div><h3>Transparent liquidity review</h3><p>See the live quote, buyer-side liquidity, approval request and <a class="cite" href="https://etherscan.io/gastracker" rel="nofollow noopener noreferrer">network gas context</a> before you confirm. If the route is not attractive, you can walk away without sending the NFT.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="wrap sec" id="how">
-      <div class="sec-head">
-        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>How it works</span>
-        <h2 class="h2">Sell NFT Instantly in three wallet-led steps</h2>
-      </div>
-      <div class="steps">
-        <div class="step"><span class="num">1</span><h3>Connect your wallet</h3><p>Open the app, connect your Web3 wallet and let the interface read eligible NFTs without taking custody of the asset.</p></div>
-        <div class="step"><span class="num">2</span><h3>Select the NFT to sell</h3><p>Choose the collection item and payout asset. The app checks supported chains, available liquidity and executable sale paths at the moment you request a quote.</p></div>
-        <div class="step"><span class="num">3</span><h3>Review and sign</h3><p>Confirm only after the sale route, estimated timing, network cost and approval details make sense. Settlement depends on the chain and the final wallet transaction.</p></div>
-      </div>
-    </section>
-
-    <!-- FAQ (2-col) -->
-    <section class="wrap sec" id="faq">
-      <div class="sec-head">
-        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 .8-1 1.7M12 17h.01"/></svg>FAQ</span>
-        <h2 class="h2">Common questions</h2>
-      </div>
-      <div class="faq">
-        <div class="qa"><span class="qn">01</span><h3>What is Sell NFT Instantly?</h3><p>It is a non-custodial DeFi app for selling eligible NFTs from your wallet. It uses wallet connection, live quote review and standards-aware NFT handling such as <a class="cite" href="https://eips.ethereum.org/EIPS/eip-721" rel="nofollow noopener noreferrer">ERC-721 tokens</a> where supported.</p></div>
-        <div class="qa"><span class="qn">02</span><h3>How fast can an NFT sale happen?</h3><p>The app can prepare an immediate sale path when supported liquidity is available. Final timing depends on wallet approval, market liquidity, network conditions and the transaction you choose to sign.</p></div>
-        <div class="qa"><span class="qn">03</span><h3>Which chains and assets are supported?</h3><p>The app focuses on supported NFT collections and payout assets available in the interface. See the current list on the <a href="supported-chains/">supported chains</a> page before you connect.</p></div>
-        <div class="qa"><span class="qn">04</span><h3>What does it cost to sell?</h3><p>Any marketplace, liquidity route or network cost is shown in the app before confirmation. Your wallet may also show contract approval details through tools such as <a class="cite" href="https://walletconnect.com/" rel="nofollow noopener noreferrer">wallet connection</a> prompts.</p></div>
-      </div>
-    </section>
-
-    <section class="wrap sec" id="more">
-      <div class="sec-head">
-        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></svg>Learn more</span>
-        <h2 class="h2">Explore Sell NFT Instantly</h2>
-      </div>
-      <div class="related">
-        <a class="rel" href="how-it-works/"><span class="rt">How it works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span><p>The full walkthrough for connecting a wallet, choosing an NFT and reviewing the sale before signing.</p></a>
-        <a class="rel" href="security/"><span class="rt">Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span><p>How self-custody, approval review and wallet confirmation help keep the sale process under your control.</p></a>
-        <a class="rel" href="supported-chains/"><span class="rt">Supported chains <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span><p>The networks, NFT assets and payout routes available inside the app.</p></a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="wrap">
-      
-      <p style="margin-top:6px"><b>Sell NFT Instantly</b></p>
+    <div class="nav-links" id="navMenu">
+      <a href="how-it-works.html">How it works</a>
+      <a href="index.html#why">Why instant</a>
+      <a href="faq.html">FAQ</a>
     </div>
-  </footer>
+    <div class="nav-right">
+      <a class="btn btn-primary btn-sm" href="/dashboard" data-app-link>Open App
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m0 0-6-6m6 6-6 6" stroke="#07110c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
 
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[
-    {"@type":"WebSite","@id":"https://sell-nft-instantly.github.io/#website","url":"https://sell-nft-instantly.github.io/","name":"Sell NFT Instantly"},
-    {"@type":"Organization","@id":"https://sell-nft-instantly.github.io/#org","name":"Sell NFT Instantly","url":"https://sell-nft-instantly.github.io/","logo":"https://sell-nft-instantly.github.io/favicon.png"},
-    {"@type":"WebApplication","name":"Sell NFT Instantly","applicationCategory":"FinanceApplication","operatingSystem":"Web","url":"https://sell-nft-instantly.github.io/","browserRequirements":"Requires a Web3 wallet","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Non-custodial DeFi app for selling eligible NFTs from a wallet-native interface with live quotes, visible costs and approval review."},
-    {"@type":"FAQPage","mainEntity":[
-      {"@type":"Question","name":"What is Sell NFT Instantly?","acceptedAnswer":{"@type":"Answer","text":"It is a non-custodial DeFi app for selling eligible NFTs from your wallet. It uses wallet connection, live quote review and standards-aware NFT handling where supported."}},
-      {"@type":"Question","name":"How fast can an NFT sale happen?","acceptedAnswer":{"@type":"Answer","text":"The app can prepare an immediate sale path when supported liquidity is available. Final timing depends on wallet approval, market liquidity, network conditions and the transaction you choose to sign."}},
-      {"@type":"Question","name":"Which chains and assets are supported?","acceptedAnswer":{"@type":"Answer","text":"The app focuses on supported NFT collections and payout assets available in the interface. See the current list on the supported chains page before you connect."}},
-      {"@type":"Question","name":"What does it cost to sell?","acceptedAnswer":{"@type":"Answer","text":"Any marketplace, liquidity route or network cost is shown in the app before confirmation. Your wallet may also show contract approval details before you sign."}}
-    ]}
-  ]}
-  </script>
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow reveal"><svg class="gemdot" viewBox="0 0 32 32" fill="none"><path d="M16 2 30 12 16 30 2 12z" fill="#37E1EE"/></svg> Instant NFT liquidity</span>
+      <h1 class="display reveal d1">Sell your NFT<br><span class="grad">instantly.</span></h1>
+      <p class="lead reveal d2">No listing. No buyers to wait for. No gas. Drop any NFT into the appraisal engine, get a firm live offer in seconds, and cash out — the moment you decide to.</p>
+      <div class="hero-cta reveal d3">
+        <a class="btn btn-primary btn-lg" href="/dashboard" data-app-link>Open the App
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m0 0-6-6m6 6-6 6" stroke="#07110c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-ghost btn-lg" href="how-it-works.html">See how it works</a>
+      </div>
+      <div class="trust reveal d3">
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Non-custodial</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Zero gas to get an offer</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> ~9-second settlement</span>
+      </div>
+    </div>
 
-  <script>
-  (function(){"use strict";var b=document.querySelector("[data-switch]");if(!b)return;b.addEventListener("click",function(){var p=document.querySelectorAll(".rgrid .tok");if(p.length<2)return;var t=p[0].innerHTML;p[0].innerHTML=p[1].innerHTML;p[1].innerHTML=t;});}());
-  </script>
+    <div class="hero-visual reveal d2">
+      <a class="termcard state-ready" href="/dashboard" data-app-link aria-label="Open the appraisal dashboard">
+        <div class="tc-halo"></div>
+        <div class="tc-head">
+          <span class="tc-live"><i></i> Live preview</span>
+          <span class="tc-tag">Instant appraisal</span>
+        </div>
+        <div class="tc-slot">
+          <div class="tc-ready">
+            <span class="tc-up"><svg viewBox="0 0 24 24" fill="none"><path d="M12 15V4m0 0 4.2 4.2M12 4 7.8 8.2" stroke="#C9BCFF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 14v2.5A2.5 2.5 0 0 0 7.5 19h9a2.5 2.5 0 0 0 2.5-2.5V14" stroke="#C9BCFF" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+            <span class="tc-ready-t">Drop your NFT</span>
+            <span class="tc-ready-s">any image · any collection</span>
+          </div>
+          <div class="tc-art" id="tcArt">
+            <img id="tcImg" src="NFT.jpg" alt="Your NFT" onerror="this.classList.add('missing')" />
+            <span class="tc-art-ph"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="8.5" cy="9.5" r="1.7" fill="currentColor"/><path d="M4 16.5l5-4 4 3 3-2 4 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>NFT.jpg</b> — drop it in this folder</span></span>
+          </div>
+          <div class="tc-scan"></div>
+          <span class="tc-r tl"></span><span class="tc-r tr"></span><span class="tc-r bl"></span><span class="tc-r br"></span>
+          <div class="tc-meta" id="tcMeta">Your NFT</div>
+          <div class="tc-chip"><b id="tcPrice">≈ 5.1 ETH</b><em>Instant offer <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="#0a0713" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></em></div>
+        </div>
+        <div class="tc-cap" id="tcCap">Drop an NFT → get its price instantly</div>
+        <div class="tc-btn">Open Dashboard
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m0 0-6-6m6 6-6 6" stroke="#07110c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </a>
+      <div class="tc-flow">
+        <span data-step="0">Place</span><i></i><span data-step="1">Appraise</span><i></i><span data-step="2">Cash out</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ TIME COLLAPSE ============ -->
+<section class="band">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <span class="eyebrow"><svg class="gemdot" viewBox="0 0 32 32" fill="none"><path d="M16 2 30 12 16 30 2 12z" fill="#37E1EE"/></svg> The real cost of selling</span>
+      <h2 class="h2">Time is the fee nobody prices in.</h2>
+      <p class="muted">Listing an NFT means days of waiting, negotiating and re-pricing — with no guarantee it ever sells. Sell NFT collapses that entire window into a single moment.</p>
+    </div>
+    <div class="collapse">
+      <div class="track slow reveal">
+        <div class="lbl">Listing on a marketplace</div>
+        <div class="big">up to 14 days</div>
+        <div class="rail"><i></i></div>
+        <div class="steps-mini">list → wait → negotiate → maybe sell</div>
+      </div>
+      <div class="track fast reveal d1">
+        <div class="lbl">With Sell NFT</div>
+        <div class="big">~9 seconds</div>
+        <div class="rail"><i></i></div>
+        <div class="steps-mini">drop → offer → paid</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3 STEPS ============ -->
+<section class="band" id="how">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <span class="eyebrow"><svg class="gemdot" viewBox="0 0 32 32" fill="none"><path d="M16 2 30 12 16 30 2 12z" fill="#37E1EE"/></svg> The idea</span>
+      <h2 class="h2">Three moves. One is a click.</h2>
+      <p class="muted">The whole flow is built to remove every step between deciding to sell and getting paid.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="connect"></span>
+        <div class="no">STEP 01</div>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 16V4m0 0L7 9m5-5 5 5" stroke="#C9BCFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="#C9BCFF" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3 class="h3">Place your NFT</h3>
+        <p>Drop it into the appraisal slot — or connect a wallet and pick one. Nothing is listed, nothing leaves your hands.</p>
+      </div>
+      <div class="step reveal d1">
+        <span class="connect"></span>
+        <div class="no">STEP 02</div>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 3 14h7l-1 8 10-12h-7z" stroke="#C9BCFF" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+        <h3 class="h3">Get an instant offer</h3>
+        <p>The engine reads traits, floor and live bids and returns one firm, itemized number — in seconds, not days.</p>
+      </div>
+      <div class="step reveal d2">
+        <div class="no">STEP 03</div>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20m5-16H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="#C9BCFF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3 class="h3">Cash out in seconds</h3>
+        <p>Accept and the payout settles almost instantly. Non-custodial the whole way — your NFT is yours until you say yes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPARE ============ -->
+<section class="band" id="why">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <span class="eyebrow"><svg class="gemdot" viewBox="0 0 32 32" fill="none"><path d="M16 2 30 12 16 30 2 12z" fill="#37E1EE"/></svg> Why instant wins</span>
+      <h2 class="h2">The old way asks you to wait. Sell NFT doesn't.</h2>
+    </div>
+    <div class="compare">
+      <div class="col old reveal">
+        <h3><span class="tag">Marketplace listing</span></h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> List it and set a price you can only guess at</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Wait days or weeks for a buyer that may never come</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Field lowball offers and re-price again and again</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Pay gas to list, edit and cancel — sale not guaranteed</li>
+        </ul>
+      </div>
+      <div class="vs"><span>VS</span></div>
+      <div class="col new reveal d1">
+        <h3><span class="tag">Sell NFT · instant</span></h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg> Drop it in and see a firm, data-backed offer at once</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg> Accept in one click — paid in about nine seconds</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg> No negotiating, no re-listing, no chasing buyers</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg> Zero gas to get an offer · non-custodial until you accept</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="band">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <span class="eyebrow"><svg class="gemdot" viewBox="0 0 32 32" fill="none"><path d="M16 2 30 12 16 30 2 12z" fill="#37E1EE"/></svg> Under the hood</span>
+      <h2 class="h2">Built so the price is instant — and honest.</h2>
+    </div>
+    <div class="features">
+      <div class="feature reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5m0 14 5-6 4 4 7-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3 class="h3">Appraisal engine</h3>
+        <p>Traits, rarity, floor and live bids are modeled into a single number — the reasoning shown, not hidden.</p>
+      </div>
+      <div class="feature reveal d1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 3 14h7l-1 8 10-12h-7z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+        <h3 class="h3">Real, takeable liquidity</h3>
+        <p>Not a listing you hope fills — a firm offer you can accept right now and settle against.</p>
+      </div>
+      <div class="feature reveal d2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3 class="h3">~9-second settlement</h3>
+        <p>Accept and the payout lands almost instantly — the sale finishes in the time it took to appraise.</p>
+      </div>
+      <div class="feature reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3 4 6v6c0 5 3.5 7.5 8 9 4.5-1.5 8-4 8-9V6z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3 class="h3">Non-custodial</h3>
+        <p>Your NFT stays in your wallet until the instant you accept the offer. You are always in control.</p>
+      </div>
+      <div class="feature reveal d1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 8h18M3 8l2-3h14l2 3M3 8v11a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V8" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+        <h3 class="h3">Zero listing overhead</h3>
+        <p>No listing fees, no cancel fees, no gas just to find out what your NFT is worth today.</p>
+      </div>
+      <div class="feature reveal d2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.7"/><rect x="13" y="3" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.7"/><rect x="3" y="13" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.7"/><rect x="13" y="13" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3 class="h3">Every collection</h3>
+        <p>Blue-chips to the long tail. If a piece has a market, the engine finds its price and quotes it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STAT STRIP ============ -->
+<section class="band" style="padding-top:0">
+  <div class="wrap reveal">
+    <div class="stat-strip">
+      <div class="stat"><div class="v mint"><span data-count="9" data-suffix="s">0s</span></div><div class="k">Typical time to settle</div></div>
+      <div class="stat"><div class="v cy">$0</div><div class="k">Gas to get an offer</div></div>
+      <div class="stat"><div class="v vio">0</div><div class="k">Listings to manage</div></div>
+      <div class="stat"><div class="v">24/7</div><div class="k">Always-on liquidity</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section class="band" style="padding-top:0">
+  <div class="wrap reveal">
+    <div class="cta-band">
+      <h2 class="h2">Your NFT already has a price. <span class="grad">Find it now.</span></h2>
+      <p class="muted">Open the app, place your NFT in the center, and watch the offer appear. No wallet needed to see the number.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="/dashboard" data-app-link>Open the App
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m0 0-6-6m6 6-6 6" stroke="#07110c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-ghost btn-lg" href="faq.html">Read the FAQ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ TEASER ============ -->
+<section class="band" style="padding-top:0">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <span class="eyebrow"><svg class="gemdot" viewBox="0 0 32 32" fill="none"><path d="M16 2 30 12 16 30 2 12z" fill="#37E1EE"/></svg> Questions</span>
+      <h2 class="h2">The three people always ask.</h2>
+    </div>
+    <div class="faq reveal">
+      <details class="qa"><summary>How can a sale be instant? <span class="pm"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></summary><div class="body">Instead of waiting for a buyer, the appraisal engine prices your NFT against traits, floor and live bids and stands behind a firm offer you can take immediately. Accepting settles the sale in seconds.</div></details>
+      <details class="qa"><summary>Do you take custody of my NFT? <span class="pm"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></summary><div class="body">No. It stays in your wallet until the moment you accept an offer. Placing an NFT to see its price never moves it and never puts it up for sale.</div></details>
+      <details class="qa"><summary>Which NFTs can I sell? <span class="pm"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></summary><div class="body">Anything with a real market — from blue-chip collections to long-tail pieces. If comparable sales and bids exist, the engine can quote it.</div></details>
+    </div>
+    <div style="margin-top:22px" class="reveal"><a class="btn btn-ghost" href="faq.html">All questions <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <svg class="gem" viewBox="0 0 32 32" fill="none"><path d="M16 2 30 12 16 30 2 12z" fill="url(#bg1)" opacity=".95"/><path d="M16 2 30 12 16 18 2 12z" fill="#fff" opacity=".28"/></svg>
+          Sell NFT
+        </a>
+        <p>Instant liquidity for NFTs. Place it, price it, cash out — the moment you decide to sell.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/dashboard" data-app-link>Open the App</a></li>
+          <li><a href="how-it-works.html">How it works</a></li>
+          <li><a href="index.html#why">Why instant</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get started</h4>
+        <ul>
+          <li><a href="/dashboard" data-app-link>Appraise an NFT</a></li>
+          <li><a href="how-it-works.html#security">Security</a></li>
+          <li><a href="faq.html">Fees &amp; payouts</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <span>© Sell NFT · Instant NFT liquidity</span>
+      <span>Place · Appraise · Cash out</span>
+    </div>
+    <p class="disclaimer">Sell NFT is a product concept for instant NFT appraisal and sale. Appraisals are estimates generated from on-chain market data and are not financial advice or a guarantee of price. Digital assets are volatile; only transact what you understand.</p>
+  </div>
+</footer>
+
+<script src="assets/site.js?v=2"></script>
 </body>
 </html>
