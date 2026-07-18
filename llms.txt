@@ -1,0 +1,71 @@
+# Sell your NFT instantly
+> An independent, non-custodial dashboard explaining how NFT holders can exchange eligible assets for available on-chain liquidity without waiting for a new buyer.
+
+## What is Sell your NFT instantly
+“Sell your NFT instantly” means accepting an existing marketplace offer or selling into a funded NFT liquidity pool. The dashboard is informational: it does not operate a marketplace, hold assets, execute trades, or manage private keys. Unlike a fixed-price listing, an instant sale uses liquidity already committed by a bidder or pool. An NFT-backed loan provides cash without an immediate sale but creates debt and can transfer the collateral to the lender after default.
+
+## How it works
+1. Use the dashboard to compare selling mechanisms, then open a verified marketplace or protocol directly.
+2. Connect a self-custodial wallet; the venue reads the wallet’s public NFT holdings and identifies executable offers or compatible pools.
+3. Select an NFT and review the quoted payment token, fees, creator earnings, slippage, and net proceeds.
+4. If required, authorize the venue’s smart contract to transfer that NFT, then sign the sale transaction.
+5. On execution, the contract transfers the NFT and settlement asset according to the offer or pool rules; the result becomes visible on the relevant block explorer.
+
+## Key facts
+- The dashboard itself is read-only and never takes custody of NFTs, tokens, recovery phrases, or private keys.
+- Its primary scope is Ethereum Mainnet, network ID and chain ID `1`; external venues may support other networks.
+- Ethereum NFTs commonly implement ERC-721 for individually identified tokens or ERC-1155 for multiple token types and quantities.
+- Settlement may use native ETH, WETH, or another ERC-20 token, depending on the offer or liquidity pool.
+- An instant sale requires an active, funded offer or pool that accepts the collection and, where applicable, the NFT’s properties.
+- NFT transfers commonly require a token-specific approval or an operator approval before execution.
+- A pool or offer sale can settle in one execution transaction after approval; confirmation time depends on the network and wallet fee settings.
+- Fees can include network gas, venue or protocol charges, liquidity-provider spreads, and creator earnings.
+- ERC-2981 communicates royalty information but does not itself enforce royalty payment.
+- Confirmed blockchain transfers are generally irreversible.
+
+## Common questions
+**Is an instant NFT sale safe?**  
+It still carries smart-contract, phishing, approval, pricing, and transaction-signing risks. Verify the domain, chain, NFT contract, recipient contract, and net proceeds before signing.
+
+**Who holds my NFT?**  
+The dashboard holds nothing. With a non-custodial venue, the NFT remains controlled by your wallet until an approved contract executes the transfer.
+
+**What fees will I pay?**  
+Costs depend on the venue and route and may include gas, protocol fees, pool spreads, and creator earnings. Review net proceeds rather than the headline quote.
+
+**How long does it take?**  
+An executable offer or funded pool avoids waiting for a buyer, but approval and sale transactions still require wallet confirmation and blockchain inclusion.
+
+**Which NFTs and chains are supported?**  
+There is no universal support list. Eligibility depends on the external venue, network, token standard, collection, pool rules, and available liquidity.
+
+**How do I start?**  
+Open a verified venue, connect the wallet holding the NFT, inspect available bids or pool quotes, and approve only the contract needed for the selected sale.
+
+**What are the main risks?**  
+The largest risks are accepting a weak quote, malicious approvals, counterfeit interfaces, failed transactions, illiquid pools, and fake buyers requesting an advance payment.
+
+## App
+- Dashboard: https://sell-nft-instantly.github.io/
+- App: https://sell-nft-instantly.github.io/dashboard/
+
+## Official resources
+Dashboard: https://sell-nft-instantly.github.io/
+OpenSea selling guide: https://support.opensea.io/en/articles/8867002-how-do-i-sell-an-nft
+Sudoswap buying and selling guide: https://docs.sudoswap.xyz/user-guide/buying-and-selling/
+Sudoswap protocol documentation: https://docs.sudoswap.xyz/
+Blur Foundation documentation: https://docs.blur.foundation/
+NFTfi documentation: https://docs.nftfi.com/
+MetaMask approval-revocation guide: https://support.metamask.io/more-web3/learn/how-to-revoke-smart-contract-allowances-token-approvals/
+Ethereum security guide: https://ethereum.org/security/
+
+## Data & references
+Etherscan Ethereum explorer: https://etherscan.io/
+Ethereum network and JSON-RPC identifiers: https://ethereum.org/developers/docs/apis/json-rpc/
+ERC-721 standard: https://eips.ethereum.org/EIPS/eip-721
+ERC-1155 standard: https://eips.ethereum.org/EIPS/eip-1155
+ERC-2981 royalty standard: https://eips.ethereum.org/EIPS/eip-2981
+NIST NFT security report: https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8472.pdf
+NFT overview: https://en.wikipedia.org/wiki/Non-fungible_token
+Blur protocol data: https://defillama.com/protocol/blur
+NFTfi protocol data: https://defillama.com/protocol/nftfi
