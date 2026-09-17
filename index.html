@@ -1,298 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sell your NFT instantly — Sell your NFT instantly to live offers</title>
-  <meta name="description" content="Sell your NFT instantly is the process of accepting an active marketplace offer for an owned NFT and settling the transfer onchain.">
-  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
-  <meta name="theme-color" content="#eef0f3">
-  <link rel="canonical" href="https://sell-nft-instantly.github.io/">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="prefetch" href="dashboard/index.html">
-  <link rel="preconnect" href="https://defillama.com/" crossorigin>
-  <link rel="preconnect" href="https://coins.llama.fi" crossorigin>
-  <meta property="og:type" content="website"><meta property="og:url" content="https://sell-nft-instantly.github.io/">
-  <meta property="og:title" content="Sell your NFT instantly — Sell your NFT instantly to live offers">
-  <meta property="og:description" content="Sell your NFT instantly is the process of accepting an active marketplace offer for an owned NFT and settling the transfer onchain.">
-  <meta property="og:site_name" content="Sell your NFT instantly dashboard"><meta property="og:image" content="https://sell-nft-instantly.github.io/favicon.png">
-  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Sell your NFT instantly — Sell your NFT instantly to live offers"><meta name="twitter:description" content="Sell your NFT instantly is the process of accepting an active marketplace offer for an owned NFT and settling the transfer onchain."><meta name="twitter:image" content="https://sell-nft-instantly.github.io/favicon.png">
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {"@type":"WebSite","@id":"https://sell-nft-instantly.github.io/#website","url":"https://sell-nft-instantly.github.io/","name":"Sell your NFT instantly dashboard","inLanguage":"en-US"},
-      {"@type":"Thing","@id":"https://sell-nft-instantly.github.io/#brand","name":"Sell your NFT instantly",
-       "description":"Sell your NFT instantly is the process of accepting an active marketplace offer for an owned NFT and settling the transfer onchain.",
-       "sameAs":["https://ethereum.org/nft/", "https://eips.ethereum.org/EIPS/eip-721", "https://support.opensea.io/en/articles/8867002-how-do-i-sell-an-nft", "https://help.magiceden.io/en/articles/6006555-how-to-sell-solana-nfts-on-magic-eden"]},
-      {"@type":"WebPage","@id":"https://sell-nft-instantly.github.io/#webpage","url":"https://sell-nft-instantly.github.io/","name":"Sell your NFT instantly \u2014 Sell your NFT instantly to live offers","description":"Sell your NFT instantly is the process of accepting an active marketplace offer for an owned NFT and settling the transfer onchain.","isPartOf":{"@id":"https://sell-nft-instantly.github.io/#website"},"about":{"@id":"https://sell-nft-instantly.github.io/#brand"},"mainEntity":{"@id":"https://sell-nft-instantly.github.io/#brand"},"inLanguage":"en-US","mentions":[{"@type":"Thing","name":"OpenSea","sameAs":"https://support.opensea.io/en/articles/8867002-how-do-i-sell-an-nft"},{"@type":"Thing","name":"Magic Eden","sameAs":"https://help.magiceden.io/en/articles/6006555-how-to-sell-solana-nfts-on-magic-eden"}]},
-      {"@type":"ItemList","@id":"https://sell-nft-instantly.github.io/#resources","name":"Sell your NFT instantly \u2014 resources & references","itemListElement":[{"@type":"ListItem","position":1,"name":"Ethereum NFT Guide","url":"https://ethereum.org/nft/"},{"@type":"ListItem","position":2,"name":"ERC-721 Standard","url":"https://eips.ethereum.org/EIPS/eip-721"},{"@type":"ListItem","position":3,"name":"ERC-1155 Standard","url":"https://eips.ethereum.org/EIPS/eip-1155"},{"@type":"ListItem","position":4,"name":"NFT Overview","url":"https://en.wikipedia.org/wiki/Non-fungible_token"},{"@type":"ListItem","position":5,"name":"OpenSea Top Collections","url":"https://opensea.io/collections/top"},{"@type":"ListItem","position":6,"name":"NFT Price Floor","url":"https://nftpricefloor.com/"},{"@type":"ListItem","position":7,"name":"CoinMarketCap NFT Rankings","url":"https://coinmarketcap.com/nft/"},{"@type":"ListItem","position":8,"name":"OpenSea Stats Guide","url":"https://support.opensea.io/en/articles/10549939-how-do-i-use-the-stats-pages-on-opensea"},{"@type":"ListItem","position":9,"name":"OpenSea Selling Guide","url":"https://support.opensea.io/en/articles/8867002-how-do-i-sell-an-nft"},{"@type":"ListItem","position":10,"name":"Magic Eden Instant Sell","url":"https://help.magiceden.io/en/articles/6006555-how-to-sell-solana-nfts-on-magic-eden"},{"@type":"ListItem","position":11,"name":"OpenSea Fees","url":"https://support.opensea.io/en/articles/8867091-what-fees-do-i-pay-on-opensea"},{"@type":"ListItem","position":12,"name":"SuperRare Selling Options","url":"https://help.superrare.com/en/articles/10629742-offers-auctions-and-pricing"},{"@type":"ListItem","position":13,"name":"OpenSea NFT Safety","url":"https://support.opensea.io/en/articles/8867129-how-can-i-stay-safe-and-protect-my-nfts"},{"@type":"ListItem","position":14,"name":"MetaMask Token Approvals","url":"https://support.metamask.io/stay-safe/safety-in-web3/what-is-a-token-approval"},{"@type":"ListItem","position":15,"name":"Revoke.cash Scam Response","url":"https://revoke.cash/learn/security/what-to-do-when-scammed"},{"@type":"ListItem","position":16,"name":"OpenSea Phishing Reports","url":"https://support.opensea.io/en/articles/8867125-how-can-i-report-a-phishing-email-or-direct-message-dm"}]}
-    ]
-  }
-  </script>
-  <style>
-:root{
-  --bg:#eef0f3; --bg-2:#e7eaef; --panel:#ffffff; --field:#f1f3f7; --field-2:#e9edf2;
-  --ink:#151a21; --text:#414954; --muted:#6a727d; --faint:#9aa2ad;
-  --line:rgba(20,26,33,.09); --line-2:rgba(20,26,33,.14);
-  --accent:#9c7bff; --accent-ink:#40336c; --accent-soft:rgba(156,123,255,0.13); --accent-glow:rgba(156,123,255,0.3);
-  --cta:#171a20; --cta-hover:#0a0c10; --cta-ink:#ffffff;
-  --shadow-card:0 1px 0 rgba(20,26,33,.02), 0 40px 80px -42px rgba(24,32,48,.40), 0 14px 30px -22px rgba(24,32,48,.24);
-  --shadow-pop:0 24px 60px -26px rgba(24,32,48,.38), 0 8px 20px -12px rgba(24,32,48,.22);
-  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
-  --font: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --ease: cubic-bezier(0.22, 0.7, 0.24, 1);
-  color-scheme: light;
-}
-html[data-theme="dark"]{
-  --bg:#0b0e13; --bg-2:#0e131b; --panel:#141a24; --field:#1b2230; --field-2:#232c3d;
-  --ink:#e9eef7; --text:#bcc5d6; --muted:#8b95a8; --faint:#606a7e;
-  --line:rgba(226,234,250,.10); --line-2:rgba(226,234,250,.18);
-  --accent:#b79fff; --accent-ink:#cdbdff; --accent-soft:rgba(183,159,255,0.16); --accent-glow:rgba(183,159,255,0.34);
-  --cta:#b79fff; --cta-hover:#9d88db; --cta-ink:#12161c;
-  --shadow-card:0 30px 70px -34px rgba(0,0,0,.66), 0 6px 18px -10px rgba(0,0,0,.5);
-  --shadow-pop:0 24px 60px -26px rgba(0,0,0,.7);
-  color-scheme: dark;
-}
-*{ box-sizing:border-box; }
-html{ height:100%; scroll-behavior:smooth; }
-@media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
-body{ margin:0; min-width:320px; height:100%; overflow:hidden; color:var(--text); background:var(--bg); font-family:var(--font); font-size:15px; line-height:1.55; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
-a{ color:inherit; text-decoration:none; }
-button{ font:inherit; color:inherit; background:none; border:none; cursor:pointer; }
-img{ display:block; max-width:100%; }
-h1,h2,h3,p{ margin:0; }
-a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:10px; }
-.skip{ position:absolute; left:-999px; }
-.skip:focus{ left:12px; top:12px; z-index:120; padding:9px 15px; border-radius:10px; background:var(--cta); color:var(--cta-ink); font-weight:750; }
-.bg{ position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden; background:
-  radial-gradient(1100px 700px at 82% 116%, var(--bg-2), transparent 60%),
-  radial-gradient(900px 620px at -6% -8%, var(--bg-2), transparent 58%); }
-.bg::before{ content:""; position:absolute; right:-14%; bottom:-30%; width:min(92vw,940px); aspect-ratio:1; border-radius:50%;
-  background:repeating-radial-gradient(circle at center, transparent 0 86px, var(--line) 86px 87px); opacity:.5; mask:radial-gradient(circle at center, #000 62%, transparent 72%); }
-.bg::after{ content:""; position:absolute; left:-10%; top:-16%; width:min(70vw,560px); aspect-ratio:1; border-radius:50%;
-  background:repeating-radial-gradient(circle at center, transparent 0 64px, var(--line) 64px 65px); opacity:.4; mask:radial-gradient(circle at center, #000 60%, transparent 72%); }
-.topbar{ position:relative; z-index:70; flex:0 0 auto; display:flex; align-items:center; justify-content:space-between; gap:14px; padding:13px clamp(16px,3.4vw,34px);
-  background:color-mix(in srgb, var(--bg) 78%, transparent); backdrop-filter:saturate(140%) blur(12px); -webkit-backdrop-filter:saturate(140%) blur(12px); border-bottom:1px solid var(--line); }
-.tb-left{ display:flex; align-items:center; gap:12px; min-width:0; }
-.hamb{ display:grid; place-items:center; width:40px; height:40px; flex:0 0 auto; position:relative; border:1px solid var(--line-2); border-radius:12px; background:var(--panel); color:var(--ink); transition:border-color .15s var(--ease); }
-.hamb:hover{ border-color:var(--accent); }
-.hamb .bar{ position:absolute; left:11px; right:11px; height:2px; border-radius:2px; background:currentColor; transition:transform .24s var(--ease), opacity .18s var(--ease); }
-.hamb .bar:nth-child(1){ top:14px; } .hamb .bar:nth-child(2){ top:19px; } .hamb .bar:nth-child(3){ top:24px; }
-body.drawer-open .hamb .bar:nth-child(1){ transform:translateY(5px) rotate(45deg); }
-body.drawer-open .hamb .bar:nth-child(2){ opacity:0; }
-body.drawer-open .hamb .bar:nth-child(3){ transform:translateY(-5px) rotate(-45deg); }
-.brand{ display:flex; align-items:center; gap:11px; min-width:0; }
-.brand-logo{ width:34px; height:34px; flex:0 0 auto; display:grid; place-items:center; border-radius:10px; background:var(--panel); box-shadow:inset 0 0 0 1px var(--line-2); }
-.brand-logo img{ width:22px; height:22px; border-radius:50%; }
-.brand-name{ font-size:19px; font-weight:820; letter-spacing:-0.03em; color:var(--ink); line-height:1.1; white-space:nowrap; }
-.tb-right{ display:flex; align-items:center; gap:9px; }
-.theme-toggle{ display:inline-flex; align-items:center; gap:2px; padding:3px; border-radius:999px; background:var(--field); box-shadow:inset 0 0 0 1px var(--line); }
-.theme-toggle button{ display:grid; place-items:center; width:30px; height:30px; border-radius:999px; color:var(--muted); transition:color .15s var(--ease), background-color .15s var(--ease); }
-.theme-toggle button svg{ width:15px; height:15px; }
-.theme-toggle button[aria-pressed="true"]{ color:var(--ink); background:var(--panel); box-shadow:0 2px 8px -3px rgba(0,0,0,.28); }
-.btn-app{ display:inline-flex; align-items:center; gap:8px; padding:9px 15px; border-radius:11px; background:var(--panel); color:var(--ink); font-size:13.5px; font-weight:700; letter-spacing:-0.01em; box-shadow:inset 0 0 0 1px var(--line-2); transition:box-shadow .15s var(--ease), transform .15s var(--ease); white-space:nowrap; }
-.btn-app svg{ width:16px; height:16px; color:var(--muted); }
-.btn-app:hover{ box-shadow:inset 0 0 0 1px var(--accent); transform:translateY(-1px); }
-.btn-app:hover svg{ color:var(--accent-ink); }
-.scrim{ position:fixed; inset:0; z-index:80; background:rgba(10,14,17,.42); opacity:0; visibility:hidden; transition:opacity .28s var(--ease), visibility .28s var(--ease); }
-body.drawer-open .scrim{ opacity:1; visibility:visible; }
-.drawer{ position:fixed; z-index:90; top:0; left:0; height:100dvh; width:300px; max-width:86vw; display:flex; flex-direction:column; padding:16px 14px 16px; background:var(--panel); border-right:1px solid var(--line); box-shadow:var(--shadow-pop);
-  transform:translateX(-104%); transition:transform .3s var(--ease); overflow-y:auto; }
-body.drawer-open .drawer{ transform:translateX(0); }
-.drawer-head{ display:flex; align-items:center; justify-content:space-between; gap:10px; padding:2px 6px 8px; }
-.drawer-head .brand-name{ font-size:15px; }
-.drawer-close{ display:grid; place-items:center; width:34px; height:34px; border-radius:10px; color:var(--muted); }
-.drawer-close:hover{ color:var(--ink); background:var(--field); }
-.drawer-close svg{ width:17px; height:17px; }
-.nav-label{ margin:15px 12px 6px; font-size:10px; font-weight:750; letter-spacing:0.15em; text-transform:uppercase; color:var(--faint); }
-.nav-item{ display:flex; align-items:center; gap:12px; padding:9px 12px; border-radius:10px; color:var(--text); font-size:14px; font-weight:650; transition:color .15s var(--ease), background-color .15s var(--ease); }
-.nav-item .ni-ico{ width:18px; height:18px; flex:0 0 auto; color:var(--muted); }
-.nav-item.is-active{ color:var(--accent-ink); background:var(--accent-soft); }
-.nav-item.is-active .ni-ico{ color:var(--accent-ink); }
-.nav-item:hover{ color:var(--ink); background:var(--field); }
-.nav-group{ border-radius:10px; }
-.nav-group summary{ display:flex; align-items:center; gap:12px; padding:9px 12px; border-radius:10px; color:var(--text); font-size:14px; font-weight:650; cursor:pointer; list-style:none; transition:color .15s var(--ease), background-color .15s var(--ease); }
-.nav-group summary::-webkit-details-marker{ display:none; }
-.nav-group summary .ni-ico{ width:18px; height:18px; flex:0 0 auto; color:var(--muted); }
-.nav-group summary .chev{ width:15px; height:15px; margin-left:auto; color:var(--faint); transition:transform .2s var(--ease); }
-.nav-group summary:hover{ color:var(--ink); background:var(--field); }
-.nav-group[open] summary{ color:var(--ink); }
-.nav-group[open] summary .chev{ transform:rotate(180deg); }
-.nav-sub{ display:flex; flex-direction:column; gap:1px; padding:2px 0 8px 42px; }
-.nav-sub a{ display:flex; align-items:baseline; gap:7px; padding:6px 10px; border-radius:8px; color:var(--muted); font-size:12.5px; font-weight:550; transition:color .15s var(--ease), background-color .15s var(--ease); }
-.nav-sub a small{ color:var(--faint); font-size:10.5px; font-weight:500; }
-.nav-sub a:hover{ color:var(--accent-ink); background:var(--field); }
-.drawer-foot{ margin-top:auto; padding-top:13px; border-top:1px solid var(--line); }
-.disclose{ margin:8px 8px 0; font-size:11px; line-height:1.5; color:var(--muted); }
-.disclose strong{ color:var(--text); font-weight:750; }
-.fine{ margin:6px 8px 0; font-size:10.5px; line-height:1.45; color:var(--faint); }
-.app{ height:100dvh; display:flex; flex-direction:column; overflow:hidden; position:relative; z-index:1; }
-.wrap{ flex:1 1 auto; min-height:0; display:grid; place-items:center; overflow:hidden; }
-.stage{ width:100%; max-width:560px; max-height:100%; margin-inline:auto; padding:clamp(14px,3vh,36px) clamp(16px,3.4vw,26px); display:flex; flex-direction:column; align-items:center; text-align:center; }
-.lead{ margin:0 0 clamp(13px,2.2vh,20px); max-width:24ch; font-size:clamp(19px,2.5vw,27px); line-height:1.16; letter-spacing:-0.025em; font-weight:750; color:var(--ink); }
-.lead .hl{ color:var(--accent-ink); }
-.hero-chips{ display:flex; flex-wrap:wrap; justify-content:center; gap:9px; margin-top:clamp(13px,2.2vh,18px); }
-.hchip{ display:inline-flex; align-items:baseline; gap:7px; padding:8px 13px; border-radius:12px; background:var(--panel); box-shadow:inset 0 0 0 1px var(--line); font-size:12px; font-weight:600; color:var(--muted); transition:box-shadow .15s var(--ease), color .15s var(--ease); }
-.hchip b{ color:var(--ink); font-family:var(--mono); font-size:12.5px; font-weight:650; font-variant-numeric:tabular-nums; }
-.hchip .ext{ color:var(--faint); font-size:10px; }
-a.hchip:hover{ box-shadow:inset 0 0 0 1px var(--accent); color:var(--text); }
-a.hchip:hover .ext{ color:var(--accent-ink); }
-.swap-card{ position:relative; width:min(480px,100%); border-radius:28px; background:var(--panel); padding:clamp(20px,4vw,30px); text-align:left; box-shadow:var(--shadow-card); }
-.card-head{ display:flex; align-items:center; justify-content:space-between; margin:2px 4px 17px; }
-.card-title{ font-size:15px; font-weight:800; letter-spacing:-0.02em; color:var(--ink); }
-.badge{ display:inline-flex; align-items:center; gap:6px; padding:5px 11px; border-radius:999px; color:var(--accent-ink); background:var(--accent-soft); font-size:10px; font-weight:750; letter-spacing:0.07em; text-transform:uppercase; }
-.badge i{ width:6px; height:6px; border-radius:50%; background:var(--accent); }
-.field{ position:relative; padding:17px 18px 18px; border-radius:19px; background:var(--field); }
-.field + .field{ margin-top:6px; }
-.field-top{ display:flex; align-items:center; justify-content:space-between; }
-.field-label{ font-size:12px; font-weight:600; color:var(--muted); }
-.field-bal{ font-size:11px; font-weight:600; color:var(--faint); }
-.field-row{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:11px; min-width:0; }
-.amount{ min-width:0; }
-.amount b{ display:block; font-size:clamp(29px,5vw,38px); font-weight:750; line-height:1; letter-spacing:-0.02em; color:var(--ink); font-variant-numeric:tabular-nums; }
-.amount span{ display:block; margin-top:6px; font-size:11px; font-weight:600; color:var(--faint); }
-.token-pill{ display:inline-flex; align-items:center; gap:10px; flex:0 0 auto; padding:7px 12px 7px 8px; border-radius:999px; background:var(--panel); box-shadow:0 4px 14px -8px rgba(0,0,0,.4), inset 0 0 0 1px var(--line); transition:box-shadow .15s var(--ease); }
-.token-pill:hover{ box-shadow:0 6px 18px -8px rgba(0,0,0,.42), inset 0 0 0 1px var(--line-2); }
-.token-pill img{ width:26px; height:26px; flex:0 0 auto; border-radius:50%; }
-.token-meta{ display:flex; flex-direction:column; line-height:1.05; min-width:0; }
-.token-meta small{ font-size:9.5px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--faint); }
-.token-meta b{ font-size:15px; font-weight:800; letter-spacing:-0.01em; color:var(--ink); white-space:nowrap; }
-.token-pill .chev{ width:14px; height:14px; flex:0 0 auto; color:var(--faint); }
-.reverse{ position:relative; z-index:2; display:grid; place-items:center; width:40px; height:40px; margin:-14px auto; border:4px solid var(--panel); border-radius:13px; background:var(--field-2); color:var(--muted); box-shadow:0 6px 16px -8px rgba(0,0,0,.4); transition:transform .28s var(--ease), color .15s var(--ease), background-color .15s var(--ease); }
-.reverse svg{ width:16px; height:16px; }
-.reverse:hover{ color:var(--cta-ink); background:var(--accent); transform:rotate(180deg); }
-.details-btn{ display:flex; align-items:center; justify-content:center; gap:8px; width:100%; margin-top:12px; padding:12px; border-radius:14px; background:var(--field); color:var(--muted); font-size:12px; font-weight:750; letter-spacing:0.06em; text-transform:uppercase; transition:color .15s var(--ease), background-color .15s var(--ease); }
-.details-btn svg{ width:14px; height:14px; transition:transform .2s var(--ease); }
-.details-btn:hover{ color:var(--ink); }
-.details-btn[aria-expanded="true"] svg{ transform:rotate(180deg); }
-.details{ overflow:hidden; max-height:0; opacity:0; transition:max-height .3s var(--ease), opacity .22s var(--ease), margin .3s var(--ease); }
-.details.open{ max-height:280px; opacity:1; margin-top:6px; }
-.d-row{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:11px 8px; border-bottom:1px solid var(--line); }
-.d-row:last-child{ border-bottom:0; }
-.d-row span{ font-size:12.5px; font-weight:600; color:var(--muted); }
-.d-row b{ font-size:12.5px; font-weight:700; color:var(--text); }
-.d-row b.ok{ color:var(--accent-ink); }
-.d-row b.mono{ font-family:var(--mono); font-size:11px; }
-.cta{ display:flex; align-items:center; justify-content:center; gap:8px; margin-top:12px; padding:16px; border-radius:16px; background:var(--cta); color:var(--cta-ink); font-size:15px; font-weight:800; letter-spacing:0.03em; text-transform:uppercase; box-shadow:0 16px 34px -16px rgba(0,0,0,.5); transition:background-color .15s var(--ease), transform .15s var(--ease); }
-.cta svg{ width:16px; height:16px; }
-.cta:hover{ background:var(--cta-hover); transform:translateY(-1px); }
-.card-note{ margin:13px 4px 0; font-size:11px; line-height:1.5; color:var(--faint); text-align:center; }
-.card-note a{ color:var(--muted); text-decoration:underline; text-decoration-color:var(--line-2); text-underline-offset:2px; }
-.card-note a:hover{ color:var(--accent-ink); }
-@media (max-width:560px){
-  .brand-name{ font-size:16px; } .btn-app span{ display:none; } .btn-app{ padding:9px 11px; }
-  .stage{ padding:12px 16px; }
-  .lead{ font-size:clamp(18px,5.5vw,24px); margin-bottom:14px; }
-  .swap-card{ padding:18px; } .field{ padding:14px 15px 15px; } .amount b{ font-size:29px; }
-  .hero-chips{ margin-top:12px; }
-}
-@media (max-height:700px){ .lead{ font-size:clamp(17px,4.5vw,21px); margin-bottom:10px; } .hero-chips{ display:none; } }
-@media (max-height:600px){ .field{ padding:12px 15px 13px; } .amount b{ font-size:26px; } .details-btn{ margin-top:8px; padding:9px; } .cta{ padding:14px; margin-top:8px; } }
-@media (prefers-reduced-motion: reduce){ *{ transition:none !important; } }
-.stage.is-hero{ max-width:780px; }
-.hero{ display:flex; flex-direction:column; align-items:center; text-align:center; }
-.hero-h2{ margin:0; max-width:17ch; font-size:clamp(31px,5.8vw,56px); line-height:1.04; letter-spacing:-0.035em; font-weight:830; color:var(--ink); }
-.hero-h2 .hl{ color:var(--accent-ink); }
-.hero-sub{ margin:clamp(16px,2.8vh,23px) auto 0; max-width:54ch; font-size:clamp(15px,1.65vw,18px); line-height:1.58; color:var(--muted); font-weight:450; }
-.hero-cta{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:12px; margin-top:clamp(22px,3.6vh,32px); }
-.hero-cta .cta{ margin-top:0; text-transform:none; letter-spacing:0.005em; padding:15px 26px; font-size:15px; border-radius:14px; }
-.hero-cta .cta-ghost{ background:var(--panel); color:var(--ink); box-shadow:inset 0 0 0 1px var(--line-2); }
-.hero-cta .cta-ghost:hover{ background:var(--field); box-shadow:inset 0 0 0 1px var(--accent); transform:translateY(-1px); }
-@media (max-width:560px){ .hero-cta{ flex-direction:column; width:100%; max-width:340px; } .hero-cta .cta{ width:100%; } }
-@media (max-height:640px){ .hero-sub{ font-size:14px; margin-top:12px; } .hero-chips{ display:none; } }
-  </style>
-  <script>document.documentElement.classList.add('js')</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sell NFT Instantly | Find Your NFT’s Value</title>
+<meta name="description" content="Sell NFT Instantly starts with knowing your NFT’s value. Connect your wallet, inspect ownership and explore floor, rarity, traits and a clear example payout.">
+<meta name="theme-color" content="#111215">
+<link rel="canonical" href="https://sell-nft-instantly.github.io/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sell NFT Instantly">
+<meta property="og:title" content="Sell NFT Instantly | Find Your NFT’s Value">
+<meta property="og:description" content="Your NFT. Its value. Your next move. Explore the NFT valuation studio.">
+<meta property="og:url" content="https://sell-nft-instantly.github.io/">
+<meta property="og:image" content="https://sell-nft-instantly.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sell NFT Instantly valuation studio with a chrome digital collectible and an example offer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sell NFT Instantly | Find Your NFT’s Value">
+<meta name="twitter:description" content="Your NFT. Its value. Your next move. Explore the NFT valuation studio.">
+<meta name="twitter:url" content="https://sell-nft-instantly.github.io/">
+<meta name="twitter:image" content="https://sell-nft-instantly.github.io/assets/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://sell-nft-instantly.github.io/#website","url":"https://sell-nft-instantly.github.io/","name":"Sell NFT Instantly"},{"@type":"SoftwareApplication","@id":"https://sell-nft-instantly.github.io/swap/#app","url":"https://sell-nft-instantly.github.io/swap/","name":"Sell NFT Instantly","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"Connect a browser wallet, check ERC-721 ownership and explore an illustrative NFT valuation. Live buyer offers are currently unavailable."},{"@type":"FAQPage","@id":"https://sell-nft-instantly.github.io/#faq","mainEntity":[{"@type":"Question","name":"How do I Sell NFT Instantly?","acceptedAnswer":{"@type":"Answer","text":"Connect your wallet, select an NFT and check for an eligible buyer offer. When an executable offer is available, review the net payout and approve the sale in your wallet. Live offers are not currently available on this site."}},{"@type":"Question","name":"How is an instant NFT offer calculated?","acceptedAnswer":{"@type":"Answer","text":"Collection floor, recent sales, traits, rarity and buyer demand help inform a valuation. An instant offer also depends on available liquidity. A displayed estimate is not a guaranteed sale price."}},{"@type":"Question","name":"Can every NFT be sold instantly?","acceptedAnswer":{"@type":"Answer","text":"No. An instant sale needs a valid buyer offer for that NFT or its collection, on a supported network. Rare traits alone do not guarantee demand or an offer."}},{"@type":"Question","name":"What crypto do I receive, and are there fees?","acceptedAnswer":{"@type":"Answer","text":"The executable offer determines the payout currency and network. Review service fees, any royalties and network costs before signing. The example in this app uses ETH and illustrative fees; it cannot be accepted."}},{"@type":"Question","name":"Does connecting my wallet sell or transfer my NFT?","acceptedAnswer":{"@type":"Answer","text":"No. Connecting shares your public account address. This app can read ERC-721 ownership on Ethereum, Base and Arbitrum. A sale would require a separate, explicit transaction approval; this site currently does not submit sale transactions."}}]}]}</script>
 </head>
 <body>
-  <a class="skip" href="#route-preview">Skip to preview</a>
-  <div class="bg" aria-hidden="true"></div>
-
-  <div class="app">
-  <header class="topbar">
-    <div class="tb-left">
-      <button class="hamb" type="button" id="hamb" aria-label="Open navigation" aria-controls="drawer" aria-expanded="false"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
-      <div class="brand"><span class="brand-logo"><img src="favicon.png" width="22" height="22" alt="Sell your NFT instantly logo"></span><h1 class="brand-name">Sell your NFT instantly</h1></div>
-    </div>
-    <div class="tb-right">
-      <div class="theme-toggle" role="group" aria-label="Color theme">
-        <button type="button" id="theme-light" aria-pressed="true" aria-label="Light theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg></button>
-        <button type="button" id="theme-dark" aria-pressed="false" aria-label="Dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a6.5 6.5 0 1 0 10.5 10.5z"/></svg></button>
-      </div>
-      <a class="btn-app" href="dashboard/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M16 11h2"/></svg><span>Open app</span></a>
-    </div>
-  </header>
-
-  <div class="scrim" id="scrim" tabindex="-1"></div>
-  <aside class="drawer" id="drawer" aria-label="Primary" aria-hidden="true">
-    <div class="drawer-head">
-      <div class="brand"><span class="brand-logo"><img src="favicon.png" width="22" height="22" alt=""></span><span class="brand-name">Sell your NFT instantly</span></div>
-      <button class="drawer-close" type="button" id="drawer-close" aria-label="Close navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-    </div>
-    <nav aria-label="Sections">
-      <p class="nav-label">Bridge</p>
-      <a class="nav-item is-active" href="#route-preview" aria-current="page"><svg class="ni-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 10h11l-3-3M17 14H6l3 3"/></svg>Route preview</a>
-      <p class="nav-label">Understand</p>
-      <details class="nav-group" open><summary><svg class="ni-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h10a3 3 0 0 1 3 3v11a2 2 0 0 0-2-2H4zM20 5h-1a3 3 0 0 0-3 3v11a2 2 0 0 1 2-2h2z"/></svg>NFT sale basics<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="nav-sub"><a href="https://ethereum.org/nft/" target="_blank" rel="noopener noreferrer">Ethereum NFT Guide <small>Ownership and transfer basics</small></a><a href="https://eips.ethereum.org/EIPS/eip-721" target="_blank" rel="noopener noreferrer">ERC-721 Standard <small>Core NFT transfer interface</small></a><a href="https://eips.ethereum.org/EIPS/eip-1155" target="_blank" rel="noopener noreferrer">ERC-1155 Standard <small>Multi-token transfer standard</small></a><a href="https://en.wikipedia.org/wiki/Non-fungible_token" target="_blank" rel="noopener noreferrer">NFT Overview <small>Independent concept reference</small></a></div></details>
-      <p class="nav-label">Markets &amp; data</p>
-      <details class="nav-group"><summary><svg class="ni-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h10a3 3 0 0 1 3 3v11a2 2 0 0 0-2-2H4zM20 5h-1a3 3 0 0 0-3 3v11a2 2 0 0 1 2-2h2z"/></svg>Price and demand<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="nav-sub"><a href="https://opensea.io/collections/top" target="_blank" rel="noopener noreferrer">OpenSea Top Collections <small>Marketplace rankings and floors</small></a><a href="https://nftpricefloor.com/" target="_blank" rel="noopener noreferrer">NFT Price Floor <small>Collection prices and volume</small></a><a href="https://coinmarketcap.com/nft/" target="_blank" rel="noopener noreferrer">CoinMarketCap NFT Rankings <small>Collection market data</small></a><a href="https://support.opensea.io/en/articles/10549939-how-do-i-use-the-stats-pages-on-opensea" target="_blank" rel="noopener noreferrer">OpenSea Stats Guide <small>Ranking filters explained</small></a></div></details>
-      <p class="nav-label">Guides</p>
-      <details class="nav-group"><summary><svg class="ni-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h10a3 3 0 0 1 3 3v11a2 2 0 0 0-2-2H4zM20 5h-1a3 3 0 0 0-3 3v11a2 2 0 0 1 2-2h2z"/></svg>Sell and settle<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="nav-sub"><a href="https://support.opensea.io/en/articles/8867002-how-do-i-sell-an-nft" target="_blank" rel="noopener noreferrer">OpenSea Selling Guide <small>List or accept offers</small></a><a href="https://help.magiceden.io/en/articles/6006555-how-to-sell-solana-nfts-on-magic-eden" target="_blank" rel="noopener noreferrer">Magic Eden Instant Sell <small>Accept collection offers</small></a><a href="https://support.opensea.io/en/articles/8867091-what-fees-do-i-pay-on-opensea" target="_blank" rel="noopener noreferrer">OpenSea Fees <small>Seller fees and gas</small></a><a href="https://help.superrare.com/en/articles/10629742-offers-auctions-and-pricing" target="_blank" rel="noopener noreferrer">SuperRare Selling Options <small>Offers auctions and pricing</small></a></div></details>
-      <p class="nav-label">Safety</p>
-      <details class="nav-group"><summary><svg class="ni-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h10a3 3 0 0 1 3 3v11a2 2 0 0 0-2-2H4zM20 5h-1a3 3 0 0 0-3 3v11a2 2 0 0 1 2-2h2z"/></svg>Protect your wallet<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="nav-sub"><a href="https://support.opensea.io/en/articles/8867129-how-can-i-stay-safe-and-protect-my-nfts" target="_blank" rel="noopener noreferrer">OpenSea NFT Safety <small>Protect assets and access</small></a><a href="https://support.metamask.io/stay-safe/safety-in-web3/what-is-a-token-approval" target="_blank" rel="noopener noreferrer">MetaMask Token Approvals <small>Review NFT permissions</small></a><a href="https://revoke.cash/learn/security/what-to-do-when-scammed" target="_blank" rel="noopener noreferrer">Revoke.cash Scam Response <small>Marketplace signature recovery</small></a><a href="https://support.opensea.io/en/articles/8867125-how-can-i-report-a-phishing-email-or-direct-message-dm" target="_blank" rel="noopener noreferrer">OpenSea Phishing Reports <small>Report fake buyer messages</small></a></div></details>
-    </nav>
-    <div class="drawer-foot">
-      <p class="disclose"><strong>Independent dashboard.</strong> Not affiliated with any protocol or issuer named here.</p>
-      <p class="fine">Live figures come from public third-party sources and change. Educational reference only.</p>
-    </div>
-  </aside>
-
-  <div class="wrap">
-    <main class="stage is-hero">
-      <div class="hero" id="app">
-        <h2 class="hero-h2"><span class="hl">Sell your NFT</span> instantly to live offers</h2>
-        <p class="hero-sub">Compare active marketplace offers, review fees and royalties, then accept the best available bid from your connected wallet.</p>
-        <div class="hero-cta">
-          <a class="cta cta-primary" href="dashboard/" target="_blank" rel="noopener noreferrer">Enter Dashboard <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-          <a class="cta cta-ghost" href="https://support.opensea.io/en/articles/8867002-how-do-i-sell-an-nft" target="_blank" rel="noopener noreferrer">How it works</a>
-        </div>
-      </div>
-      <div class="hero-chips">
-        <a class="hchip" href="https://ethereum.org/developers/docs/gas/" target="_blank" rel="noopener noreferrer">ETH Gas <b id="sig0">—</b> <span class="ext" aria-hidden="true">↗</span></a>
-          <a class="hchip" href="https://opensea.io/collections/top" target="_blank" rel="noopener noreferrer">NFT Rankings <b>Live collection data</b> <span class="ext" aria-hidden="true">↗</span></a>
-          <a class="hchip" href="https://eips.ethereum.org/EIPS/eip-721" target="_blank" rel="noopener noreferrer">NFT Standard <b>ERC-721</b> <span class="ext" aria-hidden="true">↗</span></a>
-      </div>
-    </main>
-  </div>
-  </div>
-
-  <script>
-  (function(){
-    "use strict";
-    var $=function(id){ return document.getElementById(id); };
-    var root=document.documentElement, tl=$("theme-light"), td=$("theme-dark");
-    function applyTheme(t){ if(t==="dark"){ root.setAttribute("data-theme","dark"); } else { root.removeAttribute("data-theme"); } if(tl) tl.setAttribute("aria-pressed", String(t!=="dark")); if(td) td.setAttribute("aria-pressed", String(t==="dark")); }
-    var saved=null; try{ saved=localStorage.getItem("sellyournf-theme"); }catch(e){}
-    if(saved) applyTheme(saved);
-    function setTheme(t){ applyTheme(t); try{ localStorage.setItem("sellyournf-theme", t); }catch(e){} }
-    if(tl) tl.addEventListener("click", function(){ setTheme("light"); });
-    if(td) td.addEventListener("click", function(){ setTheme("dark"); });
-    var body=document.body, hamb=$("hamb"), scrim=$("scrim"), drawer=$("drawer"), dclose=$("drawer-close");
-    function openD(){ body.classList.add("drawer-open"); hamb.setAttribute("aria-expanded","true"); drawer.setAttribute("aria-hidden","false"); }
-    function closeD(){ body.classList.remove("drawer-open"); hamb.setAttribute("aria-expanded","false"); drawer.setAttribute("aria-hidden","true"); }
-    if(hamb) hamb.addEventListener("click", function(){ body.classList.contains("drawer-open")?closeD():openD(); });
-    if(scrim) scrim.addEventListener("click", closeD);
-    if(dclose) dclose.addEventListener("click", closeD);
-    document.addEventListener("keydown", function(e){ if(e.key==="Escape" && body.classList.contains("drawer-open")) closeD(); });
-    if(drawer) drawer.addEventListener("click", function(e){ if(e.target.closest("a")) closeD(); });
-
-    var db=$("details-btn"), dp=$("details");
-    if(db&&dp) db.addEventListener("click", function(){ var open=dp.classList.toggle("open"); db.setAttribute("aria-expanded", String(open)); db.firstChild.textContent = open?"Hide details ":"Show details "; });
-    function money(n){ if(n>=1e9) return "$"+(n/1e9).toFixed(2)+"B"; if(n>=1e6) return "$"+(n/1e6).toFixed(1)+"M"; if(n>=1e3) return "$"+(n/1e3).toFixed(0)+"K"; return "$"+n.toFixed(0); }
-    function gwei(g){ return (g>=0.1?g.toFixed(2):(g>=0.001?g.toFixed(3):Number(g.toPrecision(2)).toString()))+" gwei"; }
-    function grab(url,opt){ var c="AbortController" in window ? new AbortController():null, t=c?setTimeout(function(){c.abort();},7000):null; var o=opt||{}; if(c) o.signal=c.signal; return fetch(url,o).then(function(r){ if(!r.ok) throw 0; return r.json(); }).finally(function(){ if(t) clearTimeout(t); }); }
-    grab("https://ethereum-rpc.publicnode.com",{ method:"POST", headers:{"Content-Type":"application/json"}, body:'{"jsonrpc":"2.0","id":1,"method":"eth_gasPrice","params":[]}' }).then(function(j){ var wei=j&&j.result?parseInt(j.result,16):NaN; if(isFinite(wei)&&wei>0) $("sig0").textContent=gwei(wei/1e9); }).catch(function(){});
-  })();
-  </script>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap nav"><a class="brand" href="./" aria-label="Sell NFT Instantly home"><span class="brand-symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-9 12h7l-1 8 10-13h-7V2Z" fill="currentColor"/></svg></span><span>instant<span class="brand-tag">NFT</span></span></a><nav class="nav-links" aria-label="Main navigation"><a href="#how-it-works">How it works</a><a href="#valuation">The valuation</a><a href="#faq">FAQ</a></nav><a class="button button-small" href="swap/">Launch app <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div></header>
+<main id="main">
+<section class="hero wrap">
+<div class="hero-copy"><div class="eyebrow"><span class="status-dot"></span> THE NFT VALUATION STUDIO</div><h1>Sell NFT <span>Instantly</span></h1><p class="hero-subtitle">Art in your wallet.<br>Possibility in your hands.</p><p class="hero-description">Bring your NFT. Discover what drives its value.<br>See the path from collectible to crypto.</p><a class="button button-primary hero-button" href="swap/">Find my NFT’s value <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a><div class="hero-assurance"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 8V6a2 2 0 0 0-2-2H5a3 3 0 0 0 0 6h16v9H5a3 3 0 0 1-3-3V7m14 6h5v4h-5z"/></svg> Your wallet. Your decision.</div></div>
+<a class="valuation-preview" href="/swap/" aria-label="Open the app to value your NFT">
+<div class="preview-header"><span><span class="status-dot"></span> INSIDE THE ENGINE</span><span class="badge">ILLUSTRATIVE PREVIEW</span></div>
+<div class="preview-body"><div class="preview-art"><img src="assets/example-nft.png" alt="Azuki #40 — example NFT shown for instant valuation" width="600" height="600" fetchpriority="high"><span class="art-edition">STUDIO COLLECTION / 001</span><div class="art-caption"><div><span>Chrome studies</span><strong>Bloom #0084</strong></div><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 6-6 4 4 3-3 5 5"/></svg></div></div>
+<div class="preview-analysis"><div class="analysis-label">VALUE SIGNALS</div><div class="signal-row"><span>Collection floor</span><strong>1.20 <small>ETH</small></strong></div><svg class="floor-chart" viewBox="0 0 360 110" role="img" aria-label="Illustrative seven-day floor price rising from 1.02 to 1.20 ETH"><defs><linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d6ff62" stop-opacity=".18"/><stop offset="1" stop-color="#d6ff62" stop-opacity="0"/></linearGradient></defs><path d="M0 25H360M0 60H360M0 95H360" stroke="currentColor" stroke-opacity=".12" stroke-dasharray="3 5"/><path d="M0 87 26 78 49 82 77 56 101 64 128 50 151 58 177 35 198 40 225 26 249 33 278 18 299 25 329 12 355 16V110H0Z" fill="url(#chartFill)"/><path class="chart-line" d="m0 87 26-9 23 4 28-26 24 8 27-14 23 8 26-23 21 5 27-14 24 7 29-15 21 7 30-13 26 4" fill="none" stroke="#d6ff62" stroke-width="2.5" stroke-linejoin="round"/><circle cx="355" cy="16" r="4" fill="#d6ff62"/></svg><div class="signal-row rarity-label"><span>Rarity</span><strong>Top 8<span class="percent">%</span></strong></div><div class="rarity-track"><span></span></div><div class="range-label"><span>Common</span><span>Rare</span></div><div class="analysis-label trait-label">DISTINCTIVE TRAITS</div><div class="trait-chips"><span>Liquid chrome</span><span>Violet aura</span><span>Edition 1/1</span></div></div></div>
+<div class="preview-offer"><div><span class="small-label">EXAMPLE NET OFFER</span><div class="offer-number">1.344 <span>ETH</span></div></div><span class="round-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></span></div><div class="preview-foot"><span>From collectible to crypto</span><span>Explore the breakdown <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+</a>
+</section>
+<div class="signal-strip"><div class="wrap"><span class="strip-title">ART MEETS ANALYSIS</span><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18M7 14l4-4 4 2 5-7"/></svg> Collection floor</span><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 6-6 4 4 3-3 5 5"/></svg> Traits &amp; rarity</span><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 17V9m5 8V5m5 12v-6m5 6V3"/></svg> Market momentum</span><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 8V6a2 2 0 0 0-2-2H5a3 3 0 0 0 0 6h16v9H5a3 3 0 0 1-3-3V7m14 6h5v4h-5z"/></svg> Net payout</span></div></div>
+<section class="section wrap" id="how-it-works">
+<div class="section-heading"><div><div class="eyebrow">01 / THE PROCESS</div><h2>How to Sell NFT Instantly.<br> <span class="muted">Three moves. One decision.</span></h2></div><p>From what you own<br>to what you could receive.</p></div>
+<div class="process-grid">
+<article class="process-card"><div class="step-top"><span class="step-number">01</span><span class="step-category">IDENTIFY</span></div><div class="process-visual bring-visual"><div class="mini-nft"><img src="assets/example-nft.png" alt="" width="600" height="600"></div><div class="wallet-chip"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 8V6a2 2 0 0 0-2-2H5a3 3 0 0 0 0 6h16v9H5a3 3 0 0 1-3-3V7m14 6h5v4h-5z"/></svg> Your collection <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></div></div><h3>Bring your NFT.</h3><p>Connect a wallet. Paste an item link or a collection address and token ID.</p><a class="subtle-link" href="swap/">Find your collectible <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></article>
+<article class="process-card"><div class="step-top"><span class="step-number">02</span><span class="step-category">EVALUATE</span></div><div class="process-visual gauge-visual"><svg viewBox="0 0 240 140" role="img" aria-label="Example valuation considers floor, rarity and traits"><path d="M30 112a90 90 0 0 1 180 0" fill="none" stroke="#333139" stroke-width="15"/><path d="M30 112a90 90 0 0 1 180 0" fill="none" stroke="#b6a1ff" stroke-width="15" stroke-dasharray="225 283"/><path d="m120 112 57-47" stroke="#d6ff62" stroke-width="3" stroke-linecap="round"/><circle cx="120" cy="112" r="6" fill="#d6ff62"/><path d="m30 112 9 0m18-65 7 7m56-32v10m64 15-7 7m33 58h-9" stroke="#111215" stroke-width="3"/></svg><span class="gauge-caption">FLOOR · RARITY · DEMAND</span></div><h3>See beyond the floor.</h3><p>Understand the traits, rarity and collection activity behind the number.</p><a class="subtle-link" href="#valuation">Inside a valuation <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></article>
+<article class="process-card"><div class="step-top"><span class="step-number">03</span><span class="step-category">DECIDE</span></div><div class="process-visual payout-visual"><span class="small-label">EXAMPLE NET PAYOUT</span><strong>1.344 <span>ETH</span></strong><div class="payout-route"><span>NFT</span><svg viewBox="0 0 90 24" fill="none" aria-hidden="true"><path d="M0 12h84m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/></svg><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 8V6a2 2 0 0 0-2-2H5a3 3 0 0 0 0 6h16v9H5a3 3 0 0 1-3-3V7m14 6h5v4h-5z"/></svg> Your wallet</span></div></div><h3>Make your next move.</h3><p>Review an available offer and its costs. You approve before anything moves.</p><span class="availability-note">Live offers currently unavailable</span></article>
+</div></section>
+<section class="valuation-section" id="valuation"><div class="wrap valuation-layout"><div class="valuation-copy"><div class="eyebrow">02 / KNOW YOUR NUMBER</div><h2>Sell NFT Instantly.<br> <span class="muted">Understand the offer.</span></h2><p>A collectible is more than its floor price.<br>Every signal adds context.</p><div class="value-reasons"><div><span>01</span><div><h3>The collection sets the baseline.</h3><p>Floor prices and recent sales frame the market.</p></div></div><div><span>02</span><div><h3>Your traits tell the rest.</h3><p>Rarity and buyer demand can influence value.</p></div></div><div><span>03</span><div><h3>The net amount is what matters.</h3><p>See costs before making the call.</p></div></div></div><a class="subtle-link" href="swap/">Explore the valuation studio <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div>
+<div class="breakdown-card"><div class="breakdown-head"><span>THE VALUE BREAKDOWN</span><span class="badge">EXAMPLE</span></div><div class="floor-top"><span>Collection floor</span><strong>1.20 <small>ETH</small></strong></div><svg class="floor-chart" viewBox="0 0 360 110" role="img" aria-label="Illustrative seven-day floor price rising from 1.02 to 1.20 ETH"><defs><linearGradient id="detailFill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d6ff62" stop-opacity=".18"/><stop offset="1" stop-color="#d6ff62" stop-opacity="0"/></linearGradient></defs><path d="M0 25H360M0 60H360M0 95H360" stroke="currentColor" stroke-opacity=".12" stroke-dasharray="3 5"/><path d="M0 87 26 78 49 82 77 56 101 64 128 50 151 58 177 35 198 40 225 26 249 33 278 18 299 25 329 12 355 16V110H0Z" fill="url(#detailFill)"/><path class="chart-line" d="m0 87 26-9 23 4 28-26 24 8 27-14 23 8 26-23 21 5 27-14 24 7 29-15 21 7 30-13 26 4" fill="none" stroke="#d6ff62" stroke-width="2.5" stroke-linejoin="round"/><circle cx="355" cy="16" r="4" fill="#d6ff62"/></svg><div class="chart-caption"><span>7 DAYS / ILLUSTRATIVE DATA</span><span>ETH</span></div><dl class="value-table"><div><dt><span class="legend floor-legend"></span>Floor baseline</dt><dd>1.200 ETH</dd></div><div><dt><span class="legend rarity-legend"></span>Rarity &amp; trait adjustment</dt><dd>0.180 ETH</dd></div><div><dt><span class="legend fee-legend"></span>Example service fee</dt><dd>−0.030 ETH</dd></div><div><dt><span class="legend fee-legend"></span>Example network cost</dt><dd>−0.006 ETH</dd></div></dl><div class="net-total"><span>What reaches your wallet</span><strong>1.344 <small>ETH</small></strong></div><p class="fine-print">Illustrative arithmetic, not an executable offer. Actual pricing, fees and availability depend on a live buyer quote.</p></div></div></section>
+<section class="section wrap faq-layout" id="faq"><div class="faq-intro"><div class="eyebrow">03 / A LITTLE CLARITY</div><h2>Sell NFT Instantly:<br> <span class="muted">fees, wallets &amp; eligibility.</span></h2><a class="subtle-link" href="swap/">Open the app <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div><div class="faq-list"><details><summary>How do I Sell NFT Instantly?<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Connect your wallet, select an NFT and check for an eligible buyer offer. When an executable offer is available, review the net payout and approve the sale in your wallet. Live offers are not currently available on this site.</p></details><details><summary>How is an instant NFT offer calculated?<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Collection floor, recent sales, traits, rarity and buyer demand help inform a valuation. An instant offer also depends on available liquidity. A displayed estimate is not a guaranteed sale price.</p></details><details><summary>Can every NFT be sold instantly?<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>No. An instant sale needs a valid buyer offer for that NFT or its collection, on a supported network. Rare traits alone do not guarantee demand or an offer.</p></details><details><summary>What crypto do I receive, and are there fees?<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>The executable offer determines the payout currency and network. Review service fees, any royalties and network costs before signing. The example in this app uses ETH and illustrative fees; it cannot be accepted.</p></details><details><summary>Does connecting my wallet sell or transfer my NFT?<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>No. Connecting shares your public account address. This app can read ERC-721 ownership on Ethereum, Base and Arbitrum. A sale would require a separate, explicit transaction approval; this site currently does not submit sale transactions.</p></details></div></section>
+<section class="wrap final-section"><div class="final-cta"><div><div class="eyebrow">YOUR NEXT MOVE STARTS HERE</div><h2>Sell NFT Instantly from your wallet.</h2><p>Start with the NFT already in your wallet.</p></div><a class="button button-dark" href="swap/">Find my NFT’s value <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div></section>
+</main>
+<footer class="site-footer wrap"><a class="brand" href="./" aria-label="Sell NFT Instantly home"><span class="brand-symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-9 12h7l-1 8 10-13h-7V2Z" fill="currentColor"/></svg></span><span>instant<span class="brand-tag">NFT</span></span></a><span>Collect something. Discover its value.</span><a href="swap/">Enter the studio <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a><div class="footer-bottom"><span>© 2026 Sell NFT Instantly</span><span>Valuation preview. Live offers are currently unavailable.</span></div></footer>
 </body>
 </html>
