@@ -1,0 +1,3 @@
+# Sell NFT Instantly
+
+See how collection bids, trait bids and AMM pools like Sudoswap let a holder accept the best current offer in one transaction, what Blur's bidding and Blend change, and the fees, royalties and scams to check before accepting.
