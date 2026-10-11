@@ -6,7 +6,9 @@
   <title>Sell NFT Instantly — Bids, Fees and the Price Trade-Off</title>
   <meta name="description" content="See how collection bids, trait bids and AMM pools like Sudoswap let a holder accept the best current offer in one transaction, what Blur's bidding and Blend change, and the fees, royalties and scams to check before accepting.">
   <link rel="canonical" href="https://sell-nft-instantly.github.io/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%237c5cff'/%3E%3Cpath d='M16 7l9 9-9 9-9-9z' fill='white'/%3E%3C/svg%3E">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Website">
   <meta property="og:title" content="Sell NFT Instantly">
   <meta property="og:description" content="See how collection bids, trait bids and AMM pools like Sudoswap let a holder accept the best current offer in one transaction, what Blur's bidding and Blend change, and the fees, royalties and scams to check before accepting.">
   <meta property="og:url" content="https://sell-nft-instantly.github.io/">
@@ -15,264 +17,473 @@
   <meta name="twitter:title" content="Sell NFT Instantly">
   <meta name="twitter:description" content="See how collection bids, trait bids and AMM pools like Sudoswap let a holder accept the best current offer in one transaction, what Blur's bidding and Blend change, and the fees, royalties and scams to check before accepting.">
   <meta name="twitter:image" content="https://sell-nft-instantly.github.io/og.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://sell-nft-instantly.github.io/#website", "url": "https://sell-nft-instantly.github.io/", "name": "Sell NFT Instantly — Bids, Fees and the Price Trade-Off"}, {"@type": "WebPage", "@id": "https://sell-nft-instantly.github.io/#webpage", "url": "https://sell-nft-instantly.github.io/", "name": "Sell NFT Instantly — Bids, Fees and the Price Trade-Off", "isPartOf": {"@id": "https://sell-nft-instantly.github.io/#website"}, "description": "See how collection bids, trait bids and AMM pools like Sudoswap let a holder accept the best current offer in one transaction, what Blur's bidding and Blend change, and the fees, royalties and scams to check before accepting.", "datePublished": "2026-10-11", "dateModified": "2026-10-11"}, {"@type": "SoftwareApplication", "name": "Sell NFT Instantly", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sell-nft-instantly.github.io/"}, {"@type": "ListItem", "position": 2, "name": "NFT"}, {"@type": "ListItem", "position": 3, "name": "Sell NFT Instantly"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does it mean to accept an offer right away instead of listing?", "acceptedAnswer": {"@type": "Answer", "text": "It means accepting the best live bid on a token right now rather than publishing a listing and waiting for a buyer, trading some price for immediate, guaranteed liquidity in a single on-chain transaction."}}, {"@type": "Question", "name": "How much less do I get when I sell NFT instantly compared to listing?", "acceptedAnswer": {"@type": "Answer", "text": "A bid typically sits below the last recorded sale or the lowest active listing because the bidder is taking on the risk of holding the token until a future buyer appears. The gap varies by collection and by how deep the current bids are."}}, {"@type": "Question", "name": "What is a collection bid versus a trait bid?", "acceptedAnswer": {"@type": "Answer", "text": "A collection bid is a standing offer on any token in a collection, while a trait bid targets tokens with a specific attribute and usually pays more. Checking for a matching trait bid before accepting the generic collection offer often captures a better price."}}, {"@type": "Question", "name": "How does Blur's Blend differ from an outright sale?", "acceptedAnswer": {"@type": "Answer", "text": "Blend lets a holder borrow against a token instead of selling it, which raises cash while keeping ownership. An outright sale through a collection or trait bid transfers the token permanently in exchange for the full bid amount."}}, {"@type": "Question", "name": "What fees come out of an instant NFT sale?", "acceptedAnswer": {"@type": "Answer", "text": "A marketplace fee and a creator royalty are typically deducted from the bid amount, plus network gas to settle the transaction. Some bid-based venues let royalty be set to zero or optional, which changes the net amount received."}}, {"@type": "Question", "name": "Are NFT-AMM pools like Sudoswap safe to sell into?", "acceptedAnswer": {"@type": "Answer", "text": "Selling into a pool is close to instant because the contract itself is the counterparty, but thin pools can be priced further below floor and can move sharply after a large trade, so checking recent activity before committing is worthwhile."}}, {"@type": "Question", "name": "How do I avoid scams when accepting a bid?", "acceptedAnswer": {"@type": "Answer", "text": "Read every signature request carefully, reject any approval broader than the single token and amount being sold, and never enter a seed phrase anywhere — no legitimate marketplace or bidder ever asks for it."}}]}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://sell-nft-instantly.github.io/#website", "url": "https://sell-nft-instantly.github.io/", "name": "Sell NFT Instantly — Bids, Fees and the Price Trade-Off"}, {"@type": "WebPage", "@id": "https://sell-nft-instantly.github.io/#webpage", "url": "https://sell-nft-instantly.github.io/", "name": "Sell NFT Instantly — Bids, Fees and the Price Trade-Off", "isPartOf": {"@id": "https://sell-nft-instantly.github.io/#website"}, "description": "See how collection bids, trait bids and AMM pools like Sudoswap let a holder accept the best current offer in one transaction, what Blur's bidding and Blend change, and the fees, royalties and scams to check before accepting.", "datePublished": "2026-10-11", "dateModified": "2026-10-11"}, {"@type": "SoftwareApplication", "name": "Sell NFT Instantly", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sell-nft-instantly.github.io/"}, {"@type": "ListItem", "position": 2, "name": "NFT"}, {"@type": "ListItem", "position": 3, "name": "Sell NFT Instantly"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does it mean to accept an offer right away instead of listing?", "acceptedAnswer": {"@type": "Answer", "text": "It means accepting the best live bid on a token right now rather than publishing a listing and waiting for a buyer, trading some price for immediate, guaranteed liquidity in a single on-chain transaction."}}, {"@type": "Question", "name": "How much less do I get when I sell NFT instantly compared to listing?", "acceptedAnswer": {"@type": "Answer", "text": "A bid typically sits below the last recorded sale or the lowest active listing because the bidder is taking on the risk of holding the token until a future buyer appears. The gap varies by collection and by how deep the current bids are."}}, {"@type": "Question", "name": "What is a collection bid versus a trait bid?", "acceptedAnswer": {"@type": "Answer", "text": "A collection bid is a standing offer on any token in a collection, while a trait bid targets tokens with a specific attribute and usually pays more. Checking for a matching trait bid before accepting the generic collection offer often captures a better price."}}, {"@type": "Question", "name": "How does Blur's Blend differ from an outright sale?", "acceptedAnswer": {"@type": "Answer", "text": "Blend lets a holder borrow against a token instead of selling it, which raises cash while keeping ownership. An outright sale through a collection or trait bid transfers the token permanently in exchange for the full bid amount."}}, {"@type": "Question", "name": "What fees come out of an instant NFT sale?", "acceptedAnswer": {"@type": "Answer", "text": "A marketplace fee and a creator royalty are typically deducted from the bid amount, plus network gas to settle the transaction. Some bid-based venues let royalty be set to zero or optional, which changes the net amount received."}}, {"@type": "Question", "name": "Are NFT-AMM pools like Sudoswap safe to sell into?", "acceptedAnswer": {"@type": "Answer", "text": "Selling into a pool is close to instant because the contract itself is the counterparty, but thin pools can be priced further below floor and can move sharply after a large trade, so checking recent activity before committing is worthwhile."}}, {"@type": "Question", "name": "How do I avoid scams when accepting a bid?", "acceptedAnswer": {"@type": "Answer", "text": "Read every signature request carefully, reject any approval broader than the single token and amount being sold, and never enter a seed phrase anywhere — no legitimate marketplace or bidder ever asks for it."}}]}]}</script>
   <style>
-    :root{--bg:#120B0E;--surface:#1D1317;--text:#F3EAED;--muted:#A4868D;--accent:#F472B6;--accent-ink:#1A0710;--radius:16px;--display:"Manrope";--body:"Manrope"}
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
-    body { margin: 0; background: var(--bg); color: var(--text); font: 400 1rem/1.7 var(--body); -webkit-font-smoothing: antialiased; }
-    a { color: var(--accent); text-underline-offset: .22em; }
-    a:hover { text-decoration-thickness: .12em; }
-    :focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
-    ::selection { background: var(--accent); color: var(--accent-ink); }
-    h1, h2, h3, h4, h5, h6 { font-family: var(--display); line-height: 1.15; text-wrap: balance; }
-    p, h1, h2, h3 { margin-top: 0; }
-    img, svg { max-width: 100%; vertical-align: middle; }
-    .c05abf8 { width: min(1180px, calc(100% - 3rem)); margin-inline: auto; }
-    .c14e9a5 { position: absolute; z-index: 5; top: .5rem; left: 1rem; padding: .7rem 1rem; background: var(--surface); transform: translateY(-180%); border-radius: var(--radius); }
-    .c14e9a5:focus { transform: translateY(0); }
-    .cf3fef9 { border-bottom: 1px solid color-mix(in srgb,var(--text) 10%,transparent); }
-    .c546767 { min-height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
-    .c4a0333 { display: inline-flex; align-items: center; gap: .7rem; color: var(--text); font: 650 1.12rem/1.2 var(--display); text-decoration: none; }
-    .ce4477a { display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: calc(var(--radius) * .6); background: var(--accent); color: var(--accent-ink); }
-    .c523633 { width: 1.2rem; height: 1.2rem; fill: none; stroke: var(--accent-ink); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; flex: 0 0 auto; }
-    .cbd40be { display: flex; align-items: center; gap: 1.8rem; }
-    .cbd40be > a { font-size: .88rem; font-weight: 600; text-decoration: none; }
-    .cbd40be > a:not(.c980fa8) { color: var(--muted); }
-    .c980fa8 { display: inline-flex; align-items: center; justify-content: center; gap: .8rem; min-height: 52px; padding: .85rem 1.4rem; border: 1px solid color-mix(in srgb,var(--accent-ink) 12%,transparent); border-radius: var(--radius); background: linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 88%,var(--text))); color: var(--accent-ink); font: 650 .95rem/1.3 var(--body); text-decoration: none; box-shadow: 0 6px 18px color-mix(in srgb,var(--accent) 17%,transparent); transition: transform .18s ease, box-shadow .18s ease; }
-    .c980fa8:hover { transform: translateY(-2px); box-shadow: 0 9px 24px color-mix(in srgb,var(--accent) 25%,transparent); }
-    .c546767 .c980fa8 { min-height: 42px; padding: .65rem 1rem; }
-    .cf9a987 { padding-block: 1rem 0; color: var(--muted); font-size: .8rem; overflow-wrap: anywhere; }
-    .c763367 { color: var(--muted); }
-    .c763367 a, a.c763367 { color: var(--muted); text-decoration: none; }
-    .c763367 a:hover, a.c763367:hover { color: var(--accent); text-decoration: underline; }
-    .c763367 ol, .c763367 ul { display: flex; flex-wrap: wrap; gap: .5rem 1rem; padding: 0; margin: 0; list-style: none; }
-    .cf24a4d { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(0,1fr); gap: clamp(2rem,5vw,4.5rem); align-items: start; padding-block: 1.5rem 3rem; }
-    .cb7ec29 { display: inline-flex; align-items: center; gap: .55rem; margin-bottom: 1.3rem; color: var(--accent); font-size: .86rem; font-weight: 600; }
-    .cb7ec29::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 5px color-mix(in srgb,var(--accent) 9%,transparent); }
-    h1 { margin-bottom: 1.4rem; font-size: clamp(2.5rem,4.7vw,4.35rem); font-weight: 600; letter-spacing: -.055em; overflow-wrap: anywhere; }
-    h1 em { color: var(--accent); font-style: normal; }
-    .ccfb4c9 { max-width: 48ch; margin-bottom: 2rem; color: var(--muted); font-size: 1.08rem; line-height: 1.8; }
-    .c2649c9 { position: relative; min-width: 0; padding: clamp(1.1rem,2.4vw,1.5rem); border: 1px solid color-mix(in srgb,var(--accent) 20%,var(--surface)); border-radius: calc(var(--radius) * 1.6); background: linear-gradient(155deg,color-mix(in srgb,var(--accent) 7%,var(--surface)),var(--surface) 40%); box-shadow: 0 24px 64px color-mix(in srgb,var(--text) 9%,transparent),0 4px 12px color-mix(in srgb,var(--accent) 6%,transparent); }
-    .c6852e4 { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .7rem; margin-bottom: 1rem; }
-    .c6852e4 h2 { margin: 0; font-size: 1.35rem; letter-spacing: -.035em; }
-    .cbf021f { display: inline-flex; align-items: center; gap: .4rem; padding: .3rem .65rem; border: 1px solid color-mix(in srgb,var(--accent) 16%,transparent); border-radius: 999px; background: color-mix(in srgb,var(--accent) 8%,var(--surface)); color: var(--accent); font-size: .72rem; font-weight: 600; }
-    .cbf021f::before { content: ""; width: .35rem; height: .35rem; border-radius: 50%; background: var(--accent); }
-    .route { display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); align-items: center; gap: .8rem; padding: .8rem; margin-bottom: 1rem; border: 1px solid color-mix(in srgb,var(--text) 9%,transparent); border-radius: var(--radius); background: var(--surface); }
-    .endpoint { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: .45rem; }
-    .endpoint:last-child { align-items: flex-end; }
-    .endpoint-label, .cda26d4 { color: var(--muted); font-size: .78rem; font-weight: 500; }
-    .logo { display: flex; align-items: center; min-height: 36px; max-width: 100%; overflow-wrap: anywhere; font: 600 1rem/1.3 var(--display); }
-    .logo img, .logo svg { max-height: 36px; width: auto; max-width: 100%; object-fit: contain; }
-    .route-arrow { display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 50%; background: color-mix(in srgb,var(--accent) 9%,var(--surface)); }
-    .route-arrow .c523633 { stroke: var(--accent); }
-    .cda26d4 { display: block; margin-bottom: .5rem; color: var(--text); }
-    .amount-field { display: flex; align-items: center; gap: .75rem; padding: .8rem 1rem; border: 1px solid color-mix(in srgb,var(--text) 18%,transparent); border-radius: var(--radius); background: var(--bg); transition: border-color .18s ease; }
-    .amount-field:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb,var(--accent) 12%,transparent); }
-    .amount-field input { width: 100%; min-width: 0; padding: .2rem 0; border: 0; background: var(--bg); color: var(--text); font: 550 1.6rem/1.2 var(--display); font-variant-numeric: tabular-nums; }
-    .amount-field input:focus { outline: 0; }
-    .unit { color: var(--muted); font-size: .8rem; }
-    .c7ddaa6 { margin: .45rem 0 .85rem; color: var(--muted); font-size: .74rem; }
-    .field-error { margin: .5rem 0; color: var(--text); font-size: .8rem; font-weight: 600; }
-    [hidden] { display: none !important; }
-    .estimate { padding: 1rem; border-radius: var(--radius); background: linear-gradient(120deg,color-mix(in srgb,var(--accent) 12%,var(--surface)),color-mix(in srgb,var(--accent) 4%,var(--surface))); }
-    .estimate-label { margin-bottom: .25rem; color: var(--muted); font-size: .8rem; }
-    .estimate-value { display: block; color: var(--text); font: 600 clamp(1.7rem,3vw,2.5rem)/1.3 var(--display); letter-spacing: -.04em; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
-    .estimate-value small { color: var(--muted); font: 400 .8rem/1.4 var(--body); letter-spacing: 0; }
-    .estimate dl { display: grid; gap: .5rem; margin: .8rem 0 0; padding-top: .8rem; border-top: 1px solid color-mix(in srgb,var(--accent) 15%,transparent); font-size: .8rem; }
-    .estimate dl div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .25rem 1rem; }
-    .estimate dt { color: var(--muted); }
-    .estimate dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; }
-    .method { margin-block: .7rem; color: var(--muted); font-size: .75rem; }
-    .method summary { width: fit-content; color: var(--text); cursor: pointer; }
-    .method p { margin: .65rem 0 0; }
-    .c2649c9 > .c980fa8 { width: 100%; }
-    .cfb6070 { padding: .8rem 1rem; border: 1px solid color-mix(in srgb,var(--text) 10%,transparent); border-radius: var(--radius); background: var(--surface); }
-    .c21c52a { margin-bottom: .45rem; }
-    .c8474c8 { display: flex; align-items: center; gap: .75rem; }
-    .c5b708f { flex: 1; min-width: 0; padding: 0; border: 0; background: transparent; color: var(--text); font: 550 1.55rem/1.2 var(--display); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
-    .c5b708f:focus { outline: 0; }
-    .c70e5f6 { position: relative; display: inline-flex; align-items: center; gap: .5rem; flex: none; padding: .4rem 1.5rem .4rem .5rem; border: 1px solid color-mix(in srgb,var(--text) 13%,transparent); border-radius: 999px; background: var(--bg); }
-    .c18df1c { width: 22px; height: 22px; border-radius: 50%; object-fit: contain; flex: none; }
-    .c6549f0 { border: 0; background: transparent; color: var(--text); font: 600 .95rem/1 var(--body); cursor: pointer; appearance: none; -webkit-appearance: none; }
-    .c6549f0:focus { outline: 0; }
-    .c70e5f6::after { content: ""; position: absolute; right: .7rem; width: .42rem; height: .42rem; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: translateY(-2px) rotate(45deg); pointer-events: none; }
-    .cd6d4d7 { margin-top: .4rem; color: var(--muted); font-size: .78rem; font-variant-numeric: tabular-nums; }
-    .swap-switch { position: relative; z-index: 1; display: grid; place-items: center; width: 2.4rem; height: 2.4rem; margin: -.55rem auto; padding: 0; border: 3px solid var(--surface); border-radius: 50%; background: color-mix(in srgb,var(--accent) 13%,var(--surface)); color: var(--accent); cursor: pointer; transition: transform .2s ease, background .2s ease; }
-    .swap-switch svg { width: 1.1rem; height: 1.1rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .swap-switch:hover { transform: rotate(180deg); background: color-mix(in srgb,var(--accent) 20%,var(--surface)); }
-    .c1af3c9 { display: grid; gap: .5rem; margin: 1rem 0 0; padding-top: .9rem; border-top: 1px solid color-mix(in srgb,var(--accent) 15%,transparent); font-size: .82rem; }
-    .c1af3c9 div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .2rem 1rem; }
-    .c1af3c9 dt { color: var(--muted); }
-    .c1af3c9 dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; }
-    .c0a9971 > .c980fa8 { width: 100%; margin-top: 1.05rem; }
-    .c1fb158 { width: 100%; padding: .15rem 0; font: 600 1.1rem/1.2 var(--display); }
-    .c476ed4 { font: 600 .95rem/1 var(--body); color: var(--text); }
-    .cbf0565 { padding: 2rem; border: 1px solid color-mix(in srgb,var(--text) 10%,transparent); border-radius: calc(var(--radius) * 1.3); background: var(--surface); }
-    .c36452e { margin-bottom: 1.3rem; font-size: 1.65rem; font-weight: 550; letter-spacing: -.035em; }
-    .c01f5d8 { max-width: 100%; overflow-x: auto; }
-    .c63d18e { width: 100%; border-collapse: collapse; text-align: left; font-size: .92rem; }
-    .c63d18e caption { padding-bottom: 1rem; text-align: left; color: var(--muted); }
-    .c63d18e th, .c63d18e td { padding: 1rem 1.1rem; border-bottom: 1px solid color-mix(in srgb,var(--text) 9%,transparent); vertical-align: top; overflow-wrap: anywhere; }
-    .c63d18e th { color: var(--muted); font-weight: 500; }
-    .c63d18e thead { background: color-mix(in srgb,var(--accent) 5%,var(--surface)); }
-    .c63d18e tbody tr:last-child > * { border-bottom: 0; }
-    .c2579bd { max-width: 820px; padding-block: 4rem 2rem; }
-    .c86d4ea { margin-bottom: 3.3rem; }
-    .c5fbca8 { margin: 0 0 1.1rem; font: 550 clamp(1.6rem,3vw,2.2rem)/1.2 var(--display); letter-spacing: -.035em; }
-    .cee3892 { color: var(--muted); line-height: 1.85; overflow-wrap: anywhere; }
-    .cee3892 p { margin-bottom: 1.2rem; }
-    .cee3892 strong, .cee3892 h3, .cee3892 h4 { color: var(--text); }
-    .cee3892 ul, .cee3892 ol { padding-left: 1.3rem; }
-    .cee3892 li { padding-left: .3rem; margin-block: .55rem; }
-    .cee3892 li::marker { color: var(--accent); }
-    .cee3892 blockquote { margin: 1.5rem 0; padding: 1rem 1.4rem; border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; background: var(--surface); color: var(--text); }
-    .cee3892 img { height: auto; border-radius: var(--radius); }
-    .cee3892 pre { overflow-x: auto; padding: 1rem; border-radius: var(--radius); background: var(--surface); }
-    .cee3892 code, .cee3892 pre { font-family: var(--body); }
-    .ccbc07b { margin-block: .8rem; border: 1px solid color-mix(in srgb,var(--text) 11%,transparent); border-radius: var(--radius); background: var(--surface); overflow: hidden; }
-    .c639e3e { position: relative; padding: 1.3rem 3.5rem 1.3rem 1.4rem; list-style: none; cursor: pointer; color: var(--text); font: 550 1.04rem/1.5 var(--display); }
-    .c639e3e::-webkit-details-marker { display: none; }
-    .c639e3e::after { content: "+"; position: absolute; right: 1.4rem; top: 1.2rem; color: var(--accent); font-size: 1.3rem; }
-    details[open] > .c639e3e::after { content: "−"; }
-    .ccbc07b[open] { border-color: color-mix(in srgb,var(--accent) 35%,var(--surface)); }
-    .c639e3e:focus-visible { outline-offset: -5px; }
-    .c7c7477 { padding: 0 1.4rem 1.4rem; color: var(--muted); overflow-wrap: anywhere; }
-    .c7c7477 > :last-child { margin-bottom: 0; }
-    .ca1f72f { max-width: 820px; padding-block: 1.5rem 3.5rem; border-top: 1px solid color-mix(in srgb,var(--text) 12%,transparent); }
-    .ca1f72f .c36452e { font-size: 1.25rem; }
-    .cb8d4e3 { margin: 0; padding-left: 1.25rem; color: var(--muted); font-size: .88rem; }
-    .ca85948 { padding-block: .4rem; padding-left: .25rem; overflow-wrap: anywhere; }
-    .ca85948 a, a.ca85948 { color: var(--text); text-decoration-color: color-mix(in srgb,var(--accent) 45%,transparent); }
-    .ca85948 a:hover, a.ca85948:hover { color: var(--accent); }
-    .c0f5a88 { border-top: 1px solid color-mix(in srgb,var(--text) 10%,transparent); }
-    .c7f741d { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; min-height: 96px; padding-block: 1.5rem; color: var(--muted); font-size: .8rem; }
-    .c7f741d p { margin: 0; }
-    .c7f741d a { color: var(--muted); }
-    @media (max-width: 850px) { .cf24a4d { grid-template-columns: minmax(0,1fr); gap: 2.5rem; padding-block: 2.5rem 3.5rem; } .ccf0fdf { max-width: 650px; } .c2649c9 { width: 100%; max-width: 600px; justify-self: center; } h1 { font-size: clamp(2.5rem,7vw,4rem); } .ccfb4c9 { max-width: 60ch; } }
-    @media (max-width: 540px) { .c05abf8 { width: calc(100% - 2rem); } .c546767 { min-height: 76px; gap: .7rem; } .c4a0333 { font-size: .95rem; gap: .45rem; } .ce4477a { width: 2rem; height: 2rem; } .cbd40be { gap: .6rem; } .cbd40be > a:not(.c980fa8) { display: none; } .c546767 .c980fa8 { padding-inline: .85rem; font-size: .8rem; } .cbf0565 { padding: 1.25rem; } .c63d18e th, .c63d18e td { padding: .8rem .55rem; } .ccf0fdf > .c980fa8 { width: 100%; } .c2579bd { padding-top: 2.8rem; } .c7f741d { align-items: flex-start; flex-direction: column; } }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .c980fa8, .amount-field { transition: none; } .c980fa8:hover { transform: none; } }
+:root{--bg:#120B0E;--surface:#1D1317;--text:#F3EAED;--muted:#A4868D;--accent:#F472B6;--accent-ink:#1A0710;--radius:16px;--display:"Manrope";--body:"Manrope";--line:color-mix(in srgb,var(--text) 13%,var(--bg));--line-soft:color-mix(in srgb,var(--text) 8%,var(--surface));--read:color-mix(in srgb,var(--text) 78%,var(--muted));--quiet:color-mix(in srgb,var(--muted) 82%,var(--text));--wash:color-mix(in srgb,var(--accent) 7%,var(--surface));--art-dark:color-mix(in srgb,var(--accent-ink) 92%,var(--accent));--art-mid:color-mix(in srgb,var(--accent) 48%,var(--accent-ink));--art-light:color-mix(in srgb,var(--accent) 40%,var(--text));--art-pale:color-mix(in srgb,var(--text) 84%,var(--accent));--panel-radius:clamp(12px,calc(var(--radius) * 1.5),30px);--card-radius:clamp(8px,calc(var(--radius) * .65),16px)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-underline-offset:.22em}
+button,input{font:inherit}
+a,button,input,summary,[role="button"]{-webkit-tap-highlight-color:transparent}
+svg{display:block;flex:none;max-width:100%}
+img{max-width:100%;height:auto}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-family:var(--display)}
+h1,h2,h3,p,li,th,td,summary{overflow-wrap:anywhere}
+::selection{background:var(--accent);color:var(--accent-ink)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+.cb5089d{width:min(1232px,calc(100% - 32px));margin-inline:auto}
+.c73dd6f{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.c638cdc{position:absolute;z-index:10;top:12px;left:16px;padding:10px 18px;border-radius:var(--card-radius);background:var(--accent);color:var(--accent-ink);transform:translateY(-160%)}
+.c638cdc:focus{transform:translateY(0)}
+.c523633{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+.cf3fef9{border-bottom:1px solid var(--line)}
+.cf32190{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:74px}
+.c4a0333{display:inline-flex;align-items:center;gap:11px;color:var(--text);font:700 21px/1 var(--display);letter-spacing:-.065em;text-decoration:none}
+.c976822{color:var(--accent);width:29px;height:29px}
+.cbd40be{display:flex;align-items:center;gap:32px}
+.cbd40be>a:not(.cee9959){position:relative;padding-block:12px;color:var(--quiet);font-size:13px;text-decoration:none;transition:color .2s}
+.cbd40be>a:not(.cee9959):hover{color:var(--text)}
+.cee9959{display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:54px;padding:14px 23px;border:1px solid color-mix(in srgb,var(--accent-ink) 12%,var(--accent));border-radius:clamp(8px,calc(var(--radius) * .75),18px);background:var(--accent);color:var(--accent-ink);font-size:14px;font-weight:700;line-height:1.4;text-align:center;text-decoration:none;transition:transform .22s,background .22s}
+.cee9959:hover{background:color-mix(in srgb,var(--accent) 88%,var(--text));transform:translateY(-2px)}
+.cbd40be .cee9959{min-height:38px;padding:8px 17px;gap:18px;font-size:12px}
+.cbd40be .cee9959 .c523633{width:16px;height:16px}
+.cf9a987{padding-block:17px 0}
+.c763367{display:flex;flex-wrap:wrap;align-items:baseline;gap:7px;color:var(--quiet);font-size:10px;line-height:1.6}
+.c763367 a{color:var(--quiet);text-decoration:none}
+.c763367 a:hover{color:var(--accent)}
+.c763367 span{color:var(--muted)}
+.c763367 span:last-child{color:var(--read)}
+.cf24a4d{position:relative;display:grid;grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);align-items:start;gap:clamp(28px,4.2vw,60px);padding-block:22px 44px}
+.ccf0fdf{min-width:0;padding-top:5px}
+.cb7ec29{display:inline-flex;align-items:center;gap:8px;padding:5px 10px 5px 8px;margin-bottom:22px;border:1px solid color-mix(in srgb,var(--accent) 23%,var(--bg));border-radius:99px;color:var(--read);background:color-mix(in srgb,var(--accent) 4%,var(--bg));font-size:11px;line-height:1.4}
+.cb7ec29 .c523633{width:14px;height:14px;color:var(--accent)}
+h1{max-width:11ch;margin:0 0 23px -4px;font-size:clamp(58px,6.5vw,90px);font-weight:600;line-height:1.015;letter-spacing:-.075em;text-wrap:balance}
+h1 em{color:var(--accent);font-style:normal}
+.ccfb4c9{max-width:47ch;color:var(--quiet);font-size:16px;line-height:1.8;text-wrap:pretty}
+.c30fe4b{display:flex;flex-wrap:wrap;align-items:center;gap:16px 21px;margin-top:26px}
+.c30fe4b .cee9959{min-width:198px}
+.c30fe4b>p{max-width:16ch;color:var(--quiet);font-size:11px;line-height:1.65}
+.c30fe4b>p strong{display:block;color:var(--text);font-weight:500}
+.c92e739{display:flex;align-items:center;gap:13px;width:fit-content;max-width:100%;margin:30px 0 0;padding:20px 0 0;border-top:1px solid var(--line);list-style:none}
+.c92e739 li{display:flex;align-items:center;gap:8px;color:var(--read);font-size:11px}
+.c92e739 li+li::before{content:"\2192";margin-right:5px;color:var(--muted)}
+.c92e739 .c523633{width:15px;height:15px;color:var(--accent)}
+.c9e8ee8{position:relative;isolation:isolate;min-width:0;padding:20px;border:1px solid color-mix(in srgb,var(--accent) 23%,var(--surface));border-radius:var(--panel-radius);background:linear-gradient(145deg,color-mix(in srgb,var(--text) 3%,var(--surface)),var(--surface) 55%);box-shadow:0 20px 65px -30px color-mix(in srgb,var(--accent-ink) 65%,transparent),0 1px 0 color-mix(in srgb,var(--text) 5%,transparent) inset}
+.cb3a57e{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.cb3a57e h2{font-size:24px;font-weight:600;letter-spacing:-.055em;line-height:1.25}
+.c286293{display:inline-flex;align-items:center;gap:6px;color:var(--quiet);font-size:10px}
+.c286293::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 10%,transparent)}
+.ce8d7fe{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:43px;margin-top:5px;color:var(--quiet);font-size:10px}
+.ce8d7fe>span{display:flex;align-items:center;gap:6px}
+.ce8d7fe>span .c523633{width:13px;height:13px}
+.c3beb14{display:inline-flex;align-items:center;gap:7px;min-height:36px;color:var(--read);cursor:pointer;user-select:none}
+.c3beb14 input{width:14px;height:14px;margin:0;accent-color:var(--accent);cursor:pointer}
+.cd4496f{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,140px);gap:10px}
+.c97fef1{position:relative;display:flex;flex-direction:column;min-width:0;padding:4px;border:1px solid var(--line-soft);border-radius:var(--card-radius);background:var(--bg);cursor:pointer;user-select:none;touch-action:manipulation;transition:transform .22s cubic-bezier(.2,.7,.2,1),border-color .22s,background .22s}
+.c97fef1:first-child{grid-row:span 2}
+.c97fef1[aria-pressed="true"]{border-color:color-mix(in srgb,var(--accent) 65%,var(--surface));background:color-mix(in srgb,var(--accent) 5%,var(--bg));box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 12%,transparent);transform:translateY(-1px)}
+.c1d7de7{width:100%;height:76px;flex:1 1 auto;min-height:0;border-radius:max(4px,calc(var(--card-radius) - 4px));overflow:hidden;background:var(--art-dark)}
+.c97fef1:first-child .c1d7de7{height:220px}
+.cf1eec2{position:absolute;top:10px;right:10px;display:grid;place-items:center;width:19px;height:19px;border:1px solid color-mix(in srgb,var(--art-pale) 75%,transparent);border-radius:50%;background:color-mix(in srgb,var(--art-dark) 65%,transparent);color:var(--accent-ink);transition:background .2s,border-color .2s}
+.cf1eec2 .c523633{width:11px;height:11px;stroke-width:2.4;opacity:0;transform:scale(.4);transition:opacity .18s,transform .22s}
+.c97fef1[aria-pressed="true"] .cf1eec2{border-color:var(--accent);background:var(--accent)}
+.c97fef1[aria-pressed="true"] .cf1eec2 .c523633{opacity:1;transform:scale(1)}
+.c7c69ce{padding:6px 4px 3px;flex:none;line-height:1.4}
+.ce972cb{display:block;margin-bottom:3px;color:var(--quiet);font-size:11px}
+.c5e9ed1{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:1px 4px;font-variant-numeric:tabular-nums}
+.c5e9ed1 strong{font-size:12px;font-weight:600;letter-spacing:-.025em}
+.c5e9ed1 small{color:var(--quiet);font-size:10px}
+.c8d7fbc{fill:var(--art-dark)}
+.c1a87ef{fill:var(--accent)}
+.c0fe18a{fill:var(--art-pale)}
+.c96b86a{fill:var(--art-mid)}
+.c035500{fill:none;stroke:var(--art-pale)}
+.c57fb7b{stop-color:var(--art-dark)}
+.c5ba937{stop-color:var(--art-mid)}
+.cf19515{stop-color:var(--accent)}
+.cba7eaa{stop-color:var(--art-light)}
+.c35e5af{stop-color:var(--art-pale)}
+.c8b487e{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding-block:18px 15px}
+.c7e2095{color:var(--quiet);font-size:10px}
+.c7e2095 strong{display:block;margin-bottom:4px;color:var(--text);font-size:12px;font-weight:500}
+.c438dbe{text-align:right;font-variant-numeric:tabular-nums}
+.c69755a{display:block;font:600 30px/1.1 var(--display);letter-spacing:-.065em}
+.c69755a>span{display:inline-block}
+.c69755a small{margin-left:5px;color:var(--quiet);font:500 13px/1 var(--body);letter-spacing:-.02em}
+.cadf57e{display:block;margin-top:4px;color:var(--quiet);font-size:10px}
+.cbbc8f8{width:100%;min-height:48px;justify-content:space-between;padding:12px 16px;font-size:13px}
+.cbbc8f8 .c523633{width:18px;height:18px}
+.c2eb524{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:11px;color:var(--quiet);font-size:9px;line-height:1.5}
+.c2eb524 .c523633{width:12px;height:12px;color:var(--accent)}
+.c60fecc{padding-block:28px 32px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.c25c664{display:flex;align-items:baseline;justify-content:space-between;gap:10px 24px;margin-bottom:22px}
+.c25c664 h2{font-size:17px;font-weight:500;letter-spacing:-.035em}
+.c25c664 p{color:var(--quiet);font-size:11px}
+.c63d18e{display:block;width:100%;border-collapse:collapse;text-align:left}
+.c63d18e tbody{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 0}
+.c63d18e tr{display:flex;min-width:0;flex-direction:column;gap:7px;padding:0 24px;border-left:1px solid var(--line)}
+.c63d18e tr:nth-child(3n + 1){padding-left:0;border-left:0}
+.c63d18e th{color:var(--quiet);font-size:10px;font-weight:400;line-height:1.5}
+.c63d18e td{max-width:34ch;color:var(--read);font:500 14px/1.55 var(--display);letter-spacing:-.025em}
+.c8f96bc,.c372a48,.ce1d0ac{display:grid;grid-template-columns:minmax(180px,.55fr) minmax(0,1.45fr);align-items:start;gap:clamp(28px,6vw,92px)}
+.c8f96bc{padding-block:70px 64px}
+.cb55f09{position:sticky;top:32px}
+.c680e7b{display:flex;align-items:center;gap:9px;margin-bottom:18px;color:var(--quiet);font-size:11px}
+.c680e7b::before{content:"";width:24px;height:1px;background:var(--accent)}
+.cb55f09 h2{max-width:9ch;font:500 clamp(29px,3.1vw,42px)/1.15 var(--display);letter-spacing:-.055em}
+.cb55f09>p{max-width:24ch;margin-top:16px;color:var(--quiet);font-size:13px;line-height:1.8}
+.ca5366d{display:grid;gap:1px;max-width:220px;margin-top:28px;border-top:1px solid var(--line)}
+.ca5366d a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px;border-bottom:1px solid var(--line);color:var(--quiet);font-size:11px;text-decoration:none;transition:color .2s}
+.ca5366d a::after{content:"\2197";color:var(--accent);font-size:16px}
+.c591f66,.c59a562{min-width:0;width:100%;max-width:70ch;justify-self:end}
+.c86d4ea{padding-block:33px 35px;border-bottom:1px solid var(--line)}
+.c86d4ea:first-child{padding-top:0}
+.c86d4ea:last-child{padding-bottom:0;border-bottom:0}
+.c5fbca8{max-width:32ch;margin-bottom:19px;color:var(--text);font:500 clamp(25px,2.5vw,33px)/1.22 var(--display);letter-spacing:-.045em;text-wrap:pretty}
+.cee3892{max-width:69ch;color:var(--read);font-size:15px;line-height:1.9;overflow-wrap:anywhere}
+.cee3892 p{margin-block:0 18px}
+.cee3892 >:last-child{margin-bottom:0}
+.cee3892 h3{margin-block:26px 10px;color:var(--text);font-size:18px;font-weight:600;line-height:1.4;letter-spacing:-.03em}
+.cee3892 strong,.c7c7477 strong{color:var(--text);font-weight:600}
+.cee3892 a,.c7c7477 a{color:var(--text);text-decoration-color:color-mix(in srgb,var(--accent) 60%,transparent);text-decoration-thickness:1px}
+.cee3892 a:hover,.c7c7477 a:hover{color:var(--accent)}
+.cee3892 ul,.cee3892 ol,.c7c7477 ul,.c7c7477 ol{margin-block:18px;padding-left:22px}
+.cee3892 li,.c7c7477 li{margin-block:10px;padding-left:5px}
+.cee3892 li::marker,.c7c7477 li::marker{color:var(--accent)}
+.cee3892 table{width:100%;max-width:100%;margin-block:24px;border:1px solid var(--line);border-collapse:separate;border-spacing:0;border-radius:var(--card-radius);background:var(--surface);table-layout:fixed;overflow:hidden;font-size:12px;line-height:1.7;text-align:left}
+.cee3892 th,.cee3892 td{padding:13px 15px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
+.cee3892 th{background:var(--wash);color:var(--text);font-size:11px;font-weight:600}
+.cee3892 td+td,.cee3892 th+th{border-left:1px solid var(--line-soft)}
+.cee3892 tbody tr:last-child td{border-bottom:0}
+.c372a48{padding:45px 0 55px;border-top:1px solid var(--line)}
+.c297175 h2{max-width:10ch;font-size:clamp(30px,3.3vw,44px);font-weight:500;line-height:1.13;letter-spacing:-.055em}
+.c297175 p{max-width:23ch;margin-top:15px;color:var(--quiet);font-size:13px;line-height:1.8}
+.ccbc07b{border-bottom:1px solid var(--line)}
+.ccbc07b:first-child{border-top:1px solid var(--line)}
+.c639e3e{position:relative;padding:20px 48px 20px 0;list-style:none;color:var(--text);font:500 15px/1.6 var(--display);letter-spacing:-.018em;cursor:pointer}
+.c639e3e::-webkit-details-marker{display:none}
+.c639e3e::after{position:absolute;top:20px;right:3px;display:grid;place-items:center;width:25px;height:25px;border:1px solid var(--line);border-radius:50%;content:"+";color:var(--quiet);font:400 18px/1 var(--body);transition:color .2s,background .2s,transform .2s}
+.c639e3e:hover{color:var(--accent)}
+.c639e3e:focus-visible{outline-offset:1px}
+.ccbc07b[open]{border-bottom-color:color-mix(in srgb,var(--accent) 40%,var(--bg))}
+.ccbc07b[open] .c639e3e{color:var(--accent)}
+.ccbc07b[open] .c639e3e::after{content:"\2212";background:var(--accent);border-color:var(--accent);color:var(--accent-ink);transform:rotate(180deg)}
+.c7c7477{max-width:67ch;padding:0 36px 24px 0;color:var(--read);font-size:14px;line-height:1.9;overflow-wrap:anywhere}
+.c7c7477 p{margin-bottom:14px}
+.c7c7477 >:last-child{margin-bottom:0}
+.ce1d0ac{padding-block:29px 42px;border-top:1px solid var(--line)}
+.ce1d0ac h2{font-size:17px;font-weight:500;letter-spacing:-.025em}
+.ce1d0ac>div{min-width:0}
+.cb8d4e3{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px;margin:0;padding:0;list-style:none}
+.cb8d4e3 li{min-width:0;border-bottom:1px solid var(--line)}
+.ca85948{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:11px 0;color:var(--quiet);font-size:11px;text-decoration:none;overflow-wrap:anywhere;transition:color .2s}
+.ca85948::after{flex:none;content:"\2197";color:var(--accent)}
+.ca85948:hover{color:var(--text)}
+.c0f5a88{border-top:1px solid var(--line)}
+.c7f741d{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;min-height:90px;padding-block:22px;color:var(--quiet);font-size:10px}
+.c61905e{color:var(--text);font:600 16px/1 var(--display);letter-spacing:-.05em}
+.ccae23b{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.ccae23b .c523633{width:14px;height:14px}
+.ccae23b:hover{color:var(--accent)}
+@media (hover:hover){.c97fef1:hover{z-index:1;transform:translateY(-4px);border-color:var(--accent)}
+}
+@media (max-width:899px){.cf24a4d{grid-template-columns:minmax(0,1fr);gap:30px;padding-block:28px 36px}
+.ccf0fdf{max-width:640px;padding-top:0}
+h1{max-width:12ch;font-size:clamp(62px,10vw,86px)}
+.ccfb4c9{max-width:58ch}
+.c92e739{margin-top:24px}
+.c9e8ee8{width:100%;max-width:650px;justify-self:center}
+.cd4496f{grid-template-rows:repeat(2,150px)}
+.c8f96bc,.c372a48,.ce1d0ac{grid-template-columns:minmax(0,1fr);gap:30px}
+.c8f96bc{padding-block:44px}
+.cb55f09{position:static}
+.cb55f09 h2,.c297175 h2{max-width:100%}
+.cb55f09>p,.c297175 p{max-width:45ch}
+.ca5366d{display:flex;flex-wrap:wrap;gap:24px;max-width:none;margin-top:18px;border-top:0}
+.ca5366d a{gap:20px}
+.c591f66,.c59a562{justify-self:start;max-width:70ch}
+.c86d4ea:first-child{padding-top:28px;border-top:1px solid var(--line)}
+.c372a48{padding-block:32px 40px}
+.ce1d0ac{gap:14px}
+}
+@media (max-width:560px){.cf32190{min-height:64px;gap:16px}
+.cbd40be>a:not(.cee9959){display:none}
+h1{margin-left:-2px;font-size:clamp(51px,12vw,67px);letter-spacing:-.065em}
+.ccfb4c9{font-size:14px;line-height:1.85}
+.c92e739{width:100%;justify-content:space-between;gap:8px;padding-top:17px}
+.c92e739 li{gap:6px;font-size:10px}
+.c92e739 li+li::before{margin-right:2px}
+.c9e8ee8{padding:15px;border-radius:clamp(12px,var(--radius),22px)}
+.cd4496f{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;gap:10px}
+.c97fef1:first-child{grid-column:span 2;grid-row:auto}
+.c1d7de7{height:105px;flex:none}
+.c97fef1:first-child .c1d7de7{height:155px}
+.c7c69ce{padding:8px 5px 5px}
+.c97fef1:first-child .c7c69ce{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 12px}
+.c97fef1:first-child .c5e9ed1{gap:10px}
+.c60fecc{padding-block:24px}
+.c25c664{display:block;margin-bottom:22px}
+.c25c664 p{margin-top:5px}
+.c63d18e tbody{grid-template-columns:repeat(2,minmax(0,1fr));gap:23px 0}
+.c63d18e tr,.c63d18e tr:nth-child(3n + 1){padding:0 15px;border-left:1px solid var(--line)}
+.c63d18e tr:nth-child(2n + 1){padding-left:0;border-left:0}
+.c63d18e tr:nth-child(even){padding-right:0}
+.c63d18e td{font-size:12px}
+.cee3892{font-size:14px}
+.cee3892 th,.cee3892 td{padding:10px 8px;font-size:10px}
+.c639e3e{font-size:14px;padding-right:39px}
+.c7c7477{padding-right:8px;font-size:13px}
+.cb8d4e3{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+*,*::before,*::after{animation:none !important;transition:none !important}
+.cee9959:hover,.c97fef1:hover,.c97fef1[aria-pressed="true"]{transform:none}
+}
   </style>
 </head>
-<body>
-  <a class="c14e9a5" href="#content">Skip to content</a>
+<body id="top">
+  <a class="c638cdc" href="#content">Skip to content</a>
   <header class="cf3fef9">
-    <nav class="c546767 c05abf8" aria-label="Primary navigation">
-      <a class="c4a0333" href="#top" aria-label="NFT desk, top of page">
-        <span class="ce4477a" aria-hidden="true"><svg class="c523633" viewBox="0 0 24 24"><path d="M4 8h15m-4-4 4 4-4 4M20 16H5m4-4-4 4 4 4"/></svg></span>
-        NFT desk
+    <nav class="cf32190 cb5089d" aria-label="Main navigation">
+      <a class="c4a0333" href="#top" aria-label="Website, back to top">
+        <svg class="c976822" width="29" height="29" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M8 2h16l7 14-7 14H8L1 16 8 2Z" stroke="currentColor" stroke-width="1.4"/><path d="m10 9 12 7-12 7V9Z" fill="currentColor"/></svg>
+        Website
       </a>
       <div class="cbd40be">
-        <a href="#facts">Key facts</a>
+        <a href="#guide">How it works</a>
+        <a href="#faq">Questions</a>
         <a href="#sources">Sources</a>
-        <a class="c980fa8" href="dashboard/">Sell</a>
+        <a class="cee9959" href="dashboard/">Sell <svg class="c523633" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a>
       </div>
     </nav>
   </header>
-  <div class="c05abf8" id="top">
+  <main id="content" class="cb5089d">
     <div class="cf9a987"><nav class="c763367" aria-label="Breadcrumb"><a href="dashboard/">Home</a> <span>/</span> <span>NFT</span> <span>/</span> <span>Sell NFT Instantly</span></nav></div>
     <section class="cf24a4d" aria-labelledby="hero-title">
       <div class="ccf0fdf">
-        <p class="cb7ec29">Floor &amp; mint</p>
+        <p class="cb7ec29"><svg class="c523633" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-9 12h7l-1 8 10-13h-7l1-7Z"/></svg> Your collection, instantly liquid.</p>
         <h1 id="hero-title">Sell NFT <em>Instantly</em>.</h1>
         <p class="ccfb4c9">Sell NFT Instantly describes the moment a holder stops waiting on a listing and accepts the top live bid on a marketplace instead, trading some upside for cash in the wallet within seconds.</p>
-        <a class="c980fa8" href="dashboard/">Sell <svg class="c523633" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+        <div class="c30fe4b">
+          <a class="cee9959" href="dashboard/">Sell all your NFTs <svg class="c523633" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+          <p>Your entire collection.<strong>Out in two clicks.</strong></p>
+        </div>
+        <ol class="c92e739" aria-label="How instant selling works">
+          <li><svg class="c523633" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 7V4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h15V7H5a1 1 0 0 1 0-2m15 7h-5v4h5"/></svg>Connect</li>
+          <li><svg class="c523633" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="m8 12 3 3 5-6"/></svg>Select</li>
+          <li><svg class="c523633" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="m13 3-9 11h7l-1 7L20 9h-7V3Z"/></svg>Sell &amp; get paid</li>
+        </ol>
       </div>
-      <aside class="c2649c9 c0a9971" aria-labelledby="widget-title">
-        <div class="c6852e4">
-          <h2 id="widget-title">Buy NFTs</h2>
-          <span class="cbf021f">Live floor</span>
+      <section class="c9e8ee8" aria-labelledby="panel-title">
+        <div class="cb3a57e">
+          <h2 id="panel-title">Instant sell</h2>
+          <span class="c286293">Best live offers</span>
         </div>
-        <div class="cfb6070">
-          <div class="c21c52a"><span class="cda26d4">Collection</span></div>
-          <div class="c8474c8">
-            <select id="nft-collection" class="c6549f0 c1fb158" aria-label="Collection"></select>
+        <div class="ce8d7fe">
+          <span><svg class="c523633" width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg> Your collection</span>
+          <label class="c3beb14"><input id="select-all" type="checkbox" checked disabled aria-controls="nft-grid">Select all</label>
+        </div>
+        <div class="cd4496f" id="nft-grid" role="group" aria-label="Choose NFTs to sell">
+          <div class="c97fef1" role="button" tabindex="0" aria-pressed="true" aria-label="Artifact #1042, offer 0.42 ETH, approximately 1,071 dollars" data-offer="42">
+            <svg class="c1d7de7" width="180" height="220" viewBox="0 0 180 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <defs>
+                <radialGradient id="a1042-haze" cx="65%" cy="25%" r="80%"><stop class="c5ba937"/><stop offset="1" class="c57fb7b"/></radialGradient>
+                <linearGradient id="a1042-front" x1="0" y1="0" x2="1" y2=".85"><stop class="cba7eaa"/><stop offset=".48" class="cf19515"/><stop offset="1" class="c5ba937"/></linearGradient>
+                <linearGradient id="a1042-side" x1="0" y1="0" x2="1" y2="0"><stop class="c5ba937"/><stop offset="1" class="c57fb7b"/></linearGradient>
+                <linearGradient id="a1042-floor" x1="0" y1="0" x2="0" y2="1"><stop class="cf19515" stop-opacity=".3"/><stop offset="1" class="c57fb7b" stop-opacity="0"/></linearGradient>
+              </defs>
+              <path fill="url(#a1042-haze)" d="M0 0h180v220H0z"/>
+              <g class="c035500" opacity=".12" stroke-width=".6"><circle cx="95" cy="91" r="61"/><circle cx="95" cy="91" r="77"/><path d="M0 171h180M0 191h180M90 165l-80 55m80-55 80 55M90 165v55"/></g>
+              <ellipse cx="93" cy="176" rx="60" ry="11" class="c8d7fbc" opacity=".6"/>
+              <path d="m51 161 54 20 27-16-21 46-72-13Z" fill="url(#a1042-floor)"/>
+              <path d="M54 57 105 36l27 23-51 22Z" class="c0fe18a"/>
+              <path d="m54 57 51 21v96l-51-21Z" fill="url(#a1042-front)"/>
+              <path d="m105 78 27-19v95l-27 20Z" fill="url(#a1042-side)"/>
+              <path d="m54 57 51 21 27-19M105 78v96" class="c035500" opacity=".6" stroke-width=".7"/>
+              <path d="m64 79 30 12m-30-2 30 12m-30-2 30 12m-30-2 30 12m-30-2 30 12m-30-2 30 12" class="c035500" opacity=".36" stroke-width=".7"/>
+              <circle cx="137" cy="39" r="3" class="c0fe18a"/><path d="M25 32h8m-4-4v8M141 187h8m-4-4v8" class="c035500" opacity=".6"/>
+            </svg>
+            <span class="cf1eec2" aria-hidden="true"><svg class="c523633" width="11" height="11" viewBox="0 0 16 16"><path d="m4 8 3 3 5-6"/></svg></span>
+            <div class="c7c69ce"><span class="ce972cb">Artifact #1042</span><div class="c5e9ed1"><strong>0.42 ETH</strong><small>~$1,071</small></div></div>
           </div>
-          <div class="cd6d4d7" id="nft-floor">Floor —</div>
-        </div>
-        <div class="cfb6070">
-          <div class="c21c52a"><span class="cda26d4">Quantity</span></div>
-          <div class="c8474c8">
-            <input id="nft-qty" class="c5b708f" type="number" inputmode="numeric" min="1" max="1000" step="1" value="1" aria-label="Quantity">
-            <span class="c70e5f6"><img class="c18df1c" width="22" height="22" alt="ETH" src="assets/tokens/eth.svg"><span class="c476ed4">ETH</span></span>
+          <div class="c97fef1" role="button" tabindex="0" aria-pressed="true" aria-label="Artifact #2086, offer 0.35 ETH, approximately 892 dollars and 50 cents" data-offer="35">
+            <svg class="c1d7de7" width="180" height="90" viewBox="0 0 180 110" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <defs>
+                <linearGradient id="a2086-bg" x1="0" y1="0" x2="1" y2="1"><stop class="cba7eaa"/><stop offset="1" class="cf19515"/></linearGradient>
+                <linearGradient id="a2086-ring" x1="0" y1="0" x2="1" y2="1"><stop class="c35e5af"/><stop offset=".35" class="cf19515"/><stop offset=".7" class="c57fb7b"/><stop offset="1" class="cba7eaa"/></linearGradient>
+              </defs>
+              <path fill="url(#a2086-bg)" d="M0 0h180v110H0z"/>
+              <g class="c035500" opacity=".3" stroke-width=".6"><path d="M0 22h180M0 44h180M0 66h180M0 88h180M30 0v110M60 0v110M90 0v110M120 0v110M150 0v110"/></g>
+              <ellipse cx="90" cy="94" rx="41" ry="5" class="c96b86a" opacity=".25"/>
+              <g transform="translate(91 53) rotate(-29)"><ellipse rx="42" ry="26" fill="none" stroke="url(#a2086-ring)" stroke-width="18"/><ellipse rx="42" ry="26" fill="none" stroke="var(--art-pale)" stroke-width=".8" transform="translate(0 -7)" opacity=".65"/></g>
+              <circle cx="26" cy="22" r="3" class="c0fe18a"/>
+            </svg>
+            <span class="cf1eec2" aria-hidden="true"><svg class="c523633" width="11" height="11" viewBox="0 0 16 16"><path d="m4 8 3 3 5-6"/></svg></span>
+            <div class="c7c69ce"><span class="ce972cb">Artifact #2086</span><div class="c5e9ed1"><strong>0.35 ETH</strong><small>~$892.50</small></div></div>
+          </div>
+          <div class="c97fef1" role="button" tabindex="0" aria-pressed="true" aria-label="Artifact #0317, offer 0.28 ETH, approximately 714 dollars" data-offer="28">
+            <svg class="c1d7de7" width="180" height="90" viewBox="0 0 180 110" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <defs>
+                <radialGradient id="a0317-bg" cx="50%" cy="60%" r="70%"><stop class="c5ba937"/><stop offset="1" class="c57fb7b"/></radialGradient>
+                <linearGradient id="a0317-fold" x1="0" y1="0" x2="1" y2=".4"><stop class="c35e5af"/><stop offset=".5" class="cf19515"/><stop offset="1" class="c5ba937"/></linearGradient>
+              </defs>
+              <path fill="url(#a0317-bg)" d="M0 0h180v110H0z"/>
+              <circle cx="91" cy="55" r="42" class="c035500" stroke-width=".6" opacity=".22"/>
+              <path d="m46 73 32-53 57 18-35 57Z" class="c96b86a"/>
+              <path d="m46 73 45-25 9 47Z" class="c1a87ef"/>
+              <path d="m78 20 13 28 44-10Z" class="c0fe18a"/>
+              <path d="m91 48 9 47 35-57Z" fill="url(#a0317-fold)"/>
+              <path d="m46 73 32-53 13 28Z" fill="url(#a0317-fold)"/>
+              <path d="m78 20 13 28 9 47m-54-22 45-25 44-10" class="c035500" stroke-width=".65" opacity=".7"/>
+              <path d="M27 88h7m-3.5-3.5v7M143 19h6m-3-3v6" class="c035500" opacity=".6"/>
+            </svg>
+            <span class="cf1eec2" aria-hidden="true"><svg class="c523633" width="11" height="11" viewBox="0 0 16 16"><path d="m4 8 3 3 5-6"/></svg></span>
+            <div class="c7c69ce"><span class="ce972cb">Artifact #0317</span><div class="c5e9ed1"><strong>0.28 ETH</strong><small>~$714</small></div></div>
+          </div>
+          <div class="c97fef1" role="button" tabindex="0" aria-pressed="true" aria-label="Artifact #0891, offer 0.31 ETH, approximately 790 dollars and 50 cents" data-offer="31">
+            <svg class="c1d7de7" width="180" height="90" viewBox="0 0 180 110" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <defs>
+                <linearGradient id="a0891-bg" x1="0" y1="0" x2="1" y2="1"><stop class="c35e5af"/><stop offset="1" class="cba7eaa"/></linearGradient>
+                <radialGradient id="a0891-pearl" cx="30%" cy="21%" r="80%"><stop class="c35e5af"/><stop offset=".28" class="cf19515"/><stop offset=".7" class="c5ba937"/><stop offset="1" class="c57fb7b"/></radialGradient>
+              </defs>
+              <path fill="url(#a0891-bg)" d="M0 0h180v110H0z"/>
+              <g fill="none" stroke="var(--art-mid)" opacity=".15" stroke-width=".7"><path d="M-20 112Q27 9 107-8M-5 119Q37 8 124-12M10 120Q53 7 141-12M24 126Q66 14 156-8M40 127Q82 19 171-5"/></g>
+              <ellipse cx="91" cy="94" rx="43" ry="5" class="c96b86a" opacity=".2"/>
+              <path d="M52 59C41 39 62 16 85 19c19 3 22 19 36 23 31 9 25 44-2 47-21 3-20-12-37-9-22 4-24-10-30-21Z" fill="url(#a0891-pearl)"/>
+              <path d="M58 45c1-17 24-25 36-14" class="c035500" stroke-width="2" stroke-linecap="round" opacity=".65"/>
+              <circle cx="140" cy="24" r="3" class="c96b86a" opacity=".4"/>
+            </svg>
+            <span class="cf1eec2" aria-hidden="true"><svg class="c523633" width="11" height="11" viewBox="0 0 16 16"><path d="m4 8 3 3 5-6"/></svg></span>
+            <div class="c7c69ce"><span class="ce972cb">Artifact #0891</span><div class="c5e9ed1"><strong>0.31 ETH</strong><small>~$790.50</small></div></div>
+          </div>
+          <div class="c97fef1" role="button" tabindex="0" aria-pressed="true" aria-label="Artifact #1604, offer 0.26 ETH, approximately 663 dollars" data-offer="26">
+            <svg class="c1d7de7" width="180" height="90" viewBox="0 0 180 110" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <defs>
+                <radialGradient id="a1604-bg" cx="50%" cy="50%" r="75%"><stop class="c5ba937"/><stop offset="1" class="c57fb7b"/></radialGradient>
+                <linearGradient id="a1604-star" x1="0" y1="0" x2="1" y2="1"><stop class="c35e5af"/><stop offset=".45" class="cf19515"/><stop offset="1" class="c5ba937"/></linearGradient>
+              </defs>
+              <path fill="url(#a1604-bg)" d="M0 0h180v110H0z"/>
+              <g class="c035500" stroke-width=".6" opacity=".2"><circle cx="91" cy="55" r="45"/><ellipse cx="91" cy="55" rx="65" ry="24" transform="rotate(-25 91 55)"/><path d="M25 55h132M91 7v96"/></g>
+              <path d="m91 12 9 24 25-15-12 25 29 9-29 9 12 25-25-15-9 25-9-25-25 15 13-25-30-9 30-9-13-25 25 15Z" fill="url(#a1604-star)"/>
+              <path d="m91 12 0 43 34-34-34 34 51 0-51 0 34 34-34-34 0 44 0-44-34 34 34-34-51 0 51 0-34-34 34 34Z" class="c035500" stroke-width=".7" opacity=".7"/>
+              <circle cx="91" cy="55" r="9" class="c0fe18a"/>
+              <circle cx="145" cy="26" r="2" class="c1a87ef"/>
+            </svg>
+            <span class="cf1eec2" aria-hidden="true"><svg class="c523633" width="11" height="11" viewBox="0 0 16 16"><path d="m4 8 3 3 5-6"/></svg></span>
+            <div class="c7c69ce"><span class="ce972cb">Artifact #1604</span><div class="c5e9ed1"><strong>0.26 ETH</strong><small>~$663</small></div></div>
           </div>
         </div>
-        <dl class="c1af3c9">
-          <div><dt>Items</dt><dd id="nft-items">1</dd></div>
-          <div><dt>Subtotal</dt><dd id="nft-sub">—</dd></div>
-          <div><dt>Marketplace fee</dt><dd>2.5%</dd></div>
-          <div><dt>Total</dt><dd id="nft-total">—</dd></div>
-        </dl>
-        <noscript><p class="c7ddaa6">Enable JavaScript to estimate the total.</p></noscript>
-        <a class="c980fa8" href="dashboard/">Buy <svg class="c523633" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
-      </aside>
+        <div class="c8b487e">
+          <div class="c7e2095"><strong>Total instant offer</strong><span id="selection-count">5 selected</span></div>
+          <div class="c438dbe"><span class="c69755a"><span id="total-eth">1.62</span><small>ETH</small></span><span id="total-usd" class="cadf57e">~$4,131.00</span></div>
+        </div>
+        <a class="cee9959 cbbc8f8" href="dashboard/"><span>Sell <span id="sell-count">5</span> <span id="sell-noun">NFTs</span></span><svg class="c523633" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+        <p class="c2eb524"><svg class="c523633" width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 7V4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h15V7H5a1 1 0 0 1 0-2m15 7h-5v4h5"/></svg> Paid instantly to your wallet</p>
+        <p id="offer-status" class="c73dd6f" role="status" aria-live="polite" aria-atomic="true">5 NFTs selected. Total instant offer: 1.62 ETH, approximately 4,131 dollars.</p>
+      </section>
     </section>
-    <section class="cbf0565" id="facts" aria-labelledby="facts-title">
-      <h2 class="c36452e" id="facts-title">Key facts</h2>
-      <div class="c01f5d8"><table class="c63d18e"><tbody><tr><th scope="row">Mechanism</th><td>Accepting a standing bid instead of listing and waiting</td></tr>
+    <section id="facts" class="c60fecc" aria-labelledby="facts-title">
+      <div class="c25c664"><h2 id="facts-title">The sale, at a glance.</h2><p>From your collection to your wallet.</p></div>
+      <table class="c63d18e"><tbody><tr><th scope="row">Mechanism</th><td>Accepting a standing bid instead of listing and waiting</td></tr>
 <tr><th scope="row">Common venues</th><td>Blur, order-book collection offers, NFT-AMM pools</td></tr>
 <tr><th scope="row">Price trade-off</th><td>Usually below last sale or floor ask</td></tr>
 <tr><th scope="row">Settlement time</th><td>One signed transaction, seconds to minutes</td></tr>
 <tr><th scope="row">Royalties</th><td>Often reduced or optional on bid-based sales</td></tr>
-<tr><th scope="row">Custody</th><td>Self-custody — you sign the sale from your own wallet</td></tr></tbody></table></div>
+<tr><th scope="row">Custody</th><td>Self-custody — you sign the sale from your own wallet</td></tr></tbody></table>
     </section>
-  </div>
-  <main class="c2579bd c05abf8" id="content">
-    <section class="c86d4ea"><h2 class="c5fbca8">What It Means to Sell NFT Instantly</h2><div class="cee3892"><strong>It means accepting the best current bid on a token right now, trading some price for immediate, guaranteed liquidity instead of waiting on an open listing.</strong> A standard listing publishes an ask price and waits for a buyer to match it, which can take anywhere from hours to months depending on the collection. Instant selling flips that order: the market already holds live bids from collectors, traders and automated pools, and the seller simply picks the best one and signs. Every <a href="https://ethereum.org/en/nft/" rel="nofollow noopener" target="_blank">NFT</a> is a unique token on a smart contract, so the bid you accept settles on-chain in a single transaction that transfers the asset and releases payment at the same moment, with no separate escrow step and no risk that the other side walks away after the item has already shipped.</div></section>
+    <div id="guide" class="c8f96bc">
+      <aside class="cb55f09" aria-labelledby="guide-title">
+        <div class="c680e7b">A closer look</div>
+        <h2 id="guide-title">Great art.<br>Instant liquidity.</h2>
+        <p>Everything behind your next sale, from the first offer to the final transfer.</p>
+        <nav class="ca5366d" aria-label="Article navigation"><a href="#facts">The essentials</a><a href="#faq">Your questions</a><a href="#sources">Further reading</a></nav>
+      </aside>
+      <article class="c591f66" aria-label="The instant NFT selling guide"><section class="c86d4ea"><h2 class="c5fbca8">What It Means to Sell NFT Instantly</h2><div class="cee3892"><strong>It means accepting the best current bid on a token right now, trading some price for immediate, guaranteed liquidity instead of waiting on an open listing.</strong> A standard listing publishes an ask price and waits for a buyer to match it, which can take anywhere from hours to months depending on the collection. Instant selling flips that order: the market already holds live bids from collectors, traders and automated pools, and the seller simply picks the best one and signs. Every <a href="https://ethereum.org/en/nft/" rel="nofollow noopener" target="_blank">NFT</a> is a unique token on a smart contract, so the bid you accept settles on-chain in a single transaction that transfers the asset and releases payment at the same moment, with no separate escrow step and no risk that the other side walks away after the item has already shipped.</div></section>
 <section class="c86d4ea"><h2 class="c5fbca8">How to Sell NFT Instantly Using Bids</h2><div class="cee3892">Every instant sale starts with a bid someone else already placed, so understanding where those bids come from changes how much a seller can expect to receive.<h3>Collection Bids</h3>A collection bid is an open offer on any token in a given collection, regardless of which specific piece it targets. Marketplaces aggregate these offers so a seller holding even a plain token in the set can match the top collection bid and exit immediately, without needing a buyer who wants that exact item.<h3>Trait Bids</h3>A trait bid narrows the offer to tokens sharing a specific attribute, such as a rare background or accessory, and usually pays more than a plain collection bid because it reflects demand for that trait specifically. Checking whether a trait bid applies before accepting the generic collection offer is one of the easiest ways to capture a better price.<h3>Blur's Bidding and Blend</h3>Blur consolidates collection and trait bids into a single order book and, through <a href="https://docs.blur.io/" rel="nofollow noopener" target="_blank">Blend</a>, lets a holder borrow against a token instead of selling it outright, which some sellers use when they only need cash temporarily. Its bidding incentives are one reason Blur captured a large share of trading volume tracked on <a href="https://dappradar.com/nft/marketplaces" rel="nofollow noopener" target="_blank">DappRadar's marketplace rankings</a>.</div></section>
 <section class="c86d4ea"><h2 class="c5fbca8">Collection Bids, Trait Bids and NFT-AMM Pools</h2><div class="cee3892">Beyond order-book bids, automated market makers built for NFTs give another route to an instant sale.<h3>Sudoswap and Pooled Liquidity</h3><a href="https://docs.sudoswap.xyz/" rel="nofollow noopener" target="_blank">Sudoswap</a> and similar NFT-AMM protocols hold pools of a specific collection plus the matching currency, pricing each buy and sell along a curve rather than through individual bids. Selling into a pool is close to instant because the contract itself is the counterparty, though pool prices can sit further below floor than a competitive order book during quiet periods.<h3>Checking Liquidity Before You Commit</h3>Thin pools or a single large bid can move sharply once a seller trades into them, so checking recent trades on <a href="https://etherscan.io/" rel="nofollow noopener" target="_blank">Etherscan</a> or a collection's own activity feed before committing shows whether the current top offer is isolated or backed by real depth.</div></section>
 <section class="c86d4ea"><h2 class="c5fbca8">Fees and Royalties When You Sell NFT Instantly</h2><div class="cee3892">Accepting a bid still carries the marketplace's standard fee plus whatever royalty the collection's creator contract charges, and both come out of the sale price before it reaches a seller's wallet. Some bid-based venues let buyers set royalty to zero or optional, which raises what a seller nets from the same nominal bid, so always check net proceeds rather than the headline offer amount.<table><thead><tr><th>Fee type</th><th>Who sets it</th><th>Typical range</th></tr></thead><tbody><tr><td>Marketplace fee</td><td>The platform running the order book or pool</td><td>0.5% – 2.5%</td></tr><tr><td>Creator royalty</td><td>The collection contract, often optional on bids</td><td>0% – 10%</td></tr><tr><td>Network gas</td><td>The chain the sale settles on</td><td>Varies with congestion</td></tr></tbody></table></div></section>
 <section class="c86d4ea"><h2 class="c5fbca8">Step-by-Step: Sell NFT Instantly in Minutes</h2><div class="cee3892">The mechanics are the same across most venues that support instant selling, which is what makes the process repeatable once a seller has done it a first time.<ul><li>Connect a self-custody wallet to a marketplace that aggregates live bids, such as an order-book platform or an NFT-AMM pool.</li><li>Open the token for sale and compare the top collection bid against any trait-specific bid that applies to it.</li><li>Confirm the net amount after marketplace fee, royalty and gas, not just the headline bid shown on screen.</li><li>Accept the best offer and sign the sale transaction in the wallet.</li><li>Watch the transfer and payment settle in the same transaction, then verify the receiving balance before closing the tab.</li></ul></div></section>
 <section class="c86d4ea"><h2 class="c5fbca8">Instant Sale vs Listing and Waiting</h2><div class="cee3892">Listing at an ask price can net more if a motivated buyer eventually matches it, but there is no certainty anyone will, and a stale listing often sits untouched while the market moves on. Instant selling removes that uncertainty by locking in whatever the deepest current bid is, which is usually below the last recorded sale or the lowest active ask, sometimes called the floor.<h3>Why Instant Sales Trade Price for Speed</h3>A bid sits below the ask because the bidder takes on the risk of holding an illiquid asset until a future buyer appears. A seller who needs certainty today effectively pays that risk premium as a lower price, while a seller who can wait keeps the option of a higher eventual sale.</div></section>
-<section class="c86d4ea"><h2 class="c5fbca8">Avoiding Scams When You Sell NFT Instantly</h2><div class="cee3892">The speed that makes instant selling useful also makes it a target for scams that rely on a seller signing quickly without reading what the transaction actually does.<h3>Read Every Signature Request</h3>A legitimate bid acceptance names the exact token, the exact payment amount and a marketplace contract the seller already recognizes. A request asking for a broad approval covering an entire wallet, or one routed through an unfamiliar link, should be rejected and the token left unsold rather than signed in a hurry.<h3>Keep the Seed Phrase Off Every Form</h3>No marketplace, bidder or support channel ever needs a seed phrase to complete a sale. Anyone requesting it, in a chat, a form or a pop-up, is attempting to drain the wallet rather than buy the token.</div></section>
-    <details class="ccbc07b"><summary class="c639e3e">What does it mean to accept an offer right away instead of listing?</summary><div class="c7c7477">It means accepting the best live bid on a token right now rather than publishing a listing and waiting for a buyer, trading some price for immediate, guaranteed liquidity in a single on-chain transaction.</div></details>
+<section class="c86d4ea"><h2 class="c5fbca8">Avoiding Scams When You Sell NFT Instantly</h2><div class="cee3892">The speed that makes instant selling useful also makes it a target for scams that rely on a seller signing quickly without reading what the transaction actually does.<h3>Read Every Signature Request</h3>A legitimate bid acceptance names the exact token, the exact payment amount and a marketplace contract the seller already recognizes. A request asking for a broad approval covering an entire wallet, or one routed through an unfamiliar link, should be rejected and the token left unsold rather than signed in a hurry.<h3>Keep the Seed Phrase Off Every Form</h3>No marketplace, bidder or support channel ever needs a seed phrase to complete a sale. Anyone requesting it, in a chat, a form or a pop-up, is attempting to drain the wallet rather than buy the token.</div></section></article>
+    </div>
+    <section id="faq" class="c372a48" aria-labelledby="faq-title">
+      <div class="c297175"><h2 id="faq-title">Good questions.<br>Clear answers.</h2><p>A little clarity for your next move.</p></div>
+      <div class="c59a562"><details class="ccbc07b"><summary class="c639e3e">What does it mean to accept an offer right away instead of listing?</summary><div class="c7c7477">It means accepting the best live bid on a token right now rather than publishing a listing and waiting for a buyer, trading some price for immediate, guaranteed liquidity in a single on-chain transaction.</div></details>
 <details class="ccbc07b"><summary class="c639e3e">How much less do I get when I sell NFT instantly compared to listing?</summary><div class="c7c7477">A bid typically sits below the last recorded sale or the lowest active listing because the bidder is taking on the risk of holding the token until a future buyer appears. The gap varies by collection and by how deep the current bids are.</div></details>
 <details class="ccbc07b"><summary class="c639e3e">What is a collection bid versus a trait bid?</summary><div class="c7c7477">A collection bid is a standing offer on any token in a collection, while a trait bid targets tokens with a specific attribute and usually pays more. Checking for a matching trait bid before accepting the generic collection offer often captures a better price.</div></details>
 <details class="ccbc07b"><summary class="c639e3e">How does Blur's Blend differ from an outright sale?</summary><div class="c7c7477">Blend lets a holder borrow against a token instead of selling it, which raises cash while keeping ownership. An outright sale through a collection or trait bid transfers the token permanently in exchange for the full bid amount.</div></details>
 <details class="ccbc07b"><summary class="c639e3e">What fees come out of an instant NFT sale?</summary><div class="c7c7477">A marketplace fee and a creator royalty are typically deducted from the bid amount, plus network gas to settle the transaction. Some bid-based venues let royalty be set to zero or optional, which changes the net amount received.</div></details>
 <details class="ccbc07b"><summary class="c639e3e">Are NFT-AMM pools like Sudoswap safe to sell into?</summary><div class="c7c7477">Selling into a pool is close to instant because the contract itself is the counterparty, but thin pools can be priced further below floor and can move sharply after a large trade, so checking recent activity before committing is worthwhile.</div></details>
-<details class="ccbc07b"><summary class="c639e3e">How do I avoid scams when accepting a bid?</summary><div class="c7c7477">Read every signature request carefully, reject any approval broader than the single token and amount being sold, and never enter a seed phrase anywhere — no legitimate marketplace or bidder ever asks for it.</div></details>
-  </main>
-  <section class="ca1f72f c05abf8" id="sources" aria-labelledby="sources-title">
-    <h2 class="c36452e" id="sources-title">Sources</h2>
-    <ul class="cb8d4e3"><li><a class="ca85948" href="https://ethereum.org/en/nft/" rel="nofollow noopener" target="_blank">Ethereum NFT overview</a></li>
+<details class="ccbc07b"><summary class="c639e3e">How do I avoid scams when accepting a bid?</summary><div class="c7c7477">Read every signature request carefully, reject any approval broader than the single token and amount being sold, and never enter a seed phrase anywhere — no legitimate marketplace or bidder ever asks for it.</div></details></div>
+    </section>
+    <section id="sources" class="ce1d0ac" aria-labelledby="sources-title">
+      <h2 id="sources-title">Sources &amp; reading</h2>
+      <div><ul class="cb8d4e3"><li><a class="ca85948" href="https://ethereum.org/en/nft/" rel="nofollow noopener" target="_blank">Ethereum NFT overview</a></li>
 <li><a class="ca85948" href="https://en.wikipedia.org/wiki/Non-fungible_token" rel="nofollow noopener" target="_blank">Non-fungible token — Wikipedia</a></li>
 <li><a class="ca85948" href="https://docs.sudoswap.xyz/" rel="nofollow noopener" target="_blank">Sudoswap documentation</a></li>
-<li><a class="ca85948" href="https://dappradar.com/nft/marketplaces" rel="nofollow noopener" target="_blank">DappRadar NFT marketplaces</a></li></ul>
-  </section>
+<li><a class="ca85948" href="https://dappradar.com/nft/marketplaces" rel="nofollow noopener" target="_blank">DappRadar NFT marketplaces</a></li></ul></div>
+    </section>
+  </main>
   <footer class="c0f5a88">
-    <div class="c7f741d c05abf8">
-      <p>Updated Oct 11, 2026</p>
-      <a href="#top">Back to top ↑</a>
-    </div>
+    <div class="c7f741d cb5089d"><span class="c61905e">Website</span><p>Updated Oct 11, 2026</p><a class="ccae23b" href="#top">Back to top <svg class="c523633" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V4m-6 6 6-6 6 6"/></svg></a></div>
   </footer>
   <script>
     (() => {
-      const COLLECTIONS = [
-        { n: 'Genesis Apes', f: 2.4 }, { n: 'Pixel Punks', f: 0.85 },
-        { n: 'Meta Land Parcels', f: 0.42 }, { n: 'Cyber Mechs', f: 0.33 },
-        { n: 'Ocean Relics', f: 0.12 }, { n: 'Chain Legends', f: 1.6 }
-      ];
-      const ETH = 2550, FEE = 0.025;
-      const $ = (id) => document.getElementById(id);
-      const sel = $('nft-collection'), qty = $('nft-qty'), floorEl = $('nft-floor');
-      const itemsEl = $('nft-items'), subEl = $('nft-sub'), totalEl = $('nft-total');
-      const num = (n) => new Intl.NumberFormat('en', { maximumFractionDigits: 4 }).format(n);
-      const usd = (v) => '~$' + new Intl.NumberFormat('en', { maximumFractionDigits: 0 }).format(v);
-      COLLECTIONS.forEach((c, i) => { const o = document.createElement('option'); o.value = i; o.textContent = c.n; sel.appendChild(o); });
-      const calc = () => {
-        const c = COLLECTIONS[+sel.value] || COLLECTIONS[0];
-        const q = Math.max(1, Math.floor(+qty.value || 0));
-        floorEl.textContent = 'Floor ' + num(c.f) + ' ETH (' + usd(c.f * ETH) + ')';
-        const sub = q * c.f, total = sub * (1 + FEE);
-        itemsEl.textContent = q;
-        subEl.textContent = num(sub) + ' ETH';
-        totalEl.textContent = num(total) + ' ETH (' + usd(total * ETH) + ')';
+      const grid = document.getElementById('nft-grid');
+      const cards = Array.from(grid.querySelectorAll('.c97fef1'));
+      const all = document.getElementById('select-all');
+      const count = document.getElementById('selection-count');
+      const eth = document.getElementById('total-eth');
+      const usd = document.getElementById('total-usd');
+      const sellCount = document.getElementById('sell-count');
+      const noun = document.getElementById('sell-noun');
+      const status = document.getElementById('offer-status');
+      const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const dollars = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+      let tick;
+      const update = () => {
+        const selected = cards.filter(card => card.getAttribute('aria-pressed') === 'true');
+        const n = selected.length;
+        // Integer hundredths keep every combination exact at the displayed precision.
+        const hundredths = selected.reduce((sum, card) => sum + Number(card.dataset.offer), 0);
+        const value = (hundredths / 100).toFixed(2);
+        const cash = dollars.format(hundredths * 25.5);
+        count.textContent = n + ' selected';
+        eth.textContent = value;
+        usd.textContent = '~' + cash;
+        sellCount.textContent = n || 'your';
+        noun.textContent = n === 1 ? 'NFT' : 'NFTs';
+        all.checked = n === cards.length;
+        all.indeterminate = n>0 && n < cards.length;
+        status.textContent = n + ' ' + (n === 1 ? 'NFT' : 'NFTs') + ' selected. Total instant offer: ' + value + ' ETH, approximately ' + cash + '.';
+        if (tick) tick.cancel();
+        if (!motion.matches && eth.animate) {
+          tick = eth.animate([{ opacity: .35, transform: 'translateY(5px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 220, easing: 'cubic-bezier(.2,.7,.2,1)' });
+        }
       };
-      sel.addEventListener('change', calc);
-      qty.addEventListener('input', calc);
-      calc();
+      const toggle = card => {
+        card.setAttribute('aria-pressed', String(card.getAttribute('aria-pressed') !== 'true'));
+        update();
+      };
+      grid.addEventListener('click', event => {
+        const card = event.target.closest('.c97fef1');
+        if (card && grid.contains(card)) toggle(card);
+      });
+      grid.addEventListener('keydown', event => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        const card = event.target.closest('.c97fef1');
+        if (!card) return;
+        event.preventDefault();
+        if (!event.repeat) toggle(card);
+      });
+      all.addEventListener('change', () => {
+        cards.forEach(card => card.setAttribute('aria-pressed', String(all.checked)));
+        update();
+      });
+      all.disabled = false;
     })();
   </script>
 </body>
