@@ -6,7 +6,7 @@
   <title>Sell NFT Instantly — Bids, Fees and the Price Trade-Off</title>
   <meta name="description" content="See how collection bids, trait bids and AMM pools like Sudoswap let a holder accept the best current offer in one transaction, what Blur's bidding and Blend change, and the fees, royalties and scams to check before accepting.">
   <link rel="canonical" href="https://sell-nft-instantly.github.io/">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%237c5cff'/%3E%3Cpath d='M16 7l9 9-9 9-9-9z' fill='white'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='currentColor' d='M3 3h11v11H3zm15 0h11v11H18zM3 18h11v11H3zm15 0h11v11H18z'/%3E%3C/svg%3E">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Website">
   <meta property="og:title" content="Sell NFT Instantly">
@@ -18,473 +18,347 @@
   <meta name="twitter:description" content="See how collection bids, trait bids and AMM pools like Sudoswap let a holder accept the best current offer in one transaction, what Blur's bidding and Blend change, and the fees, royalties and scams to check before accepting.">
   <meta name="twitter:image" content="https://sell-nft-instantly.github.io/og.png">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://sell-nft-instantly.github.io/#website", "url": "https://sell-nft-instantly.github.io/", "name": "Sell NFT Instantly — Bids, Fees and the Price Trade-Off"}, {"@type": "WebPage", "@id": "https://sell-nft-instantly.github.io/#webpage", "url": "https://sell-nft-instantly.github.io/", "name": "Sell NFT Instantly — Bids, Fees and the Price Trade-Off", "isPartOf": {"@id": "https://sell-nft-instantly.github.io/#website"}, "description": "See how collection bids, trait bids and AMM pools like Sudoswap let a holder accept the best current offer in one transaction, what Blur's bidding and Blend change, and the fees, royalties and scams to check before accepting.", "datePublished": "2026-10-11", "dateModified": "2026-10-11"}, {"@type": "SoftwareApplication", "name": "Sell NFT Instantly", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sell-nft-instantly.github.io/"}, {"@type": "ListItem", "position": 2, "name": "NFT"}, {"@type": "ListItem", "position": 3, "name": "Sell NFT Instantly"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does it mean to accept an offer right away instead of listing?", "acceptedAnswer": {"@type": "Answer", "text": "It means accepting the best live bid on a token right now rather than publishing a listing and waiting for a buyer, trading some price for immediate, guaranteed liquidity in a single on-chain transaction."}}, {"@type": "Question", "name": "How much less do I get when I sell NFT instantly compared to listing?", "acceptedAnswer": {"@type": "Answer", "text": "A bid typically sits below the last recorded sale or the lowest active listing because the bidder is taking on the risk of holding the token until a future buyer appears. The gap varies by collection and by how deep the current bids are."}}, {"@type": "Question", "name": "What is a collection bid versus a trait bid?", "acceptedAnswer": {"@type": "Answer", "text": "A collection bid is a standing offer on any token in a collection, while a trait bid targets tokens with a specific attribute and usually pays more. Checking for a matching trait bid before accepting the generic collection offer often captures a better price."}}, {"@type": "Question", "name": "How does Blur's Blend differ from an outright sale?", "acceptedAnswer": {"@type": "Answer", "text": "Blend lets a holder borrow against a token instead of selling it, which raises cash while keeping ownership. An outright sale through a collection or trait bid transfers the token permanently in exchange for the full bid amount."}}, {"@type": "Question", "name": "What fees come out of an instant NFT sale?", "acceptedAnswer": {"@type": "Answer", "text": "A marketplace fee and a creator royalty are typically deducted from the bid amount, plus network gas to settle the transaction. Some bid-based venues let royalty be set to zero or optional, which changes the net amount received."}}, {"@type": "Question", "name": "Are NFT-AMM pools like Sudoswap safe to sell into?", "acceptedAnswer": {"@type": "Answer", "text": "Selling into a pool is close to instant because the contract itself is the counterparty, but thin pools can be priced further below floor and can move sharply after a large trade, so checking recent activity before committing is worthwhile."}}, {"@type": "Question", "name": "How do I avoid scams when accepting a bid?", "acceptedAnswer": {"@type": "Answer", "text": "Read every signature request carefully, reject any approval broader than the single token and amount being sold, and never enter a seed phrase anywhere — no legitimate marketplace or bidder ever asks for it."}}]}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://sell-nft-instantly.github.io/#website", "url": "https://sell-nft-instantly.github.io/", "name": "Sell NFT Instantly — Bids, Fees and the Price Trade-Off"}, {"@type": "WebPage", "@id": "https://sell-nft-instantly.github.io/#webpage", "url": "https://sell-nft-instantly.github.io/", "name": "Sell NFT Instantly — Bids, Fees and the Price Trade-Off", "isPartOf": {"@id": "https://sell-nft-instantly.github.io/#website"}, "description": "See how collection bids, trait bids and AMM pools like Sudoswap let a holder accept the best current offer in one transaction, what Blur's bidding and Blend change, and the fees, royalties and scams to check before accepting.", "datePublished": "2026-10-12", "dateModified": "2026-10-12"}, {"@type": "SoftwareApplication", "name": "Sell NFT Instantly", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sell-nft-instantly.github.io/"}, {"@type": "ListItem", "position": 2, "name": "NFT"}, {"@type": "ListItem", "position": 3, "name": "Sell NFT Instantly"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does it mean to accept an offer right away instead of listing?", "acceptedAnswer": {"@type": "Answer", "text": "It means accepting the best live bid on a token right now rather than publishing a listing and waiting for a buyer, trading some price for immediate, guaranteed liquidity in a single on-chain transaction."}}, {"@type": "Question", "name": "How much less do I get when I sell NFT instantly compared to listing?", "acceptedAnswer": {"@type": "Answer", "text": "A bid typically sits below the last recorded sale or the lowest active listing because the bidder is taking on the risk of holding the token until a future buyer appears. The gap varies by collection and by how deep the current bids are."}}, {"@type": "Question", "name": "What is a collection bid versus a trait bid?", "acceptedAnswer": {"@type": "Answer", "text": "A collection bid is a standing offer on any token in a collection, while a trait bid targets tokens with a specific attribute and usually pays more. Checking for a matching trait bid before accepting the generic collection offer often captures a better price."}}, {"@type": "Question", "name": "How does Blur's Blend differ from an outright sale?", "acceptedAnswer": {"@type": "Answer", "text": "Blend lets a holder borrow against a token instead of selling it, which raises cash while keeping ownership. An outright sale through a collection or trait bid transfers the token permanently in exchange for the full bid amount."}}, {"@type": "Question", "name": "What fees come out of an instant NFT sale?", "acceptedAnswer": {"@type": "Answer", "text": "A marketplace fee and a creator royalty are typically deducted from the bid amount, plus network gas to settle the transaction. Some bid-based venues let royalty be set to zero or optional, which changes the net amount received."}}, {"@type": "Question", "name": "Are NFT-AMM pools like Sudoswap safe to sell into?", "acceptedAnswer": {"@type": "Answer", "text": "Selling into a pool is close to instant because the contract itself is the counterparty, but thin pools can be priced further below floor and can move sharply after a large trade, so checking recent activity before committing is worthwhile."}}, {"@type": "Question", "name": "How do I avoid scams when accepting a bid?", "acceptedAnswer": {"@type": "Answer", "text": "Read every signature request carefully, reject any approval broader than the single token and amount being sold, and never enter a seed phrase anywhere — no legitimate marketplace or bidder ever asks for it."}}]}]}</script>
   <style>
-:root{--bg:#120B0E;--surface:#1D1317;--text:#F3EAED;--muted:#A4868D;--accent:#F472B6;--accent-ink:#1A0710;--radius:16px;--display:"Manrope";--body:"Manrope";--line:color-mix(in srgb,var(--text) 13%,var(--bg));--line-soft:color-mix(in srgb,var(--text) 8%,var(--surface));--read:color-mix(in srgb,var(--text) 78%,var(--muted));--quiet:color-mix(in srgb,var(--muted) 82%,var(--text));--wash:color-mix(in srgb,var(--accent) 7%,var(--surface));--art-dark:color-mix(in srgb,var(--accent-ink) 92%,var(--accent));--art-mid:color-mix(in srgb,var(--accent) 48%,var(--accent-ink));--art-light:color-mix(in srgb,var(--accent) 40%,var(--text));--art-pale:color-mix(in srgb,var(--text) 84%,var(--accent));--panel-radius:clamp(12px,calc(var(--radius) * 1.5),30px);--card-radius:clamp(8px,calc(var(--radius) * .65),16px)}
+:root{--bg:#120B0E;--surface:#1D1317;--text:#F3EAED;--muted:#A4868D;--accent:#F472B6;--accent-ink:#1A0710;--radius:16px;--display:"Manrope";--body:"Manrope";--line:color-mix(in srgb,var(--text) 11%,var(--surface));--soft:color-mix(in srgb,var(--text) 5%,var(--surface));--quiet:color-mix(in srgb,var(--muted) 70%,var(--text));--positive:color-mix(in srgb,hsl(from var(--accent) 145 s l) 80%,var(--text));--shadow:color-mix(in srgb,var(--accent-ink) 55%,transparent);--round:clamp(10px,var(--radius),20px);--card-round:clamp(8px,calc(var(--radius) * .7),14px)}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:24px}
-body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
-a{color:inherit;text-underline-offset:.22em}
-button,input{font:inherit}
-a,button,input,summary,[role="button"]{-webkit-tap-highlight-color:transparent}
-svg{display:block;flex:none;max-width:100%}
-img{max-width:100%;height:auto}
-h1,h2,h3,p{margin:0}
-h1,h2,h3{font-family:var(--display)}
-h1,h2,h3,p,li,th,td,summary{overflow-wrap:anywhere}
-::selection{background:var(--accent);color:var(--accent-ink)}
-:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
-.cb5089d{width:min(1232px,calc(100% - 32px));margin-inline:auto}
-.c73dd6f{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
-.c638cdc{position:absolute;z-index:10;top:12px;left:16px;padding:10px 18px;border-radius:var(--card-radius);background:var(--accent);color:var(--accent-ink);transform:translateY(-160%)}
-.c638cdc:focus{transform:translateY(0)}
-.c523633{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
-.cf3fef9{border-bottom:1px solid var(--line)}
-.cf32190{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:74px}
-.c4a0333{display:inline-flex;align-items:center;gap:11px;color:var(--text);font:700 21px/1 var(--display);letter-spacing:-.065em;text-decoration:none}
-.c976822{color:var(--accent);width:29px;height:29px}
-.cbd40be{display:flex;align-items:center;gap:32px}
-.cbd40be>a:not(.cee9959){position:relative;padding-block:12px;color:var(--quiet);font-size:13px;text-decoration:none;transition:color .2s}
-.cbd40be>a:not(.cee9959):hover{color:var(--text)}
-.cee9959{display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:54px;padding:14px 23px;border:1px solid color-mix(in srgb,var(--accent-ink) 12%,var(--accent));border-radius:clamp(8px,calc(var(--radius) * .75),18px);background:var(--accent);color:var(--accent-ink);font-size:14px;font-weight:700;line-height:1.4;text-align:center;text-decoration:none;transition:transform .22s,background .22s}
-.cee9959:hover{background:color-mix(in srgb,var(--accent) 88%,var(--text));transform:translateY(-2px)}
-.cbd40be .cee9959{min-height:38px;padding:8px 17px;gap:18px;font-size:12px}
-.cbd40be .cee9959 .c523633{width:16px;height:16px}
-.cf9a987{padding-block:17px 0}
-.c763367{display:flex;flex-wrap:wrap;align-items:baseline;gap:7px;color:var(--quiet);font-size:10px;line-height:1.6}
-.c763367 a{color:var(--quiet);text-decoration:none}
-.c763367 a:hover{color:var(--accent)}
-.c763367 span{color:var(--muted)}
-.c763367 span:last-child{color:var(--read)}
-.cf24a4d{position:relative;display:grid;grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);align-items:start;gap:clamp(28px,4.2vw,60px);padding-block:22px 44px}
-.ccf0fdf{min-width:0;padding-top:5px}
-.cb7ec29{display:inline-flex;align-items:center;gap:8px;padding:5px 10px 5px 8px;margin-bottom:22px;border:1px solid color-mix(in srgb,var(--accent) 23%,var(--bg));border-radius:99px;color:var(--read);background:color-mix(in srgb,var(--accent) 4%,var(--bg));font-size:11px;line-height:1.4}
-.cb7ec29 .c523633{width:14px;height:14px;color:var(--accent)}
-h1{max-width:11ch;margin:0 0 23px -4px;font-size:clamp(58px,6.5vw,90px);font-weight:600;line-height:1.015;letter-spacing:-.075em;text-wrap:balance}
-h1 em{color:var(--accent);font-style:normal}
-.ccfb4c9{max-width:47ch;color:var(--quiet);font-size:16px;line-height:1.8;text-wrap:pretty}
-.c30fe4b{display:flex;flex-wrap:wrap;align-items:center;gap:16px 21px;margin-top:26px}
-.c30fe4b .cee9959{min-width:198px}
-.c30fe4b>p{max-width:16ch;color:var(--quiet);font-size:11px;line-height:1.65}
-.c30fe4b>p strong{display:block;color:var(--text);font-weight:500}
-.c92e739{display:flex;align-items:center;gap:13px;width:fit-content;max-width:100%;margin:30px 0 0;padding:20px 0 0;border-top:1px solid var(--line);list-style:none}
-.c92e739 li{display:flex;align-items:center;gap:8px;color:var(--read);font-size:11px}
-.c92e739 li+li::before{content:"\2192";margin-right:5px;color:var(--muted)}
-.c92e739 .c523633{width:15px;height:15px;color:var(--accent)}
-.c9e8ee8{position:relative;isolation:isolate;min-width:0;padding:20px;border:1px solid color-mix(in srgb,var(--accent) 23%,var(--surface));border-radius:var(--panel-radius);background:linear-gradient(145deg,color-mix(in srgb,var(--text) 3%,var(--surface)),var(--surface) 55%);box-shadow:0 20px 65px -30px color-mix(in srgb,var(--accent-ink) 65%,transparent),0 1px 0 color-mix(in srgb,var(--text) 5%,transparent) inset}
-.cb3a57e{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
-.cb3a57e h2{font-size:24px;font-weight:600;letter-spacing:-.055em;line-height:1.25}
-.c286293{display:inline-flex;align-items:center;gap:6px;color:var(--quiet);font-size:10px}
-.c286293::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 10%,transparent)}
-.ce8d7fe{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:43px;margin-top:5px;color:var(--quiet);font-size:10px}
-.ce8d7fe>span{display:flex;align-items:center;gap:6px}
-.ce8d7fe>span .c523633{width:13px;height:13px}
-.c3beb14{display:inline-flex;align-items:center;gap:7px;min-height:36px;color:var(--read);cursor:pointer;user-select:none}
-.c3beb14 input{width:14px;height:14px;margin:0;accent-color:var(--accent);cursor:pointer}
-.cd4496f{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,140px);gap:10px}
-.c97fef1{position:relative;display:flex;flex-direction:column;min-width:0;padding:4px;border:1px solid var(--line-soft);border-radius:var(--card-radius);background:var(--bg);cursor:pointer;user-select:none;touch-action:manipulation;transition:transform .22s cubic-bezier(.2,.7,.2,1),border-color .22s,background .22s}
-.c97fef1:first-child{grid-row:span 2}
-.c97fef1[aria-pressed="true"]{border-color:color-mix(in srgb,var(--accent) 65%,var(--surface));background:color-mix(in srgb,var(--accent) 5%,var(--bg));box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 12%,transparent);transform:translateY(-1px)}
-.c1d7de7{width:100%;height:76px;flex:1 1 auto;min-height:0;border-radius:max(4px,calc(var(--card-radius) - 4px));overflow:hidden;background:var(--art-dark)}
-.c97fef1:first-child .c1d7de7{height:220px}
-.cf1eec2{position:absolute;top:10px;right:10px;display:grid;place-items:center;width:19px;height:19px;border:1px solid color-mix(in srgb,var(--art-pale) 75%,transparent);border-radius:50%;background:color-mix(in srgb,var(--art-dark) 65%,transparent);color:var(--accent-ink);transition:background .2s,border-color .2s}
-.cf1eec2 .c523633{width:11px;height:11px;stroke-width:2.4;opacity:0;transform:scale(.4);transition:opacity .18s,transform .22s}
-.c97fef1[aria-pressed="true"] .cf1eec2{border-color:var(--accent);background:var(--accent)}
-.c97fef1[aria-pressed="true"] .cf1eec2 .c523633{opacity:1;transform:scale(1)}
-.c7c69ce{padding:6px 4px 3px;flex:none;line-height:1.4}
-.ce972cb{display:block;margin-bottom:3px;color:var(--quiet);font-size:11px}
-.c5e9ed1{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:1px 4px;font-variant-numeric:tabular-nums}
-.c5e9ed1 strong{font-size:12px;font-weight:600;letter-spacing:-.025em}
-.c5e9ed1 small{color:var(--quiet);font-size:10px}
-.c8d7fbc{fill:var(--art-dark)}
-.c1a87ef{fill:var(--accent)}
-.c0fe18a{fill:var(--art-pale)}
-.c96b86a{fill:var(--art-mid)}
-.c035500{fill:none;stroke:var(--art-pale)}
-.c57fb7b{stop-color:var(--art-dark)}
-.c5ba937{stop-color:var(--art-mid)}
-.cf19515{stop-color:var(--accent)}
-.cba7eaa{stop-color:var(--art-light)}
-.c35e5af{stop-color:var(--art-pale)}
-.c8b487e{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding-block:18px 15px}
-.c7e2095{color:var(--quiet);font-size:10px}
-.c7e2095 strong{display:block;margin-bottom:4px;color:var(--text);font-size:12px;font-weight:500}
-.c438dbe{text-align:right;font-variant-numeric:tabular-nums}
-.c69755a{display:block;font:600 30px/1.1 var(--display);letter-spacing:-.065em}
-.c69755a>span{display:inline-block}
-.c69755a small{margin-left:5px;color:var(--quiet);font:500 13px/1 var(--body);letter-spacing:-.02em}
-.cadf57e{display:block;margin-top:4px;color:var(--quiet);font-size:10px}
-.cbbc8f8{width:100%;min-height:48px;justify-content:space-between;padding:12px 16px;font-size:13px}
-.cbbc8f8 .c523633{width:18px;height:18px}
-.c2eb524{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:11px;color:var(--quiet);font-size:9px;line-height:1.5}
-.c2eb524 .c523633{width:12px;height:12px;color:var(--accent)}
-.c60fecc{padding-block:28px 32px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.c25c664{display:flex;align-items:baseline;justify-content:space-between;gap:10px 24px;margin-bottom:22px}
-.c25c664 h2{font-size:17px;font-weight:500;letter-spacing:-.035em}
-.c25c664 p{color:var(--quiet);font-size:11px}
-.c63d18e{display:block;width:100%;border-collapse:collapse;text-align:left}
-.c63d18e tbody{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 0}
-.c63d18e tr{display:flex;min-width:0;flex-direction:column;gap:7px;padding:0 24px;border-left:1px solid var(--line)}
-.c63d18e tr:nth-child(3n + 1){padding-left:0;border-left:0}
-.c63d18e th{color:var(--quiet);font-size:10px;font-weight:400;line-height:1.5}
-.c63d18e td{max-width:34ch;color:var(--read);font:500 14px/1.55 var(--display);letter-spacing:-.025em}
-.c8f96bc,.c372a48,.ce1d0ac{display:grid;grid-template-columns:minmax(180px,.55fr) minmax(0,1.45fr);align-items:start;gap:clamp(28px,6vw,92px)}
-.c8f96bc{padding-block:70px 64px}
-.cb55f09{position:sticky;top:32px}
-.c680e7b{display:flex;align-items:center;gap:9px;margin-bottom:18px;color:var(--quiet);font-size:11px}
-.c680e7b::before{content:"";width:24px;height:1px;background:var(--accent)}
-.cb55f09 h2{max-width:9ch;font:500 clamp(29px,3.1vw,42px)/1.15 var(--display);letter-spacing:-.055em}
-.cb55f09>p{max-width:24ch;margin-top:16px;color:var(--quiet);font-size:13px;line-height:1.8}
-.ca5366d{display:grid;gap:1px;max-width:220px;margin-top:28px;border-top:1px solid var(--line)}
-.ca5366d a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px;border-bottom:1px solid var(--line);color:var(--quiet);font-size:11px;text-decoration:none;transition:color .2s}
-.ca5366d a::after{content:"\2197";color:var(--accent);font-size:16px}
-.c591f66,.c59a562{min-width:0;width:100%;max-width:70ch;justify-self:end}
-.c86d4ea{padding-block:33px 35px;border-bottom:1px solid var(--line)}
-.c86d4ea:first-child{padding-top:0}
-.c86d4ea:last-child{padding-bottom:0;border-bottom:0}
-.c5fbca8{max-width:32ch;margin-bottom:19px;color:var(--text);font:500 clamp(25px,2.5vw,33px)/1.22 var(--display);letter-spacing:-.045em;text-wrap:pretty}
-.cee3892{max-width:69ch;color:var(--read);font-size:15px;line-height:1.9;overflow-wrap:anywhere}
-.cee3892 p{margin-block:0 18px}
-.cee3892 >:last-child{margin-bottom:0}
-.cee3892 h3{margin-block:26px 10px;color:var(--text);font-size:18px;font-weight:600;line-height:1.4;letter-spacing:-.03em}
-.cee3892 strong,.c7c7477 strong{color:var(--text);font-weight:600}
-.cee3892 a,.c7c7477 a{color:var(--text);text-decoration-color:color-mix(in srgb,var(--accent) 60%,transparent);text-decoration-thickness:1px}
-.cee3892 a:hover,.c7c7477 a:hover{color:var(--accent)}
-.cee3892 ul,.cee3892 ol,.c7c7477 ul,.c7c7477 ol{margin-block:18px;padding-left:22px}
-.cee3892 li,.c7c7477 li{margin-block:10px;padding-left:5px}
-.cee3892 li::marker,.c7c7477 li::marker{color:var(--accent)}
-.cee3892 table{width:100%;max-width:100%;margin-block:24px;border:1px solid var(--line);border-collapse:separate;border-spacing:0;border-radius:var(--card-radius);background:var(--surface);table-layout:fixed;overflow:hidden;font-size:12px;line-height:1.7;text-align:left}
-.cee3892 th,.cee3892 td{padding:13px 15px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
-.cee3892 th{background:var(--wash);color:var(--text);font-size:11px;font-weight:600}
-.cee3892 td+td,.cee3892 th+th{border-left:1px solid var(--line-soft)}
-.cee3892 tbody tr:last-child td{border-bottom:0}
-.c372a48{padding:45px 0 55px;border-top:1px solid var(--line)}
-.c297175 h2{max-width:10ch;font-size:clamp(30px,3.3vw,44px);font-weight:500;line-height:1.13;letter-spacing:-.055em}
-.c297175 p{max-width:23ch;margin-top:15px;color:var(--quiet);font-size:13px;line-height:1.8}
-.ccbc07b{border-bottom:1px solid var(--line)}
-.ccbc07b:first-child{border-top:1px solid var(--line)}
-.c639e3e{position:relative;padding:20px 48px 20px 0;list-style:none;color:var(--text);font:500 15px/1.6 var(--display);letter-spacing:-.018em;cursor:pointer}
-.c639e3e::-webkit-details-marker{display:none}
-.c639e3e::after{position:absolute;top:20px;right:3px;display:grid;place-items:center;width:25px;height:25px;border:1px solid var(--line);border-radius:50%;content:"+";color:var(--quiet);font:400 18px/1 var(--body);transition:color .2s,background .2s,transform .2s}
-.c639e3e:hover{color:var(--accent)}
-.c639e3e:focus-visible{outline-offset:1px}
-.ccbc07b[open]{border-bottom-color:color-mix(in srgb,var(--accent) 40%,var(--bg))}
-.ccbc07b[open] .c639e3e{color:var(--accent)}
-.ccbc07b[open] .c639e3e::after{content:"\2212";background:var(--accent);border-color:var(--accent);color:var(--accent-ink);transform:rotate(180deg)}
-.c7c7477{max-width:67ch;padding:0 36px 24px 0;color:var(--read);font-size:14px;line-height:1.9;overflow-wrap:anywhere}
-.c7c7477 p{margin-bottom:14px}
-.c7c7477 >:last-child{margin-bottom:0}
-.ce1d0ac{padding-block:29px 42px;border-top:1px solid var(--line)}
-.ce1d0ac h2{font-size:17px;font-weight:500;letter-spacing:-.025em}
-.ce1d0ac>div{min-width:0}
-.cb8d4e3{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px;margin:0;padding:0;list-style:none}
-.cb8d4e3 li{min-width:0;border-bottom:1px solid var(--line)}
-.ca85948{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:11px 0;color:var(--quiet);font-size:11px;text-decoration:none;overflow-wrap:anywhere;transition:color .2s}
-.ca85948::after{flex:none;content:"\2197";color:var(--accent)}
-.ca85948:hover{color:var(--text)}
-.c0f5a88{border-top:1px solid var(--line)}
-.c7f741d{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;min-height:90px;padding-block:22px;color:var(--quiet);font-size:10px}
-.c61905e{color:var(--text);font:600 16px/1 var(--display);letter-spacing:-.05em}
-.ccae23b{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
-.ccae23b .c523633{width:14px;height:14px}
-.ccae23b:hover{color:var(--accent)}
-@media (hover:hover){.c97fef1:hover{z-index:1;transform:translateY(-4px);border-color:var(--accent)}
-}
-@media (max-width:899px){.cf24a4d{grid-template-columns:minmax(0,1fr);gap:30px;padding-block:28px 36px}
-.ccf0fdf{max-width:640px;padding-top:0}
-h1{max-width:12ch;font-size:clamp(62px,10vw,86px)}
-.ccfb4c9{max-width:58ch}
-.c92e739{margin-top:24px}
-.c9e8ee8{width:100%;max-width:650px;justify-self:center}
-.cd4496f{grid-template-rows:repeat(2,150px)}
-.c8f96bc,.c372a48,.ce1d0ac{grid-template-columns:minmax(0,1fr);gap:30px}
-.c8f96bc{padding-block:44px}
-.cb55f09{position:static}
-.cb55f09 h2,.c297175 h2{max-width:100%}
-.cb55f09>p,.c297175 p{max-width:45ch}
-.ca5366d{display:flex;flex-wrap:wrap;gap:24px;max-width:none;margin-top:18px;border-top:0}
-.ca5366d a{gap:20px}
-.c591f66,.c59a562{justify-self:start;max-width:70ch}
-.c86d4ea:first-child{padding-top:28px;border-top:1px solid var(--line)}
-.c372a48{padding-block:32px 40px}
-.ce1d0ac{gap:14px}
-}
-@media (max-width:560px){.cf32190{min-height:64px;gap:16px}
-.cbd40be>a:not(.cee9959){display:none}
-h1{margin-left:-2px;font-size:clamp(51px,12vw,67px);letter-spacing:-.065em}
-.ccfb4c9{font-size:14px;line-height:1.85}
-.c92e739{width:100%;justify-content:space-between;gap:8px;padding-top:17px}
-.c92e739 li{gap:6px;font-size:10px}
-.c92e739 li+li::before{margin-right:2px}
-.c9e8ee8{padding:15px;border-radius:clamp(12px,var(--radius),22px)}
-.cd4496f{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;gap:10px}
-.c97fef1:first-child{grid-column:span 2;grid-row:auto}
-.c1d7de7{height:105px;flex:none}
-.c97fef1:first-child .c1d7de7{height:155px}
-.c7c69ce{padding:8px 5px 5px}
-.c97fef1:first-child .c7c69ce{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 12px}
-.c97fef1:first-child .c5e9ed1{gap:10px}
-.c60fecc{padding-block:24px}
-.c25c664{display:block;margin-bottom:22px}
-.c25c664 p{margin-top:5px}
-.c63d18e tbody{grid-template-columns:repeat(2,minmax(0,1fr));gap:23px 0}
-.c63d18e tr,.c63d18e tr:nth-child(3n + 1){padding:0 15px;border-left:1px solid var(--line)}
-.c63d18e tr:nth-child(2n + 1){padding-left:0;border-left:0}
-.c63d18e tr:nth-child(even){padding-right:0}
-.c63d18e td{font-size:12px}
-.cee3892{font-size:14px}
-.cee3892 th,.cee3892 td{padding:10px 8px;font-size:10px}
-.c639e3e{font-size:14px;padding-right:39px}
-.c7c7477{padding-right:8px;font-size:13px}
-.cb8d4e3{grid-template-columns:minmax(0,1fr)}
-}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}
-*,*::before,*::after{animation:none !important;transition:none !important}
-.cee9959:hover,.c97fef1:hover,.c97fef1[aria-pressed="true"]{transform:none}
-}
+body{margin:0;background:radial-gradient(ellipse at 50% 0,color-mix(in srgb,var(--accent) 6%,transparent),transparent 48%),var(--bg);color:var(--text);font:400 14px/1.6 var(--body),sans-serif;-webkit-font-smoothing:antialiased}
+button,input{font:inherit}button,a,label,summary{-webkit-tap-highlight-color:transparent}
+button{color:inherit}a{color:inherit;text-underline-offset:4px}button,a,input,summary{touch-action:manipulation}
+button:disabled{cursor:default}svg{display:block;flex:none}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:var(--display),sans-serif}
+h1,h2,h3,p,li,th,td,summary{overflow-wrap:anywhere}::selection{background:var(--accent);color:var(--accent-ink)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:4px}[hidden]{display:none!important}
+.cb5089d{width:min(1280px,calc(100% - 32px));margin-inline:auto}.c73dd6f{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.c638cdc{position:absolute;top:8px;left:16px;z-index:20;transform:translateY(-160%);padding:12px;background:var(--accent);color:var(--accent-ink);border-radius:8px}.c638cdc:focus{transform:none}
+.c523633{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.c0a212b{border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg) 88%,transparent)}
+.c8337ce{min-height:76px;display:flex;align-items:center;gap:32px}.c4a0333{display:flex;align-items:center;gap:11px;font:750 21px/1 var(--display),sans-serif;text-decoration:none;letter-spacing:-.8px}.ce4477a{color:var(--accent)}
+.cf6ae26{display:flex;align-items:center;gap:27px;margin-left:auto}.cf6ae26 a{font-size:12px;color:var(--quiet);text-decoration:none}.cf6ae26 a:hover,.cf6ae26 a[aria-current]{color:var(--text)}
+.cda96dd{display:flex;align-items:center;gap:10px}.cc7f407{display:flex;align-items:center;gap:9px;min-height:39px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;text-decoration:none;font-size:11px;font-weight:600;background:var(--surface)}
+.c9fd6c1{width:6px;height:6px;border-radius:50%;background:var(--positive);box-shadow:0 0 0 3px color-mix(in srgb,var(--positive) 9%,transparent);flex:none}.cc7f407 .cb8af06{color:var(--quiet);font-size:10px;font-weight:400}
+.cee9959{display:inline-flex;align-items:center;justify-content:center;gap:22px;min-height:44px;padding:11px 19px;border:1px solid color-mix(in srgb,var(--accent) 70%,var(--text));border-radius:8px;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-size:13px;font-weight:750;transition:background .2s,transform .2s,box-shadow .2s}.cee9959:hover{background:color-mix(in srgb,var(--accent) 84%,var(--text));box-shadow:0 5px 22px color-mix(in srgb,var(--accent) 15%,transparent);transform:translateY(-1px)}.cda96dd .cee9959{min-height:39px;padding:8px 14px;font-size:12px;gap:18px}
+.c03b5f0{margin-top:25px;margin-bottom:54px;border:1px solid var(--line);border-radius:var(--round);background:linear-gradient(120deg,color-mix(in srgb,var(--text) 2%,var(--surface)),var(--surface) 60%);box-shadow:0 24px 70px -30px var(--shadow),0 1px 0 color-mix(in srgb,var(--text) 4%,transparent) inset}
+.c6db24b{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 25px;border-bottom:1px solid var(--line);font-size:11px;color:var(--quiet)}.c3fdceb{display:flex;align-items:center;gap:9px}.c3fdceb strong{color:var(--text);font-weight:550}.c8fd38d{color:var(--muted)}.c3af8e3{display:flex;align-items:center;gap:7px}.c3af8e3 .c523633{width:13px;height:13px;color:var(--accent)}
+.ca513f0{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:26px 25px 22px}.c9f1e55{min-width:0;flex:1}h1{font-size:clamp(29px,3vw,40px);font-weight:650;line-height:1.13;letter-spacing:-1.8px;text-wrap:balance}h1 em{color:var(--accent);font-style:normal}.ccfb4c9{max-width:62ch;margin-top:10px;color:var(--quiet);font-size:12px;line-height:1.7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.c30778f{display:flex;align-items:center;gap:9px;margin-bottom:12px;font-size:10px;color:var(--quiet)}.cce4784{display:flex;align-items:center;gap:5px;color:var(--positive)}.c30778f .c523633{width:12px;height:12px}.c30778f b{font-weight:550;color:var(--text)}.c30778f .c0d7db3{color:var(--muted)}
+.ca73ce3{display:grid;grid-template-columns:1.25fr .7fr 1fr 1fr;flex:1.1;gap:8px;margin:0}.c01fc87{min-width:0;padding:14px 13px;border:1px solid var(--line);border-radius:var(--card-round);background:color-mix(in srgb,var(--bg) 38%,var(--surface))}.c01fc87 dt{font-size:10px;color:var(--quiet);white-space:nowrap}.c01fc87 dd{margin:7px 0 0;font:650 22px/1.25 var(--display),sans-serif;letter-spacing:-.8px;font-variant-numeric:tabular-nums;white-space:nowrap}.c01fc87 dd small{font-size:10px;letter-spacing:0;font-weight:450}.cf4f0f3{display:block;margin-top:5px;color:var(--quiet);font:400 9px/1.6 var(--body),sans-serif;letter-spacing:0;white-space:nowrap}.c20f09d dd{color:var(--positive)}.cc75c1c{width:72px;height:17px;margin-top:4px;fill:none;stroke:var(--positive);stroke-width:1.7}
+.c242cfc{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 25px 0;border-top:1px solid var(--line)}.c242cfc h2{font-size:15px;letter-spacing:-.3px;font-weight:650}.cb15717{display:inline-grid;place-items:center;min-width:23px;height:21px;margin-left:7px;border:1px solid var(--line);border-radius:6px;font:500 10px/1 var(--body),sans-serif;color:var(--quiet);vertical-align:2px}.c613b32{display:flex;align-items:center;gap:7px;color:var(--quiet);font-size:10px}.c613b32 .c9fd6c1{width:5px;height:5px}
+.c65ecfa{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:14px 25px 19px}.c0f3260,.c46e49b{display:flex;align-items:center;gap:4px}.c0f3260{padding:3px;background:var(--bg);border:1px solid var(--line);border-radius:8px}.c2153b5{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:34px;padding:6px 12px;border:1px solid transparent;border-radius:5px;background:transparent;color:var(--quiet);font-size:11px;cursor:pointer;white-space:nowrap}.c2153b5[aria-pressed="true"]{background:var(--soft);color:var(--text);border-color:var(--line);box-shadow:0 2px 4px var(--shadow)}.c2153b5:hover:not(:disabled){color:var(--text)}.c25c975{font-size:9px;opacity:.75}.c46e49b{margin-left:auto}.c46e49b .c2153b5[aria-pressed="true"]{background:transparent;box-shadow:none}.c2153b5 .c523633{width:13px;height:13px}.c3beb14{display:flex;align-items:center;gap:8px;min-height:40px;padding-left:10px;color:var(--text);font-size:11px;cursor:pointer;white-space:nowrap}.c3beb14 input{width:15px;height:15px;margin:0;accent-color:var(--accent);cursor:inherit}.c3beb14:has(:disabled){cursor:default}
+.ce4ad33{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;padding:0 25px 25px}.c97fef1{position:relative;min-width:0;border:1px solid var(--line);border-radius:var(--card-round);background:color-mix(in srgb,var(--bg) 30%,var(--surface));box-shadow:0 5px 12px -5px var(--shadow);transition:transform .2s,border-color .2s,box-shadow .2s}.c97fef1:has(input:checked){border-color:color-mix(in srgb,var(--accent) 52%,var(--surface));box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 11%,transparent),0 7px 16px -7px var(--shadow);transform:translateY(-1px)}.c97fef1:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:4px}.c3bc76a{display:block;cursor:pointer}.c3bc76a:has(:disabled){cursor:default}.ca53da9{position:relative;margin:6px;overflow:hidden;border-radius:max(4px,calc(var(--card-round) - 5px));aspect-ratio:1.22}.cbab927{width:100%;height:100%;image-rendering:pixelated;shape-rendering:crispEdges}.cf1eec2{position:absolute;right:9px;top:9px;display:grid;place-items:center;width:22px;height:22px;border:1px solid color-mix(in srgb,var(--text) 40%,var(--surface));border-radius:6px;background:color-mix(in srgb,var(--bg) 75%,transparent);color:var(--accent-ink);transition:background .18s}.cf1eec2 .c523633{width:14px;height:14px;stroke-width:2.4;opacity:0;transform:scale(.5);transition:opacity .18s,transform .2s}.c97fef1:has(input:checked) .cf1eec2{background:var(--accent);border-color:var(--accent)}.c97fef1:has(input:checked) .cf1eec2 .c523633{opacity:1;transform:scale(1)}
+.c2d2a14{position:absolute;bottom:8px;left:50%;transform:translate(-50%,5px);padding:5px 10px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--text);font-size:9px;white-space:nowrap;opacity:0;transition:transform .2s,opacity .2s;pointer-events:none}.c97fef1:focus-within .c2d2a14{opacity:1;transform:translate(-50%,0)}
+.c794d2f{padding:5px 12px 12px}.c3fa72c{display:flex;justify-content:space-between;align-items:center;gap:8px}.c3fa72c h3{font-size:16px;font-weight:650;letter-spacing:-.4px}.cddc0af{padding:2px 6px;border:1px solid var(--line);border-radius:4px;color:var(--quiet);font-size:8px;letter-spacing:.1px}.cddc0af.c0b4376{color:var(--accent);background:color-mix(in srgb,var(--accent) 7%,var(--surface));border-color:color-mix(in srgb,var(--accent) 18%,var(--surface))}.c1972ca{display:flex;align-items:center;gap:4px;margin-top:2px;font-size:10px;color:var(--quiet)}.c1972ca .c523633{width:11px;height:11px;color:var(--accent)}.ca3fd14{display:flex;justify-content:space-between;align-items:end;gap:5px;margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}.cf3ce40{display:block;color:var(--quiet);font-size:9px;margin-bottom:3px}.ca3fd14 strong{font-size:14px;font-weight:650;letter-spacing:-.2px}.ca3fd14 strong small{font-size:10px;font-weight:500}.c8364e1{padding-bottom:2px;font-size:10px;color:var(--quiet)}
+.ca3a2e9{grid-column:1/-1;padding:65px 16px;text-align:center;color:var(--quiet)}.ca3a2e9 h3{font-size:20px;color:var(--text);margin-bottom:7px}.ca3a2e9 .c2153b5{margin-top:18px;border-color:var(--line);color:var(--accent)}
+.c2c403b{position:sticky;bottom:12px;z-index:5;display:flex;align-items:center;gap:24px;margin:0 12px 12px;padding:17px 20px;border:1px solid color-mix(in srgb,var(--accent) 28%,var(--surface));border-radius:var(--card-round);background:linear-gradient(110deg,color-mix(in srgb,var(--accent) 9%,var(--surface)),color-mix(in srgb,var(--bg) 40%,var(--surface)) 65%);box-shadow:0 -8px 30px color-mix(in srgb,var(--bg) 40%,transparent),0 12px 26px -12px var(--shadow)}.c63a642{display:flex;align-items:center;gap:12px;min-width:0}.c4cf854{display:grid;place-items:center;width:40px;height:40px;border:1px solid color-mix(in srgb,var(--accent) 20%,var(--surface));border-radius:9px;background:color-mix(in srgb,var(--accent) 9%,var(--surface));color:var(--accent)}.c63a642 strong{display:block;font-size:13px;font-weight:600}.c63a642 small{display:block;margin-top:2px;color:var(--quiet);font-size:10px}.c70783c{margin-left:auto;font-variant-numeric:tabular-nums;text-align:right}.c9d0091{color:var(--quiet);font-size:9px}.c0031ce{display:flex;align-items:baseline;justify-content:flex-end;gap:7px;font:650 29px/1.25 var(--display),sans-serif;letter-spacing:-1px}.c0031ce small{font:500 12px/1 var(--body),sans-serif;letter-spacing:0}.caa4d73{margin-left:7px;color:var(--quiet);font:400 10px/1 var(--body),sans-serif;letter-spacing:0}.c05f438{padding-left:22px;border-left:1px solid var(--line);font-size:11px;white-space:nowrap}.c05f438 strong{display:flex;align-items:center;gap:5px;color:var(--positive);font-weight:500}.c05f438 .c523633{width:13px;height:13px}.c05f438 small{display:block;margin-top:4px;color:var(--quiet);font-size:9px}.ca3e697{min-width:192px;min-height:51px;justify-content:space-between;font-size:13px;box-shadow:0 4px 16px color-mix(in srgb,var(--accent) 13%,transparent)}
+.c89c323{display:none}.ce24387{display:flex;justify-content:center;align-items:center;gap:16px;padding:1px 16px 15px;font-size:10px;color:var(--quiet)}.ce24387 span{display:flex;align-items:center;gap:5px}.ce24387 .c523633{width:12px;height:12px;color:var(--accent)}
+.c532d35{max-width:1120px;margin-inline:auto}.c763367{display:flex;align-items:baseline;flex-wrap:wrap;gap:7px;font-size:10px;color:var(--muted);margin-bottom:22px}.c763367 a{color:var(--quiet);text-decoration:none}.c763367 a:hover{color:var(--accent)}.c763367 span:last-child{color:var(--quiet)}
+.c60fecc{padding:25px 28px;border:1px solid var(--line);border-radius:var(--round);background:var(--surface)}.c808861{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:24px}.c808861 h2{font-size:17px;font-weight:600;letter-spacing:-.4px}.c808861 p{font-size:11px;color:var(--quiet)}.c63d18e{display:block;width:100%;border-collapse:collapse;text-align:left}.c63d18e tbody{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:23px}.c63d18e tr{display:flex;flex-direction:column;gap:7px;min-width:0;padding-left:15px;border-left:2px solid color-mix(in srgb,var(--accent) 25%,var(--surface))}.c63d18e th{font-size:10px;color:var(--quiet);font-weight:400}.c63d18e td{font-size:12px;line-height:1.7}
+.c7c31fa{display:grid;grid-template-columns:240px minmax(0,1fr);gap:70px;padding:64px 0}.cb55f09{align-self:start;position:sticky;top:28px}.cb55f09 h2,.cb44214{font-size:30px;font-weight:550;line-height:1.2;letter-spacing:-1px}.cb55f09 p{margin:14px 0 23px;color:var(--quiet);font-size:12px;line-height:1.8}.cb55f09 a{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);color:var(--quiet);font-size:11px;text-decoration:none}.cb55f09 a span{color:var(--accent)}.cb55f09 a:hover{color:var(--text)}.c591f66{min-width:0}.c86d4ea{padding:29px 0;border-bottom:1px solid var(--line)}.c86d4ea:first-child{padding-top:0}.c86d4ea:last-child{border:0;padding-bottom:0}.c5fbca8{margin-bottom:16px;font-size:25px;font-weight:550;line-height:1.3;letter-spacing:-.7px;text-wrap:pretty}.cee3892,.c7c7477{color:var(--quiet);font-size:14px;line-height:1.9;overflow-wrap:anywhere}.cee3892 p,.c7c7477 p{margin:0 0 15px}.cee3892 h3{margin:24px 0 10px;font-size:17px;line-height:1.5;color:var(--text);font-weight:600}.cee3892 strong,.c7c7477 strong{color:var(--text);font-weight:550}.cee3892 a,.c7c7477 a{color:var(--text);text-decoration-color:var(--accent)}.cee3892 a:hover,.c7c7477 a:hover{color:var(--accent)}.cee3892 ul,.cee3892 ol,.c7c7477 ul,.c7c7477 ol{padding-left:20px;margin:18px 0}.cee3892 li,.c7c7477 li{padding-left:4px;margin:8px 0}.cee3892 li::marker{color:var(--accent)}.cee3892 table{width:100%;table-layout:fixed;border-collapse:collapse;margin:22px 0;background:var(--surface);font-size:12px;text-align:left}.cee3892 caption{padding:10px;text-align:left;color:var(--text)}.cee3892 th,.cee3892 td{padding:12px;border:1px solid var(--line);vertical-align:top}.cee3892 th{color:var(--text);background:var(--soft);font-weight:500}.cee3892>:last-child,.c7c7477>:last-child{margin-bottom:0}
+.c372a48,.ce1d0ac{display:grid;grid-template-columns:240px minmax(0,1fr);gap:70px;padding:35px 0 45px;border-top:1px solid var(--line)}.c699c77{margin-top:12px;font-size:12px;color:var(--quiet)}.ccbc07b{border-bottom:1px solid var(--line)}.c639e3e{position:relative;padding:19px 35px 19px 0;cursor:pointer;list-style:none;font-size:14px;font-weight:550;line-height:1.6}.c639e3e::-webkit-details-marker{display:none}.c639e3e::after{position:absolute;right:2px;top:20px;content:"+";font-size:18px;line-height:1;color:var(--accent)}.ccbc07b[open] .c639e3e::after{content:"−"}.ccbc07b[open] .c639e3e,.c639e3e:hover{color:var(--accent)}.c7c7477{padding:0 25px 21px 0;font-size:13px}.ce1d0ac{padding-block:27px 38px}.ce1d0ac h2{font-size:16px;font-weight:550}.cb8d4e3{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 25px;list-style:none;margin:0;padding:0}.cb8d4e3 li{min-width:0;border-bottom:1px solid var(--line)}.ca85948{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0;font-size:11px;color:var(--quiet);text-decoration:none;overflow-wrap:anywhere}.ca85948::after{content:"↗";color:var(--accent);flex:none}.ca85948:hover{color:var(--text)}
+.c0f5a88{border-top:1px solid var(--line)}.c7f741d{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;min-height:83px;padding-block:20px;font-size:10px;color:var(--quiet)}.c61905e{font:650 16px/1 var(--display),sans-serif;color:var(--text);letter-spacing:-.5px}.ccae23b{text-decoration:none}.ccae23b span{margin-left:8px;color:var(--accent)}
+@media(hover:hover){.c97fef1:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 12px 24px -12px var(--shadow)}.c97fef1:hover .c2d2a14{opacity:1;transform:translate(-50%,0)}}
+@media(min-width:1500px){.cb5089d{width:min(1360px,calc(100% - 64px))}.ca53da9{aspect-ratio:1.25}}
+@media(max-width:1100px){.ca513f0{flex-wrap:wrap;gap:22px}.c9f1e55{flex-basis:100%}.ca73ce3{flex-basis:100%}.c01fc87{padding:12px 15px}.c01fc87 dd{font-size:24px}.c8337ce{gap:20px}.cf6ae26{gap:18px}.cc7f407 .cb8af06{display:none}.ce4ad33{gap:12px}.c05f438,.c2b686f{display:none}.c89c323{display:inline}.c7c31fa,.c372a48,.ce1d0ac{gap:40px;grid-template-columns:200px minmax(0,1fr)}.c532d35{padding-inline:10px}}
+@media(max-width:900px){.ce4ad33{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.c8337ce{min-height:68px;flex-wrap:wrap;gap:0;padding-block:13px}.c4a0333{font-size:19px}.ce4477a{width:25px;height:25px}.cda96dd{margin-left:auto;gap:7px}.cf6ae26{order:3;justify-content:center;gap:28px;width:100%;margin-top:14px;padding-top:11px;border-top:1px solid var(--line)}.cc7f407{font-size:10px;padding:7px 9px;min-height:35px}.cda96dd .cee9959{min-height:35px;font-size:11px;gap:8px;padding:7px 11px}.c03b5f0{margin-top:16px;margin-bottom:35px}.c6db24b{padding:12px 16px}.ca513f0{padding:22px 16px}.c242cfc{padding:16px 16px 0}.c65ecfa{padding:13px 16px 17px;gap:8px}.c46e49b{order:3;margin-left:0;flex-basis:100%;gap:7px}.c46e49b .c2153b5{border-color:var(--line);font-size:10px;min-height:32px}.c46e49b .c2153b5[aria-pressed="true"]{border-color:color-mix(in srgb,var(--accent) 35%,var(--surface));color:var(--text)}.c3beb14{margin-left:auto;padding-left:0}.ce4ad33{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 16px 20px;gap:12px}.ca53da9{aspect-ratio:1.13}.ca73ce3{gap:6px}.c01fc87{padding:11px 9px}.c01fc87 dd{font-size:21px}.c01fc87 dt{font-size:9px}.cf4f0f3{font-size:8px}.c2c403b{gap:12px;flex-wrap:wrap;margin-inline:8px;padding:13px 14px;bottom:8px}.c63a642{gap:8px}.c63a642 strong{font-size:12px}.c4cf854{width:33px;height:33px}.c0031ce{font-size:26px}.caa4d73{display:block;margin:3px 0 0;text-align:right}.ca3e697{width:100%;min-height:44px}.ce24387{gap:11px;font-size:9px}.c532d35{padding-inline:0}.c60fecc{padding:22px 20px}.c808861{display:block}.c808861 p{margin-top:5px}.c63d18e tbody{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.c7c31fa,.c372a48,.ce1d0ac{grid-template-columns:minmax(0,1fr);gap:26px}.c7c31fa{padding:38px 0}.cb55f09{position:static}.cb55f09 h2{font-size:28px}.cb55f09 p{max-width:48ch;margin-bottom:8px}.cb55f09 nav{display:flex;gap:25px}.cb55f09 a{gap:15px}.c5fbca8{font-size:23px}.c372a48{padding:30px 0}.cb44214{font-size:28px}.ce1d0ac{gap:13px}}
+@media(max-width:420px){.cc7f407 .c9fd6c1{width:5px;height:5px}.cc7f407{gap:6px}.cda96dd .cee9959{gap:6px;padding-inline:9px}.c4a0333{gap:7px;font-size:17px}.ce4477a{width:21px;height:21px}.c3af8e3{font-size:9px}.c3fdceb{gap:6px;font-size:10px}h1{font-size:29px;letter-spacing:-1.4px}.ca73ce3{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}.c01fc87{padding:9px 7px}.c01fc87 dd{font-size:18px;margin-top:3px;letter-spacing:-.6px}.c01fc87 dd small{font-size:8px}.cf4f0f3,.cc75c1c{display:none}.c01fc87 dt{font-size:8px;white-space:normal;min-height:25px}.c242cfc h2{font-size:14px}.c613b32{font-size:9px}.c2153b5{padding-inline:9px;font-size:10px}.c3beb14{font-size:10px;gap:6px}.ce4ad33{gap:10px;padding-inline:12px}.ca53da9{margin:4px;aspect-ratio:1}.c794d2f{padding:5px 8px 10px}.c3fa72c{gap:3px}.c3fa72c h3{font-size:14px}.cddc0af{font-size:7px;padding:2px 4px}.ca3fd14{flex-wrap:wrap;gap:1px;margin-top:9px;padding-top:8px}.ca3fd14 strong{font-size:13px}.c8364e1{font-size:9px}.cf1eec2{width:20px;height:20px;right:6px;top:6px}.c1972ca{font-size:9px}.c63a642 small{font-size:9px}.c4cf854{display:none}.c0031ce{font-size:24px}.ce24387{flex-wrap:wrap;gap:5px 12px}.cb8d4e3{grid-template-columns:1fr}.cee3892 th,.cee3892 td{padding:8px;font-size:11px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
   </style>
 </head>
 <body id="top">
-  <a class="c638cdc" href="#content">Skip to content</a>
-  <header class="cf3fef9">
-    <nav class="cf32190 cb5089d" aria-label="Main navigation">
-      <a class="c4a0333" href="#top" aria-label="Website, back to top">
-        <svg class="c976822" width="29" height="29" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M8 2h16l7 14-7 14H8L1 16 8 2Z" stroke="currentColor" stroke-width="1.4"/><path d="m10 9 12 7-12 7V9Z" fill="currentColor"/></svg>
-        Website
-      </a>
-      <div class="cbd40be">
-        <a href="#guide">How it works</a>
-        <a href="#faq">Questions</a>
-        <a href="#sources">Sources</a>
-        <a class="cee9959" href="dashboard/">Sell <svg class="c523633" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a>
-      </div>
-    </nav>
+  <a class="c638cdc" href="#dashboard">Skip to your collection</a>
+  <header class="c0a212b">
+    <div class="cb5089d c8337ce">
+      <a class="c4a0333" href="#top" aria-label="Website home"><svg class="ce4477a" width="29" height="29" viewBox="0 0 29 29" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="11" height="11" rx="2"/><rect x="17" y="1" width="11" height="11" rx="2"/><rect x="1" y="17" width="11" height="11" rx="2"/><path d="m22.5 15 7 7-7 7-7-7z"/></svg>Website</a>
+      <nav class="cf6ae26" aria-label="Main navigation"><a href="#how-it-works">How it works</a><a href="#dashboard" aria-current="page">Dashboard</a><a href="#sources">Sources</a></nav>
+      <div class="cda96dd"><a class="cc7f407" href="dashboard/" aria-label="Connected wallet 0x7a3f…c21e"><span class="c9fd6c1" aria-hidden="true"></span><span>0x7a3f…c21e</span><span class="cb8af06">Connected</span></a><a class="cee9959" href="dashboard/">Sell NFTs <span aria-hidden="true">↗</span></a></div>
+    </div>
   </header>
-  <main id="content" class="cb5089d">
-    <div class="cf9a987"><nav class="c763367" aria-label="Breadcrumb"><a href="dashboard/">Home</a> <span>/</span> <span>NFT</span> <span>/</span> <span>Sell NFT Instantly</span></nav></div>
-    <section class="cf24a4d" aria-labelledby="hero-title">
-      <div class="ccf0fdf">
-        <p class="cb7ec29"><svg class="c523633" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-9 12h7l-1 8 10-13h-7l1-7Z"/></svg> Your collection, instantly liquid.</p>
-        <h1 id="hero-title">Sell NFT <em>Instantly</em>.</h1>
-        <p class="ccfb4c9">Sell NFT Instantly describes the moment a holder stops waiting on a listing and accepts the top live bid on a marketplace instead, trading some upside for cash in the wallet within seconds.</p>
-        <div class="c30fe4b">
-          <a class="cee9959" href="dashboard/">Sell all your NFTs <svg class="c523633" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
-          <p>Your entire collection.<strong>Out in two clicks.</strong></p>
-        </div>
-        <ol class="c92e739" aria-label="How instant selling works">
-          <li><svg class="c523633" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 7V4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h15V7H5a1 1 0 0 1 0-2m15 7h-5v4h5"/></svg>Connect</li>
-          <li><svg class="c523633" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="m8 12 3 3 5-6"/></svg>Select</li>
-          <li><svg class="c523633" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="m13 3-9 11h7l-1 7L20 9h-7V3Z"/></svg>Sell &amp; get paid</li>
-        </ol>
+  <main class="cb5089d">
+    <section class="c03b5f0" id="dashboard" aria-labelledby="dashboard-title">
+      <div class="c6db24b"><div class="c3fdceb"><svg class="c523633" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 7V4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h15V7H5a1 1 0 0 1 0-2m15 7h-5v4h5"/></svg><strong>Your wallet</strong><span class="c8fd38d">/</span><span>Instant sell</span></div><span class="c3af8e3"><svg class="c523633" width="13" height="13" viewBox="0 0 18 18" aria-hidden="true"><path d="m9 1 5 8-5 3-5-3 5-8Zm-5 11 5 5 5-5M9 1v11"/></svg>Ethereum</span></div>
+      <div class="ca513f0">
+        <div class="c9f1e55"><div class="c30778f" aria-label="Connect, pick, sell"><span class="cce4784"><svg class="c523633" width="12" height="12" viewBox="0 0 16 16" aria-hidden="true"><path d="m3 8 3 3 7-7"/></svg>Connected</span><span class="c0d7db3" aria-hidden="true">→</span><b>Pick your NFTs</b><span class="c0d7db3" aria-hidden="true">→</span><span>Sell instantly</span></div><h1 id="dashboard-title">Sell NFT <em>Instantly</em>.</h1><p class="ccfb4c9">Sell NFT Instantly describes the moment a holder stops waiting on a listing and accepts the top live bid on a marketplace instead, trading some upside for cash in the wallet within seconds.</p></div>
+        <dl class="ca73ce3" aria-label="Wallet overview"><div class="c01fc87"><dt>Portfolio value</dt><dd>3.84 <small>ETH</small><span class="cf4f0f3">~$9,792.00</span></dd></div><div class="c01fc87"><dt>Items</dt><dd>8<span class="cf4f0f3">Ready to sell</span></dd></div><div class="c01fc87"><dt>Best offer</dt><dd>0.72 <small>ETH</small><span class="cf4f0f3">~$1,836.00</span></dd></div><div class="c01fc87 c20f09d"><dt>24h change</dt><dd>+8.24<small>%</small><svg class="cc75c1c" width="72" height="17" viewBox="0 0 72 17" role="img" aria-label="Portfolio value trending up"><path d="m1 14 7-3 6 2 7-7 6 3 7-5 7 3 7-5 6 2 6-3 5 1 5-2"/></svg></dd></div></dl>
       </div>
-      <section class="c9e8ee8" aria-labelledby="panel-title">
-        <div class="cb3a57e">
-          <h2 id="panel-title">Instant sell</h2>
-          <span class="c286293">Best live offers</span>
-        </div>
-        <div class="ce8d7fe">
-          <span><svg class="c523633" width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg> Your collection</span>
-          <label class="c3beb14"><input id="select-all" type="checkbox" checked disabled aria-controls="nft-grid">Select all</label>
-        </div>
-        <div class="cd4496f" id="nft-grid" role="group" aria-label="Choose NFTs to sell">
-          <div class="c97fef1" role="button" tabindex="0" aria-pressed="true" aria-label="Artifact #1042, offer 0.42 ETH, approximately 1,071 dollars" data-offer="42">
-            <svg class="c1d7de7" width="180" height="220" viewBox="0 0 180 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-              <defs>
-                <radialGradient id="a1042-haze" cx="65%" cy="25%" r="80%"><stop class="c5ba937"/><stop offset="1" class="c57fb7b"/></radialGradient>
-                <linearGradient id="a1042-front" x1="0" y1="0" x2="1" y2=".85"><stop class="cba7eaa"/><stop offset=".48" class="cf19515"/><stop offset="1" class="c5ba937"/></linearGradient>
-                <linearGradient id="a1042-side" x1="0" y1="0" x2="1" y2="0"><stop class="c5ba937"/><stop offset="1" class="c57fb7b"/></linearGradient>
-                <linearGradient id="a1042-floor" x1="0" y1="0" x2="0" y2="1"><stop class="cf19515" stop-opacity=".3"/><stop offset="1" class="c57fb7b" stop-opacity="0"/></linearGradient>
-              </defs>
-              <path fill="url(#a1042-haze)" d="M0 0h180v220H0z"/>
-              <g class="c035500" opacity=".12" stroke-width=".6"><circle cx="95" cy="91" r="61"/><circle cx="95" cy="91" r="77"/><path d="M0 171h180M0 191h180M90 165l-80 55m80-55 80 55M90 165v55"/></g>
-              <ellipse cx="93" cy="176" rx="60" ry="11" class="c8d7fbc" opacity=".6"/>
-              <path d="m51 161 54 20 27-16-21 46-72-13Z" fill="url(#a1042-floor)"/>
-              <path d="M54 57 105 36l27 23-51 22Z" class="c0fe18a"/>
-              <path d="m54 57 51 21v96l-51-21Z" fill="url(#a1042-front)"/>
-              <path d="m105 78 27-19v95l-27 20Z" fill="url(#a1042-side)"/>
-              <path d="m54 57 51 21 27-19M105 78v96" class="c035500" opacity=".6" stroke-width=".7"/>
-              <path d="m64 79 30 12m-30-2 30 12m-30-2 30 12m-30-2 30 12m-30-2 30 12m-30-2 30 12" class="c035500" opacity=".36" stroke-width=".7"/>
-              <circle cx="137" cy="39" r="3" class="c0fe18a"/><path d="M25 32h8m-4-4v8M141 187h8m-4-4v8" class="c035500" opacity=".6"/>
-            </svg>
-            <span class="cf1eec2" aria-hidden="true"><svg class="c523633" width="11" height="11" viewBox="0 0 16 16"><path d="m4 8 3 3 5-6"/></svg></span>
-            <div class="c7c69ce"><span class="ce972cb">Artifact #1042</span><div class="c5e9ed1"><strong>0.42 ETH</strong><small>~$1,071</small></div></div>
-          </div>
-          <div class="c97fef1" role="button" tabindex="0" aria-pressed="true" aria-label="Artifact #2086, offer 0.35 ETH, approximately 892 dollars and 50 cents" data-offer="35">
-            <svg class="c1d7de7" width="180" height="90" viewBox="0 0 180 110" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-              <defs>
-                <linearGradient id="a2086-bg" x1="0" y1="0" x2="1" y2="1"><stop class="cba7eaa"/><stop offset="1" class="cf19515"/></linearGradient>
-                <linearGradient id="a2086-ring" x1="0" y1="0" x2="1" y2="1"><stop class="c35e5af"/><stop offset=".35" class="cf19515"/><stop offset=".7" class="c57fb7b"/><stop offset="1" class="cba7eaa"/></linearGradient>
-              </defs>
-              <path fill="url(#a2086-bg)" d="M0 0h180v110H0z"/>
-              <g class="c035500" opacity=".3" stroke-width=".6"><path d="M0 22h180M0 44h180M0 66h180M0 88h180M30 0v110M60 0v110M90 0v110M120 0v110M150 0v110"/></g>
-              <ellipse cx="90" cy="94" rx="41" ry="5" class="c96b86a" opacity=".25"/>
-              <g transform="translate(91 53) rotate(-29)"><ellipse rx="42" ry="26" fill="none" stroke="url(#a2086-ring)" stroke-width="18"/><ellipse rx="42" ry="26" fill="none" stroke="var(--art-pale)" stroke-width=".8" transform="translate(0 -7)" opacity=".65"/></g>
-              <circle cx="26" cy="22" r="3" class="c0fe18a"/>
-            </svg>
-            <span class="cf1eec2" aria-hidden="true"><svg class="c523633" width="11" height="11" viewBox="0 0 16 16"><path d="m4 8 3 3 5-6"/></svg></span>
-            <div class="c7c69ce"><span class="ce972cb">Artifact #2086</span><div class="c5e9ed1"><strong>0.35 ETH</strong><small>~$892.50</small></div></div>
-          </div>
-          <div class="c97fef1" role="button" tabindex="0" aria-pressed="true" aria-label="Artifact #0317, offer 0.28 ETH, approximately 714 dollars" data-offer="28">
-            <svg class="c1d7de7" width="180" height="90" viewBox="0 0 180 110" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-              <defs>
-                <radialGradient id="a0317-bg" cx="50%" cy="60%" r="70%"><stop class="c5ba937"/><stop offset="1" class="c57fb7b"/></radialGradient>
-                <linearGradient id="a0317-fold" x1="0" y1="0" x2="1" y2=".4"><stop class="c35e5af"/><stop offset=".5" class="cf19515"/><stop offset="1" class="c5ba937"/></linearGradient>
-              </defs>
-              <path fill="url(#a0317-bg)" d="M0 0h180v110H0z"/>
-              <circle cx="91" cy="55" r="42" class="c035500" stroke-width=".6" opacity=".22"/>
-              <path d="m46 73 32-53 57 18-35 57Z" class="c96b86a"/>
-              <path d="m46 73 45-25 9 47Z" class="c1a87ef"/>
-              <path d="m78 20 13 28 44-10Z" class="c0fe18a"/>
-              <path d="m91 48 9 47 35-57Z" fill="url(#a0317-fold)"/>
-              <path d="m46 73 32-53 13 28Z" fill="url(#a0317-fold)"/>
-              <path d="m78 20 13 28 9 47m-54-22 45-25 44-10" class="c035500" stroke-width=".65" opacity=".7"/>
-              <path d="M27 88h7m-3.5-3.5v7M143 19h6m-3-3v6" class="c035500" opacity=".6"/>
-            </svg>
-            <span class="cf1eec2" aria-hidden="true"><svg class="c523633" width="11" height="11" viewBox="0 0 16 16"><path d="m4 8 3 3 5-6"/></svg></span>
-            <div class="c7c69ce"><span class="ce972cb">Artifact #0317</span><div class="c5e9ed1"><strong>0.28 ETH</strong><small>~$714</small></div></div>
-          </div>
-          <div class="c97fef1" role="button" tabindex="0" aria-pressed="true" aria-label="Artifact #0891, offer 0.31 ETH, approximately 790 dollars and 50 cents" data-offer="31">
-            <svg class="c1d7de7" width="180" height="90" viewBox="0 0 180 110" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-              <defs>
-                <linearGradient id="a0891-bg" x1="0" y1="0" x2="1" y2="1"><stop class="c35e5af"/><stop offset="1" class="cba7eaa"/></linearGradient>
-                <radialGradient id="a0891-pearl" cx="30%" cy="21%" r="80%"><stop class="c35e5af"/><stop offset=".28" class="cf19515"/><stop offset=".7" class="c5ba937"/><stop offset="1" class="c57fb7b"/></radialGradient>
-              </defs>
-              <path fill="url(#a0891-bg)" d="M0 0h180v110H0z"/>
-              <g fill="none" stroke="var(--art-mid)" opacity=".15" stroke-width=".7"><path d="M-20 112Q27 9 107-8M-5 119Q37 8 124-12M10 120Q53 7 141-12M24 126Q66 14 156-8M40 127Q82 19 171-5"/></g>
-              <ellipse cx="91" cy="94" rx="43" ry="5" class="c96b86a" opacity=".2"/>
-              <path d="M52 59C41 39 62 16 85 19c19 3 22 19 36 23 31 9 25 44-2 47-21 3-20-12-37-9-22 4-24-10-30-21Z" fill="url(#a0891-pearl)"/>
-              <path d="M58 45c1-17 24-25 36-14" class="c035500" stroke-width="2" stroke-linecap="round" opacity=".65"/>
-              <circle cx="140" cy="24" r="3" class="c96b86a" opacity=".4"/>
-            </svg>
-            <span class="cf1eec2" aria-hidden="true"><svg class="c523633" width="11" height="11" viewBox="0 0 16 16"><path d="m4 8 3 3 5-6"/></svg></span>
-            <div class="c7c69ce"><span class="ce972cb">Artifact #0891</span><div class="c5e9ed1"><strong>0.31 ETH</strong><small>~$790.50</small></div></div>
-          </div>
-          <div class="c97fef1" role="button" tabindex="0" aria-pressed="true" aria-label="Artifact #1604, offer 0.26 ETH, approximately 663 dollars" data-offer="26">
-            <svg class="c1d7de7" width="180" height="90" viewBox="0 0 180 110" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-              <defs>
-                <radialGradient id="a1604-bg" cx="50%" cy="50%" r="75%"><stop class="c5ba937"/><stop offset="1" class="c57fb7b"/></radialGradient>
-                <linearGradient id="a1604-star" x1="0" y1="0" x2="1" y2="1"><stop class="c35e5af"/><stop offset=".45" class="cf19515"/><stop offset="1" class="c5ba937"/></linearGradient>
-              </defs>
-              <path fill="url(#a1604-bg)" d="M0 0h180v110H0z"/>
-              <g class="c035500" stroke-width=".6" opacity=".2"><circle cx="91" cy="55" r="45"/><ellipse cx="91" cy="55" rx="65" ry="24" transform="rotate(-25 91 55)"/><path d="M25 55h132M91 7v96"/></g>
-              <path d="m91 12 9 24 25-15-12 25 29 9-29 9 12 25-25-15-9 25-9-25-25 15 13-25-30-9 30-9-13-25 25 15Z" fill="url(#a1604-star)"/>
-              <path d="m91 12 0 43 34-34-34 34 51 0-51 0 34 34-34-34 0 44 0-44-34 34 34-34-51 0 51 0-34-34 34 34Z" class="c035500" stroke-width=".7" opacity=".7"/>
-              <circle cx="91" cy="55" r="9" class="c0fe18a"/>
-              <circle cx="145" cy="26" r="2" class="c1a87ef"/>
-            </svg>
-            <span class="cf1eec2" aria-hidden="true"><svg class="c523633" width="11" height="11" viewBox="0 0 16 16"><path d="m4 8 3 3 5-6"/></svg></span>
-            <div class="c7c69ce"><span class="ce972cb">Artifact #1604</span><div class="c5e9ed1"><strong>0.26 ETH</strong><small>~$663</small></div></div>
-          </div>
-        </div>
-        <div class="c8b487e">
-          <div class="c7e2095"><strong>Total instant offer</strong><span id="selection-count">5 selected</span></div>
-          <div class="c438dbe"><span class="c69755a"><span id="total-eth">1.62</span><small>ETH</small></span><span id="total-usd" class="cadf57e">~$4,131.00</span></div>
-        </div>
-        <a class="cee9959 cbbc8f8" href="dashboard/"><span>Sell <span id="sell-count">5</span> <span id="sell-noun">NFTs</span></span><svg class="c523633" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
-        <p class="c2eb524"><svg class="c523633" width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 7V4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h15V7H5a1 1 0 0 1 0-2m15 7h-5v4h5"/></svg> Paid instantly to your wallet</p>
-        <p id="offer-status" class="c73dd6f" role="status" aria-live="polite" aria-atomic="true">5 NFTs selected. Total instant offer: 1.62 ETH, approximately 4,131 dollars.</p>
-      </section>
+      <div class="c242cfc"><h2>Your collection <span class="cb15717">8</span></h2><span class="c613b32"><span class="c9fd6c1" aria-hidden="true"></span>Best aggregated offers</span></div>
+      <div class="c65ecfa">
+        <div class="c0f3260" role="group" aria-label="Filter collection"><button class="c2153b5" type="button" data-filter="all" aria-pressed="true" aria-controls="nft-grid" disabled>All items <span class="c25c975">8</span></button><button class="c2153b5" type="button" data-filter="selected" aria-pressed="false" aria-controls="nft-grid" disabled>Selected <span class="c25c975" id="filter-count">8</span></button></div>
+        <div class="c46e49b" role="group" aria-label="Sort collection"><button class="c2153b5" type="button" data-sort="offer" aria-pressed="true" aria-controls="nft-grid" disabled><svg class="c523633" width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3v10m-2-2 2 2 2-2M8 4h6M8 8h4M8 12h2"/></svg>Highest offer</button><button class="c2153b5" type="button" data-sort="recent" aria-pressed="false" aria-controls="nft-grid" disabled>Recently listed</button></div>
+        <label class="c3beb14"><input id="select-all" type="checkbox" checked disabled aria-controls="nft-grid">Select all</label>
+      </div>
+      <div class="ce4ad33" id="nft-grid">
+        <!-- Static portraits are snapshots of the seeded generator below. -->
+        <article class="c97fef1" data-token="1042" data-offer="72" data-listed="6">
+          <label class="c3bc76a"><input class="c59d912 c73dd6f" type="checkbox" checked disabled aria-label="Select NFT #1042, top offer 0.72 ETH">
+            <div class="ca53da9"><svg class="cbab927" width="272" height="272" viewBox="-2 -1 21 19" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Pixel character #1042"><rect x="-2" y="-1" width="21" height="19" fill="#d7aab7"/><path fill="#f5a86c" d="M5 2h7v1H5zM4 3h1v1H4zM12 3h1v1H12zM4 4h1v1H4zM12 4h1v1H12zM4 5h1v1H4zM12 5h1v1H12zM4 6h1v1H4zM12 6h1v1H12zM5 7h1v1H5zM11 7h1v1H11z"/><path fill="#504557" d="M5 3h7v1H5zM5 4h7v1H5zM5 5h7v1H5zM5 6h1v1H5zM11 6h1v1H11zM3 7h2v1H3zM6 7h5v1H6zM12 7h2v1H12zM3 8h5v1H3zM9 8h5v1H9zM3 9h2v1H3zM12 9h2v1H12zM4 10h1v1H4zM12 10h1v1H12zM5 11h1v1H5zM7 11h3v1H7zM11 11h1v1H11zM5 12h1v1H5zM11 12h1v1H11zM6 13h5v1H6zM4 14h1v1H4zM12 14h1v1H12zM3 15h1v1H3zM13 15h1v1H13zM3 16h1v1H3zM13 16h1v1H13z"/><path fill="#ead0a4" d="M6 6h5v1H6zM8 8h1v1H8zM6 9h2v1H6zM9 9h2v1H9zM6 10h5v1H6zM6 11h1v1H6zM10 11h1v1H10zM7 14h3v1H7z"/><path fill="#677b6d" d="M2 7h1v1H2zM14 7h1v1H14zM2 8h1v1H2zM14 8h1v1H14zM2 9h1v1H2zM14 9h1v1H14zM5 14h2v1H5zM10 14h2v1H10zM4 15h9v1H4zM4 16h9v1H4z"/><path fill="#bd947b" d="M5 9h1v1H5zM8 9h1v1H8zM11 9h1v1H11zM5 10h1v1H5zM11 10h1v1H11zM6 12h5v1H6z"/></svg><span class="cf1eec2" aria-hidden="true"><svg class="c523633" width="14" height="14" viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"/></svg></span><span class="c2d2a14" aria-hidden="true">Ready to sell &#8599;</span></div>
+            <div class="c794d2f"><div class="c3fa72c"><h3>#1042</h3><span class="cddc0af c0b4376">Rare</span></div><span class="c1972ca">Pixel residents <svg class="c523633" width="11" height="11" viewBox="0 0 16 16" aria-hidden="true"><path d="m8 1 2 2 3 1v3l2 2-2 2-1 3H9l-1 1-2-2-3-1V9L1 7l2-2 1-3h3l1-1Z"/><path d="m5 8 2 2 4-4"/></svg></span><div class="ca3fd14"><div><span class="cf3ce40">Top offer</span><strong>0.72 <small>ETH</small></strong></div><span class="c8364e1">~$1,836.00</span></div></div>
+          </label>
+        </article>
+        <article class="c97fef1" data-token="2087" data-offer="64" data-listed="8">
+          <label class="c3bc76a"><input class="c59d912 c73dd6f" type="checkbox" checked disabled aria-label="Select NFT #2087, top offer 0.64 ETH">
+            <div class="ca53da9"><svg class="cbab927" width="272" height="272" viewBox="-2 -1 21 19" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Pixel character #2087"><rect x="-2" y="-1" width="21" height="19" fill="#b3c7de"/><path fill="#404d55" d="M4 2h2v1H4zM11 2h2v1H11zM4 3h1v1H4zM6 3h5v1H6zM12 3h1v1H12zM4 4h1v1H4zM6 4h5v1H6zM12 4h1v1H12zM4 5h1v1H4zM12 5h1v1H12zM4 6h1v1H4zM12 6h1v1H12zM4 7h1v1H4zM8 7h1v1H8zM12 7h1v1H12zM4 8h1v1H4zM6 8h5v1H6zM12 8h1v1H12zM4 9h1v1H4zM12 9h1v1H12zM4 10h1v1H4zM8 10h1v1H8zM12 10h1v1H12zM5 11h1v1H5zM7 11h3v1H7zM11 11h1v1H11zM5 12h1v1H5zM11 12h1v1H11zM6 13h5v1H6zM4 14h1v1H4zM12 14h1v1H12zM3 15h1v1H3zM13 15h1v1H13zM3 16h1v1H3zM13 16h1v1H13z"/><path fill="#f2b487" d="M5 3h1v1H5zM11 3h1v1H11zM5 4h1v1H5zM11 4h1v1H11zM5 7h3v1H5zM9 7h3v1H9zM6 10h2v1H6zM9 10h2v1H9zM6 11h1v1H6zM10 11h1v1H10z"/><path fill="#a1a468" d="M5 5h1v1H5zM11 5h1v1H11zM5 6h1v1H5zM11 6h1v1H11zM3 7h1v1H3zM13 7h1v1H13zM3 9h1v1H3zM5 9h1v1H5zM8 9h1v1H8zM11 9h1v1H11zM13 9h1v1H13zM5 10h1v1H5zM11 10h1v1H11zM6 12h5v1H6z"/><path fill="#d5d78d" d="M6 5h5v1H6zM6 6h5v1H6zM3 8h1v1H3zM13 8h1v1H13zM6 9h2v1H6zM9 9h2v1H9zM7 14h3v1H7z"/><path fill="#f9eee1" d="M5 8h1v1H5zM11 8h1v1H11z"/><path fill="#a07eb5" d="M5 14h2v1H5zM10 14h2v1H10zM4 15h9v1H4zM4 16h9v1H4z"/></svg><span class="cf1eec2" aria-hidden="true"><svg class="c523633" width="14" height="14" viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"/></svg></span><span class="c2d2a14" aria-hidden="true">Ready to sell &#8599;</span></div>
+            <div class="c794d2f"><div class="c3fa72c"><h3>#2087</h3><span class="cddc0af c0b4376">Epic</span></div><span class="c1972ca">Pixel residents <svg class="c523633" width="11" height="11" viewBox="0 0 16 16" aria-hidden="true"><path d="m8 1 2 2 3 1v3l2 2-2 2-1 3H9l-1 1-2-2-3-1V9L1 7l2-2 1-3h3l1-1Z"/><path d="m5 8 2 2 4-4"/></svg></span><div class="ca3fd14"><div><span class="cf3ce40">Top offer</span><strong>0.64 <small>ETH</small></strong></div><span class="c8364e1">~$1,632.00</span></div></div>
+          </label>
+        </article>
+        <article class="c97fef1" data-token="316" data-offer="56" data-listed="2">
+          <label class="c3bc76a"><input class="c59d912 c73dd6f" type="checkbox" checked disabled aria-label="Select NFT #0316, top offer 0.56 ETH">
+            <div class="ca53da9"><svg class="cbab927" width="272" height="272" viewBox="-2 -1 21 19" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Pixel character #0316"><rect x="-2" y="-1" width="21" height="19" fill="#91bdbb"/><path fill="#f5d77e" d="M8 1h1v1H8zM4 2h1v1H4zM8 2h1v1H8zM12 2h1v1H12zM4 3h1v1H4zM6 3h5v1H6zM12 3h1v1H12zM4 4h2v1H4zM7 4h3v1H7zM11 4h2v1H11z"/><path fill="#495363" d="M5 3h1v1H5zM11 3h1v1H11zM4 5h9v1H4zM4 6h2v1H4zM11 6h2v1H11zM4 7h1v1H4zM12 7h1v1H12zM4 8h1v1H4zM6 8h1v1H6zM10 8h1v1H10zM12 8h1v1H12zM4 9h1v1H4zM12 9h1v1H12zM4 10h1v1H4zM12 10h1v1H12zM5 11h1v1H5zM7 11h1v1H7zM9 11h1v1H9zM11 11h1v1H11zM5 12h1v1H5zM11 12h1v1H11zM6 13h5v1H6zM4 14h1v1H4zM12 14h1v1H12zM3 15h1v1H3zM13 15h1v1H13zM3 16h1v1H3zM13 16h1v1H13z"/><path fill="#b47a9d" d="M6 4h1v1H6zM10 4h1v1H10zM5 14h2v1H5zM10 14h2v1H10zM4 15h9v1H4zM4 16h9v1H4z"/><path fill="#ead6bd" d="M6 6h5v1H6zM7 7h3v1H7zM3 8h1v1H3zM7 8h3v1H7zM13 8h1v1H13zM6 9h2v1H6zM9 9h2v1H9zM6 10h5v1H6zM6 11h1v1H6zM10 11h1v1H10zM7 14h3v1H7z"/><path fill="#bb9b86" d="M3 7h1v1H3zM5 7h1v1H5zM11 7h1v1H11zM13 7h1v1H13zM5 8h1v1H5zM11 8h1v1H11zM3 9h1v1H3zM5 9h1v1H5zM8 9h1v1H8zM11 9h1v1H11zM13 9h1v1H13zM5 10h1v1H5zM11 10h1v1H11zM6 12h5v1H6z"/><path fill="#f9eee1" d="M6 7h1v1H6zM10 7h1v1H10zM8 11h1v1H8z"/></svg><span class="cf1eec2" aria-hidden="true"><svg class="c523633" width="14" height="14" viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"/></svg></span><span class="c2d2a14" aria-hidden="true">Ready to sell &#8599;</span></div>
+            <div class="c794d2f"><div class="c3fa72c"><h3>#0316</h3><span class="cddc0af c0b4376">Rare</span></div><span class="c1972ca">Pixel residents <svg class="c523633" width="11" height="11" viewBox="0 0 16 16" aria-hidden="true"><path d="m8 1 2 2 3 1v3l2 2-2 2-1 3H9l-1 1-2-2-3-1V9L1 7l2-2 1-3h3l1-1Z"/><path d="m5 8 2 2 4-4"/></svg></span><div class="ca3fd14"><div><span class="cf3ce40">Top offer</span><strong>0.56 <small>ETH</small></strong></div><span class="c8364e1">~$1,428.00</span></div></div>
+          </label>
+        </article>
+        <article class="c97fef1" data-token="891" data-offer="49" data-listed="5">
+          <label class="c3bc76a"><input class="c59d912 c73dd6f" type="checkbox" checked disabled aria-label="Select NFT #0891, top offer 0.49 ETH">
+            <div class="ca53da9"><svg class="cbab927" width="272" height="272" viewBox="-2 -1 21 19" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Pixel character #0891"><rect x="-2" y="-1" width="21" height="19" fill="#e6be82"/><path fill="#b6d9e6" d="M8 1h1v1H8zM3 7h1v1H3zM5 7h3v1H5zM9 7h3v1H9zM13 7h1v1H13zM3 8h1v1H3zM13 8h1v1H13z"/><path fill="#38494b" d="M8 2h1v1H8zM5 3h7v1H5zM4 4h9v1H4zM4 5h1v1H4zM12 5h1v1H12zM3 6h2v1H3zM12 6h2v1H12zM4 7h1v1H4zM8 7h1v1H8zM12 7h1v1H12zM4 8h1v1H4zM6 8h5v1H6zM12 8h1v1H12zM3 9h2v1H3zM12 9h2v1H12zM4 10h1v1H4zM12 10h1v1H12zM5 11h1v1H5zM7 11h3v1H7zM11 11h1v1H11zM5 12h1v1H5zM11 12h1v1H11zM6 13h5v1H6zM4 14h1v1H4zM12 14h1v1H12zM3 15h1v1H3zM13 15h1v1H13zM3 16h1v1H3zM13 16h1v1H13z"/><path fill="#73897f" d="M5 5h7v1H5zM5 6h1v1H5zM11 6h1v1H11zM5 9h1v1H5zM8 9h1v1H8zM11 9h1v1H11zM5 10h1v1H5zM11 10h1v1H11zM6 12h5v1H6z"/><path fill="#a6baa7" d="M6 6h5v1H6zM6 9h2v1H6zM9 9h2v1H9zM6 10h5v1H6zM6 11h1v1H6zM10 11h1v1H10zM7 14h3v1H7z"/><path fill="#f9eee1" d="M5 8h1v1H5zM11 8h1v1H11z"/><path fill="#bd7066" d="M5 14h2v1H5zM10 14h2v1H10zM4 15h9v1H4zM4 16h9v1H4z"/></svg><span class="cf1eec2" aria-hidden="true"><svg class="c523633" width="14" height="14" viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"/></svg></span><span class="c2d2a14" aria-hidden="true">Ready to sell &#8599;</span></div>
+            <div class="c794d2f"><div class="c3fa72c"><h3>#0891</h3><span class="cddc0af">Uncommon</span></div><span class="c1972ca">Pixel residents <svg class="c523633" width="11" height="11" viewBox="0 0 16 16" aria-hidden="true"><path d="m8 1 2 2 3 1v3l2 2-2 2-1 3H9l-1 1-2-2-3-1V9L1 7l2-2 1-3h3l1-1Z"/><path d="m5 8 2 2 4-4"/></svg></span><div class="ca3fd14"><div><span class="cf3ce40">Top offer</span><strong>0.49 <small>ETH</small></strong></div><span class="c8364e1">~$1,249.50</span></div></div>
+          </label>
+        </article>
+        <article class="c97fef1" data-token="1608" data-offer="43" data-listed="7">
+          <label class="c3bc76a"><input class="c59d912 c73dd6f" type="checkbox" checked disabled aria-label="Select NFT #1608, top offer 0.43 ETH">
+            <div class="ca53da9"><svg class="cbab927" width="272" height="272" viewBox="-2 -1 21 19" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Pixel character #1608"><rect x="-2" y="-1" width="21" height="19" fill="#b8cf95"/><path fill="#efdb74" d="M5 2h7v1H5zM4 3h1v1H4zM12 3h1v1H12zM4 4h1v1H4zM12 4h1v1H12zM4 5h1v1H4zM12 5h1v1H12zM4 6h1v1H4zM12 6h1v1H12z"/><path fill="#403c4c" d="M5 3h7v1H5zM5 4h7v1H5zM5 5h7v1H5zM5 6h1v1H5zM11 6h1v1H11zM3 7h2v1H3zM12 7h2v1H12zM3 8h2v1H3zM6 8h1v1H6zM10 8h1v1H10zM12 8h2v1H12zM3 9h2v1H3zM12 9h2v1H12zM4 10h1v1H4zM12 10h1v1H12zM5 11h1v1H5zM7 11h3v1H7zM11 11h1v1H11zM5 12h1v1H5zM11 12h1v1H11zM6 13h5v1H6zM4 14h1v1H4zM12 14h1v1H12zM3 15h1v1H3zM13 15h1v1H13zM3 16h1v1H3zM13 16h1v1H13z"/><path fill="#e9a576" d="M6 6h5v1H6zM7 7h3v1H7zM7 8h3v1H7zM6 9h2v1H6zM9 9h2v1H9zM6 10h5v1H6zM6 11h1v1H6zM10 11h1v1H10zM7 14h3v1H7z"/><path fill="#677cba" d="M2 7h1v1H2zM14 7h1v1H14zM2 8h1v1H2zM14 8h1v1H14zM2 9h1v1H2zM14 9h1v1H14zM5 14h2v1H5zM10 14h2v1H10zM4 15h9v1H4zM4 16h9v1H4z"/><path fill="#bf7859" d="M5 7h1v1H5zM11 7h1v1H11zM5 8h1v1H5zM11 8h1v1H11zM5 9h1v1H5zM8 9h1v1H8zM11 9h1v1H11zM5 10h1v1H5zM11 10h1v1H11zM6 12h5v1H6z"/><path fill="#f9eee1" d="M6 7h1v1H6zM10 7h1v1H10z"/></svg><span class="cf1eec2" aria-hidden="true"><svg class="c523633" width="14" height="14" viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"/></svg></span><span class="c2d2a14" aria-hidden="true">Ready to sell &#8599;</span></div>
+            <div class="c794d2f"><div class="c3fa72c"><h3>#1608</h3><span class="cddc0af c0b4376">Rare</span></div><span class="c1972ca">Pixel residents <svg class="c523633" width="11" height="11" viewBox="0 0 16 16" aria-hidden="true"><path d="m8 1 2 2 3 1v3l2 2-2 2-1 3H9l-1 1-2-2-3-1V9L1 7l2-2 1-3h3l1-1Z"/><path d="m5 8 2 2 4-4"/></svg></span><div class="ca3fd14"><div><span class="cf3ce40">Top offer</span><strong>0.43 <small>ETH</small></strong></div><span class="c8364e1">~$1,096.50</span></div></div>
+          </label>
+        </article>
+        <article class="c97fef1" data-token="2405" data-offer="38" data-listed="1">
+          <label class="c3bc76a"><input class="c59d912 c73dd6f" type="checkbox" checked disabled aria-label="Select NFT #2405, top offer 0.38 ETH">
+            <div class="ca53da9"><svg class="cbab927" width="272" height="272" viewBox="-2 -1 21 19" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Pixel character #2405"><rect x="-2" y="-1" width="21" height="19" fill="#a6b5d6"/><path fill="#dbeaa2" d="M5 2h7v1H5zM4 3h1v1H4zM12 3h1v1H12zM4 4h1v1H4zM12 4h1v1H12zM4 5h1v1H4zM12 5h1v1H12zM4 6h1v1H4zM12 6h1v1H12z"/><path fill="#403c59" d="M5 3h7v1H5zM5 4h7v1H5zM5 5h7v1H5zM5 6h1v1H5zM11 6h1v1H11zM3 7h2v1H3zM12 7h2v1H12zM3 8h2v1H3zM6 8h1v1H6zM10 8h1v1H10zM12 8h2v1H12zM3 9h2v1H3zM12 9h2v1H12zM4 10h1v1H4zM12 10h1v1H12zM5 11h1v1H5zM7 11h3v1H7zM11 11h1v1H11zM5 12h1v1H5zM11 12h1v1H11zM6 13h5v1H6zM4 14h1v1H4zM12 14h1v1H12zM3 15h1v1H3zM13 15h1v1H13zM3 16h1v1H3zM13 16h1v1H13z"/><path fill="#c6b2de" d="M6 6h5v1H6zM7 7h3v1H7zM7 8h3v1H7zM6 9h2v1H6zM9 9h2v1H9zM6 10h5v1H6zM6 11h1v1H6zM10 11h1v1H10zM7 14h3v1H7z"/><path fill="#dd996d" d="M2 7h1v1H2zM14 7h1v1H14zM2 8h1v1H2zM14 8h1v1H14zM2 9h1v1H2zM14 9h1v1H14zM5 14h2v1H5zM10 14h2v1H10zM4 15h9v1H4zM4 16h9v1H4z"/><path fill="#947ca9" d="M5 7h1v1H5zM11 7h1v1H11zM5 8h1v1H5zM11 8h1v1H11zM5 9h1v1H5zM8 9h1v1H8zM11 9h1v1H11zM5 10h1v1H5zM11 10h1v1H11zM6 12h5v1H6z"/><path fill="#f9eee1" d="M6 7h1v1H6zM10 7h1v1H10z"/></svg><span class="cf1eec2" aria-hidden="true"><svg class="c523633" width="14" height="14" viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"/></svg></span><span class="c2d2a14" aria-hidden="true">Ready to sell &#8599;</span></div>
+            <div class="c794d2f"><div class="c3fa72c"><h3>#2405</h3><span class="cddc0af">Uncommon</span></div><span class="c1972ca">Pixel residents <svg class="c523633" width="11" height="11" viewBox="0 0 16 16" aria-hidden="true"><path d="m8 1 2 2 3 1v3l2 2-2 2-1 3H9l-1 1-2-2-3-1V9L1 7l2-2 1-3h3l1-1Z"/><path d="m5 8 2 2 4-4"/></svg></span><div class="ca3fd14"><div><span class="cf3ce40">Top offer</span><strong>0.38 <small>ETH</small></strong></div><span class="c8364e1">~$969.00</span></div></div>
+          </label>
+        </article>
+        <article class="c97fef1" data-token="726" data-offer="33" data-listed="4">
+          <label class="c3bc76a"><input class="c59d912 c73dd6f" type="checkbox" checked disabled aria-label="Select NFT #0726, top offer 0.33 ETH">
+            <div class="ca53da9"><svg class="cbab927" width="272" height="272" viewBox="-2 -1 21 19" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Pixel character #0726"><rect x="-2" y="-1" width="21" height="19" fill="#c8b69a"/><path fill="#f2d7a0" d="M5 1h7v1H5zM4 2h1v1H4zM12 2h1v1H12zM5 3h7v1H5zM5 4h1v1H5zM11 4h1v1H11zM6 10h2v1H6zM9 10h2v1H9zM6 11h1v1H6zM10 11h1v1H10z"/><path fill="#53414a" d="M5 2h1v1H5zM11 2h1v1H11zM4 3h1v1H4zM12 3h1v1H12zM4 4h1v1H4zM6 4h5v1H6zM12 4h1v1H12zM4 5h1v1H4zM12 5h1v1H12zM4 6h1v1H4zM12 6h1v1H12zM4 7h1v1H4zM12 7h1v1H12zM4 8h1v1H4zM6 8h1v1H6zM10 8h1v1H10zM12 8h1v1H12zM4 9h1v1H4zM12 9h1v1H12zM4 10h1v1H4zM8 10h1v1H8zM12 10h1v1H12zM5 11h1v1H5zM7 11h1v1H7zM9 11h1v1H9zM11 11h1v1H11zM5 12h1v1H5zM11 12h1v1H11zM6 13h5v1H6zM4 14h1v1H4zM12 14h1v1H12zM3 15h1v1H3zM13 15h1v1H13zM3 16h1v1H3zM13 16h1v1H13z"/><path fill="#bd816e" d="M5 5h1v1H5zM11 5h1v1H11zM5 6h1v1H5zM11 6h1v1H11zM3 7h1v1H3zM5 7h1v1H5zM11 7h1v1H11zM13 7h1v1H13zM5 8h1v1H5zM11 8h1v1H11zM3 9h1v1H3zM5 9h1v1H5zM8 9h1v1H8zM11 9h1v1H11zM13 9h1v1H13zM5 10h1v1H5zM11 10h1v1H11zM6 12h5v1H6z"/><path fill="#e4b39a" d="M6 5h5v1H6zM6 6h5v1H6zM7 7h3v1H7zM3 8h1v1H3zM7 8h3v1H7zM13 8h1v1H13zM6 9h2v1H6zM9 9h2v1H9zM7 14h3v1H7z"/><path fill="#f9eee1" d="M6 7h1v1H6zM10 7h1v1H10zM8 11h1v1H8z"/><path fill="#6f9f98" d="M5 14h2v1H5zM10 14h2v1H10zM4 15h9v1H4zM4 16h9v1H4z"/></svg><span class="cf1eec2" aria-hidden="true"><svg class="c523633" width="14" height="14" viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"/></svg></span><span class="c2d2a14" aria-hidden="true">Ready to sell &#8599;</span></div>
+            <div class="c794d2f"><div class="c3fa72c"><h3>#0726</h3><span class="cddc0af c0b4376">Rare</span></div><span class="c1972ca">Pixel residents <svg class="c523633" width="11" height="11" viewBox="0 0 16 16" aria-hidden="true"><path d="m8 1 2 2 3 1v3l2 2-2 2-1 3H9l-1 1-2-2-3-1V9L1 7l2-2 1-3h3l1-1Z"/><path d="m5 8 2 2 4-4"/></svg></span><div class="ca3fd14"><div><span class="cf3ce40">Top offer</span><strong>0.33 <small>ETH</small></strong></div><span class="c8364e1">~$841.50</span></div></div>
+          </label>
+        </article>
+        <article class="c97fef1" data-token="3017" data-offer="29" data-listed="3">
+          <label class="c3bc76a"><input class="c59d912 c73dd6f" type="checkbox" checked disabled aria-label="Select NFT #3017, top offer 0.29 ETH">
+            <div class="ca53da9"><svg class="cbab927" width="272" height="272" viewBox="-2 -1 21 19" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Pixel character #3017"><rect x="-2" y="-1" width="21" height="19" fill="#b7a3d8"/><path fill="#f8dd89" d="M8 1h1v1H8zM8 3h1v1H8zM3 7h1v1H3zM5 7h1v1H5zM11 7h1v1H11zM13 7h1v1H13zM3 8h1v1H3zM13 8h1v1H13z"/><path fill="#ee927c" d="M6 2h5v1H6zM5 3h3v1H5zM9 3h3v1H9zM5 4h7v1H5zM5 14h2v1H5zM10 14h2v1H10zM4 15h9v1H4zM4 16h9v1H4z"/><path fill="#34334f" d="M4 4h1v1H4zM12 4h1v1H12zM3 5h11v1H3zM3 6h2v1H3zM12 6h2v1H12zM4 7h1v1H4zM6 7h5v1H6zM12 7h1v1H12zM4 8h4v1H4zM9 8h4v1H9zM3 9h2v1H3zM12 9h2v1H12zM4 10h1v1H4zM12 10h1v1H12zM5 11h1v1H5zM7 11h3v1H7zM11 11h1v1H11zM5 12h1v1H5zM11 12h1v1H11zM6 13h5v1H6zM4 14h1v1H4zM12 14h1v1H12zM3 15h1v1H3zM13 15h1v1H13zM3 16h1v1H3zM13 16h1v1H13z"/><path fill="#7ca1bd" d="M5 6h1v1H5zM11 6h1v1H11zM5 9h1v1H5zM8 9h1v1H8zM11 9h1v1H11zM5 10h1v1H5zM11 10h1v1H11zM6 12h5v1H6z"/><path fill="#b5d3e4" d="M6 6h5v1H6zM8 8h1v1H8zM6 9h2v1H6zM9 9h2v1H9zM6 10h5v1H6zM6 11h1v1H6zM10 11h1v1H10zM7 14h3v1H7z"/></svg><span class="cf1eec2" aria-hidden="true"><svg class="c523633" width="14" height="14" viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"/></svg></span><span class="c2d2a14" aria-hidden="true">Ready to sell &#8599;</span></div>
+            <div class="c794d2f"><div class="c3fa72c"><h3>#3017</h3><span class="cddc0af">Uncommon</span></div><span class="c1972ca">Pixel residents <svg class="c523633" width="11" height="11" viewBox="0 0 16 16" aria-hidden="true"><path d="m8 1 2 2 3 1v3l2 2-2 2-1 3H9l-1 1-2-2-3-1V9L1 7l2-2 1-3h3l1-1Z"/><path d="m5 8 2 2 4-4"/></svg></span><div class="ca3fd14"><div><span class="cf3ce40">Top offer</span><strong>0.29 <small>ETH</small></strong></div><span class="c8364e1">~$739.50</span></div></div>
+          </label>
+        </article>
+        <div class="ca3a2e9" id="empty-state" hidden><h3>Your next sale starts here.</h3><p>Select a few favorites, or sell your whole collection in two clicks.</p><button class="c2153b5" type="button" id="show-all">Show all items <span aria-hidden="true">→</span></button></div>
+      </div>
+      <div class="c2c403b" aria-label="Selected NFT payout">
+        <div class="c63a642"><span class="c4cf854" aria-hidden="true"><svg class="c523633" width="18" height="18" viewBox="0 0 24 24"><rect x="7" y="7" width="13" height="13" rx="2"/><path d="M4 16H3V3h13v1"/></svg></span><div><strong id="selection-count">8 selected</strong><small><span class="c2b686f">Your collection. One sale.</span><span class="c89c323">Paid in ~30s &middot; Non-custodial</span></small></div></div>
+        <div class="c70783c"><span class="c9d0091">You receive</span><div class="c0031ce"><span id="total-eth">3.84</span><small>ETH</small><span class="caa4d73" id="total-usd">~$9,792.00</span></div></div>
+        <div class="c05f438"><strong><svg class="c523633" width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="m9 1-6 8h5l-1 6 6-9H8l1-5Z"/></svg>Paid in ~30s</strong><small>Direct to your wallet</small></div>
+        <a class="cee9959 ca3e697" href="dashboard/"><span id="sell-label">Sell 8 NFTs</span><span aria-hidden="true">→</span></a>
+      </div>
+      <div class="ce24387"><span><svg class="c523633" width="12" height="12" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1 2 3v4c0 4 6 7 6 7s6-3 6-7V3L8 1Zm-3 6 2 2 4-4"/></svg>Paid instantly, non-custodial</span><span>Two clicks. Your whole collection.</span><span class="cc95a9b">Paid in ~30s</span></div>
+      <p class="c73dd6f" id="selection-status" role="status" aria-live="polite" aria-atomic="true">8 NFTs selected. Total payout: 3.84 ETH, approximately $9,792.00.</p>
     </section>
-    <section id="facts" class="c60fecc" aria-labelledby="facts-title">
-      <div class="c25c664"><h2 id="facts-title">The sale, at a glance.</h2><p>From your collection to your wallet.</p></div>
-      <table class="c63d18e"><tbody><tr><th scope="row">Mechanism</th><td>Accepting a standing bid instead of listing and waiting</td></tr>
+    <div class="c532d35">
+      <nav class="c763367" aria-label="Breadcrumb"><a href="dashboard/">Home</a> <span>/</span> <span>NFT</span> <span>/</span> <span>Sell NFT Instantly</span></nav>
+      <section class="c60fecc" id="facts" aria-labelledby="facts-title"><div class="c808861"><h2 id="facts-title">The essentials, at a glance.</h2><p>Everything behind a great exit.</p></div><table class="c63d18e"><tbody><tr><th scope="row">Mechanism</th><td>Accepting a standing bid instead of listing and waiting</td></tr>
 <tr><th scope="row">Common venues</th><td>Blur, order-book collection offers, NFT-AMM pools</td></tr>
 <tr><th scope="row">Price trade-off</th><td>Usually below last sale or floor ask</td></tr>
 <tr><th scope="row">Settlement time</th><td>One signed transaction, seconds to minutes</td></tr>
 <tr><th scope="row">Royalties</th><td>Often reduced or optional on bid-based sales</td></tr>
-<tr><th scope="row">Custody</th><td>Self-custody — you sign the sale from your own wallet</td></tr></tbody></table>
-    </section>
-    <div id="guide" class="c8f96bc">
-      <aside class="cb55f09" aria-labelledby="guide-title">
-        <div class="c680e7b">A closer look</div>
-        <h2 id="guide-title">Great art.<br>Instant liquidity.</h2>
-        <p>Everything behind your next sale, from the first offer to the final transfer.</p>
-        <nav class="ca5366d" aria-label="Article navigation"><a href="#facts">The essentials</a><a href="#faq">Your questions</a><a href="#sources">Further reading</a></nav>
-      </aside>
-      <article class="c591f66" aria-label="The instant NFT selling guide"><section class="c86d4ea"><h2 class="c5fbca8">What It Means to Sell NFT Instantly</h2><div class="cee3892"><strong>It means accepting the best current bid on a token right now, trading some price for immediate, guaranteed liquidity instead of waiting on an open listing.</strong> A standard listing publishes an ask price and waits for a buyer to match it, which can take anywhere from hours to months depending on the collection. Instant selling flips that order: the market already holds live bids from collectors, traders and automated pools, and the seller simply picks the best one and signs. Every <a href="https://ethereum.org/en/nft/" rel="nofollow noopener" target="_blank">NFT</a> is a unique token on a smart contract, so the bid you accept settles on-chain in a single transaction that transfers the asset and releases payment at the same moment, with no separate escrow step and no risk that the other side walks away after the item has already shipped.</div></section>
+<tr><th scope="row">Custody</th><td>Self-custody — you sign the sale from your own wallet</td></tr></tbody></table></section>
+      <div class="c7c31fa" id="how-it-works"><aside class="cb55f09"><h2>Your collection.<br>Your next move.</h2><p>Connect your wallet, pick your NFTs, and take the best aggregated offer. Your next move starts here.</p><nav aria-label="Selling guide"><a href="#facts">The essentials <span aria-hidden="true">↗</span></a><a href="#faq">Your questions <span aria-hidden="true">↗</span></a></nav></aside><article class="c591f66" aria-label="NFT selling guide"><section class="c86d4ea"><h2 class="c5fbca8">What It Means to Sell NFT Instantly</h2><div class="cee3892"><strong>It means accepting the best current bid on a token right now, trading some price for immediate, guaranteed liquidity instead of waiting on an open listing.</strong> A standard listing publishes an ask price and waits for a buyer to match it, which can take anywhere from hours to months depending on the collection. Instant selling flips that order: the market already holds live bids from collectors, traders and automated pools, and the seller simply picks the best one and signs. Every <a href="https://ethereum.org/en/nft/" rel="nofollow noopener" target="_blank">NFT</a> is a unique token on a smart contract, so the bid you accept settles on-chain in a single transaction that transfers the asset and releases payment at the same moment, with no separate escrow step and no risk that the other side walks away after the item has already shipped.</div></section>
 <section class="c86d4ea"><h2 class="c5fbca8">How to Sell NFT Instantly Using Bids</h2><div class="cee3892">Every instant sale starts with a bid someone else already placed, so understanding where those bids come from changes how much a seller can expect to receive.<h3>Collection Bids</h3>A collection bid is an open offer on any token in a given collection, regardless of which specific piece it targets. Marketplaces aggregate these offers so a seller holding even a plain token in the set can match the top collection bid and exit immediately, without needing a buyer who wants that exact item.<h3>Trait Bids</h3>A trait bid narrows the offer to tokens sharing a specific attribute, such as a rare background or accessory, and usually pays more than a plain collection bid because it reflects demand for that trait specifically. Checking whether a trait bid applies before accepting the generic collection offer is one of the easiest ways to capture a better price.<h3>Blur's Bidding and Blend</h3>Blur consolidates collection and trait bids into a single order book and, through <a href="https://docs.blur.io/" rel="nofollow noopener" target="_blank">Blend</a>, lets a holder borrow against a token instead of selling it outright, which some sellers use when they only need cash temporarily. Its bidding incentives are one reason Blur captured a large share of trading volume tracked on <a href="https://dappradar.com/nft/marketplaces" rel="nofollow noopener" target="_blank">DappRadar's marketplace rankings</a>.</div></section>
 <section class="c86d4ea"><h2 class="c5fbca8">Collection Bids, Trait Bids and NFT-AMM Pools</h2><div class="cee3892">Beyond order-book bids, automated market makers built for NFTs give another route to an instant sale.<h3>Sudoswap and Pooled Liquidity</h3><a href="https://docs.sudoswap.xyz/" rel="nofollow noopener" target="_blank">Sudoswap</a> and similar NFT-AMM protocols hold pools of a specific collection plus the matching currency, pricing each buy and sell along a curve rather than through individual bids. Selling into a pool is close to instant because the contract itself is the counterparty, though pool prices can sit further below floor than a competitive order book during quiet periods.<h3>Checking Liquidity Before You Commit</h3>Thin pools or a single large bid can move sharply once a seller trades into them, so checking recent trades on <a href="https://etherscan.io/" rel="nofollow noopener" target="_blank">Etherscan</a> or a collection's own activity feed before committing shows whether the current top offer is isolated or backed by real depth.</div></section>
 <section class="c86d4ea"><h2 class="c5fbca8">Fees and Royalties When You Sell NFT Instantly</h2><div class="cee3892">Accepting a bid still carries the marketplace's standard fee plus whatever royalty the collection's creator contract charges, and both come out of the sale price before it reaches a seller's wallet. Some bid-based venues let buyers set royalty to zero or optional, which raises what a seller nets from the same nominal bid, so always check net proceeds rather than the headline offer amount.<table><thead><tr><th>Fee type</th><th>Who sets it</th><th>Typical range</th></tr></thead><tbody><tr><td>Marketplace fee</td><td>The platform running the order book or pool</td><td>0.5% – 2.5%</td></tr><tr><td>Creator royalty</td><td>The collection contract, often optional on bids</td><td>0% – 10%</td></tr><tr><td>Network gas</td><td>The chain the sale settles on</td><td>Varies with congestion</td></tr></tbody></table></div></section>
 <section class="c86d4ea"><h2 class="c5fbca8">Step-by-Step: Sell NFT Instantly in Minutes</h2><div class="cee3892">The mechanics are the same across most venues that support instant selling, which is what makes the process repeatable once a seller has done it a first time.<ul><li>Connect a self-custody wallet to a marketplace that aggregates live bids, such as an order-book platform or an NFT-AMM pool.</li><li>Open the token for sale and compare the top collection bid against any trait-specific bid that applies to it.</li><li>Confirm the net amount after marketplace fee, royalty and gas, not just the headline bid shown on screen.</li><li>Accept the best offer and sign the sale transaction in the wallet.</li><li>Watch the transfer and payment settle in the same transaction, then verify the receiving balance before closing the tab.</li></ul></div></section>
 <section class="c86d4ea"><h2 class="c5fbca8">Instant Sale vs Listing and Waiting</h2><div class="cee3892">Listing at an ask price can net more if a motivated buyer eventually matches it, but there is no certainty anyone will, and a stale listing often sits untouched while the market moves on. Instant selling removes that uncertainty by locking in whatever the deepest current bid is, which is usually below the last recorded sale or the lowest active ask, sometimes called the floor.<h3>Why Instant Sales Trade Price for Speed</h3>A bid sits below the ask because the bidder takes on the risk of holding an illiquid asset until a future buyer appears. A seller who needs certainty today effectively pays that risk premium as a lower price, while a seller who can wait keeps the option of a higher eventual sale.</div></section>
-<section class="c86d4ea"><h2 class="c5fbca8">Avoiding Scams When You Sell NFT Instantly</h2><div class="cee3892">The speed that makes instant selling useful also makes it a target for scams that rely on a seller signing quickly without reading what the transaction actually does.<h3>Read Every Signature Request</h3>A legitimate bid acceptance names the exact token, the exact payment amount and a marketplace contract the seller already recognizes. A request asking for a broad approval covering an entire wallet, or one routed through an unfamiliar link, should be rejected and the token left unsold rather than signed in a hurry.<h3>Keep the Seed Phrase Off Every Form</h3>No marketplace, bidder or support channel ever needs a seed phrase to complete a sale. Anyone requesting it, in a chat, a form or a pop-up, is attempting to drain the wallet rather than buy the token.</div></section></article>
-    </div>
-    <section id="faq" class="c372a48" aria-labelledby="faq-title">
-      <div class="c297175"><h2 id="faq-title">Good questions.<br>Clear answers.</h2><p>A little clarity for your next move.</p></div>
-      <div class="c59a562"><details class="ccbc07b"><summary class="c639e3e">What does it mean to accept an offer right away instead of listing?</summary><div class="c7c7477">It means accepting the best live bid on a token right now rather than publishing a listing and waiting for a buyer, trading some price for immediate, guaranteed liquidity in a single on-chain transaction.</div></details>
+<section class="c86d4ea"><h2 class="c5fbca8">Avoiding Scams When You Sell NFT Instantly</h2><div class="cee3892">The speed that makes instant selling useful also makes it a target for scams that rely on a seller signing quickly without reading what the transaction actually does.<h3>Read Every Signature Request</h3>A legitimate bid acceptance names the exact token, the exact payment amount and a marketplace contract the seller already recognizes. A request asking for a broad approval covering an entire wallet, or one routed through an unfamiliar link, should be rejected and the token left unsold rather than signed in a hurry.<h3>Keep the Seed Phrase Off Every Form</h3>No marketplace, bidder or support channel ever needs a seed phrase to complete a sale. Anyone requesting it, in a chat, a form or a pop-up, is attempting to drain the wallet rather than buy the token.</div></section></article></div>
+      <section class="c372a48" id="faq" aria-labelledby="faq-title"><div><h2 class="cb44214" id="faq-title">A little clarity.</h2><p class="c699c77">Good questions. Straight answers.</p></div><div><details class="ccbc07b"><summary class="c639e3e">What does it mean to accept an offer right away instead of listing?</summary><div class="c7c7477">It means accepting the best live bid on a token right now rather than publishing a listing and waiting for a buyer, trading some price for immediate, guaranteed liquidity in a single on-chain transaction.</div></details>
 <details class="ccbc07b"><summary class="c639e3e">How much less do I get when I sell NFT instantly compared to listing?</summary><div class="c7c7477">A bid typically sits below the last recorded sale or the lowest active listing because the bidder is taking on the risk of holding the token until a future buyer appears. The gap varies by collection and by how deep the current bids are.</div></details>
 <details class="ccbc07b"><summary class="c639e3e">What is a collection bid versus a trait bid?</summary><div class="c7c7477">A collection bid is a standing offer on any token in a collection, while a trait bid targets tokens with a specific attribute and usually pays more. Checking for a matching trait bid before accepting the generic collection offer often captures a better price.</div></details>
 <details class="ccbc07b"><summary class="c639e3e">How does Blur's Blend differ from an outright sale?</summary><div class="c7c7477">Blend lets a holder borrow against a token instead of selling it, which raises cash while keeping ownership. An outright sale through a collection or trait bid transfers the token permanently in exchange for the full bid amount.</div></details>
 <details class="ccbc07b"><summary class="c639e3e">What fees come out of an instant NFT sale?</summary><div class="c7c7477">A marketplace fee and a creator royalty are typically deducted from the bid amount, plus network gas to settle the transaction. Some bid-based venues let royalty be set to zero or optional, which changes the net amount received.</div></details>
 <details class="ccbc07b"><summary class="c639e3e">Are NFT-AMM pools like Sudoswap safe to sell into?</summary><div class="c7c7477">Selling into a pool is close to instant because the contract itself is the counterparty, but thin pools can be priced further below floor and can move sharply after a large trade, so checking recent activity before committing is worthwhile.</div></details>
-<details class="ccbc07b"><summary class="c639e3e">How do I avoid scams when accepting a bid?</summary><div class="c7c7477">Read every signature request carefully, reject any approval broader than the single token and amount being sold, and never enter a seed phrase anywhere — no legitimate marketplace or bidder ever asks for it.</div></details></div>
-    </section>
-    <section id="sources" class="ce1d0ac" aria-labelledby="sources-title">
-      <h2 id="sources-title">Sources &amp; reading</h2>
-      <div><ul class="cb8d4e3"><li><a class="ca85948" href="https://ethereum.org/en/nft/" rel="nofollow noopener" target="_blank">Ethereum NFT overview</a></li>
+<details class="ccbc07b"><summary class="c639e3e">How do I avoid scams when accepting a bid?</summary><div class="c7c7477">Read every signature request carefully, reject any approval broader than the single token and amount being sold, and never enter a seed phrase anywhere — no legitimate marketplace or bidder ever asks for it.</div></details></div></section>
+      <section class="ce1d0ac" id="sources" aria-labelledby="sources-title"><h2 id="sources-title">Sources &amp; further reading</h2><div><ul class="cb8d4e3"><li><a class="ca85948" href="https://ethereum.org/en/nft/" rel="nofollow noopener" target="_blank">Ethereum NFT overview</a></li>
 <li><a class="ca85948" href="https://en.wikipedia.org/wiki/Non-fungible_token" rel="nofollow noopener" target="_blank">Non-fungible token — Wikipedia</a></li>
 <li><a class="ca85948" href="https://docs.sudoswap.xyz/" rel="nofollow noopener" target="_blank">Sudoswap documentation</a></li>
-<li><a class="ca85948" href="https://dappradar.com/nft/marketplaces" rel="nofollow noopener" target="_blank">DappRadar NFT marketplaces</a></li></ul></div>
-    </section>
+<li><a class="ca85948" href="https://dappradar.com/nft/marketplaces" rel="nofollow noopener" target="_blank">DappRadar NFT marketplaces</a></li></ul></div></section>
+    </div>
   </main>
-  <footer class="c0f5a88">
-    <div class="c7f741d cb5089d"><span class="c61905e">Website</span><p>Updated Oct 11, 2026</p><a class="ccae23b" href="#top">Back to top <svg class="c523633" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V4m-6 6 6-6 6 6"/></svg></a></div>
-  </footer>
+  <footer class="c0f5a88"><div class="cb5089d c7f741d"><span class="c61905e">Website</span><p>Updated Oct 12, 2026</p><a class="ccae23b" href="#top">Back to top <span aria-hidden="true">↑</span></a></div></footer>
   <script>
-    (() => {
-      const grid = document.getElementById('nft-grid');
-      const cards = Array.from(grid.querySelectorAll('.c97fef1'));
-      const all = document.getElementById('select-all');
-      const count = document.getElementById('selection-count');
-      const eth = document.getElementById('total-eth');
-      const usd = document.getElementById('total-usd');
-      const sellCount = document.getElementById('sell-count');
-      const noun = document.getElementById('sell-noun');
-      const status = document.getElementById('offer-status');
-      const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
-      const dollars = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
-      let tick;
-      const update = () => {
-        const selected = cards.filter(card => card.getAttribute('aria-pressed') === 'true');
-        const n = selected.length;
-        // Integer hundredths keep every combination exact at the displayed precision.
-        const hundredths = selected.reduce((sum, card) => sum + Number(card.dataset.offer), 0);
-        const value = (hundredths / 100).toFixed(2);
-        const cash = dollars.format(hundredths * 25.5);
-        count.textContent = n + ' selected';
-        eth.textContent = value;
-        usd.textContent = '~' + cash;
-        sellCount.textContent = n || 'your';
-        noun.textContent = n === 1 ? 'NFT' : 'NFTs';
-        all.checked = n === cards.length;
-        all.indeterminate = n>0 && n < cards.length;
-        status.textContent = n + ' ' + (n === 1 ? 'NFT' : 'NFTs') + ' selected. Total instant offer: ' + value + ' ETH, approximately ' + cash + '.';
-        if (tick) tick.cancel();
-        if (!motion.matches && eth.animate) {
-          tick = eth.animate([{ opacity: .35, transform: 'translateY(5px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 220, easing: 'cubic-bezier(.2,.7,.2,1)' });
+  (() => {
+    'use strict';
+    const grid = document.getElementById('nft-grid');
+    const cards = Array.from(grid.querySelectorAll('.c97fef1'));
+    const all = document.getElementById('select-all');
+    const filters = Array.from(document.querySelectorAll('[data-filter]'));
+    const sorts = Array.from(document.querySelectorAll('[data-sort]'));
+    const empty = document.getElementById('empty-state');
+    const eth = document.getElementById('total-eth');
+    const usd = document.getElementById('total-usd');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const dollars = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+    let filter = 'all';
+    let tick;
+
+    // Mulberry32: each token always has the same face, palette, and accessories.
+    function seeded(seed) {
+      return () => {
+        let n = seed += 0x6D2B79F5;
+        n = Math.imul(n ^ n >>> 15, n | 1);
+        n ^= n + Math.imul(n ^ n >>> 7, n | 61);
+        return ((n ^ n >>> 14) >>> 0) / 4294967296;
+      };
+    }
+
+    function avatar(svg, token) {
+      const random = seeded(token);
+      // Artwork palettes only; application chrome inherits the renderer tokens.
+      const palettes = [
+        ['#b8cf95','#e9a576','#bf7859','#403c4c','#677cba','#efdb74'],
+        ['#b7a3d8','#b5d3e4','#7ca1bd','#34334f','#ee927c','#f8dd89'],
+        ['#d7aab7','#ead0a4','#bd947b','#504557','#677b6d','#f5a86c'],
+        ['#e6be82','#a6baa7','#73897f','#38494b','#bd7066','#b6d9e6'],
+        ['#91bdbb','#ead6bd','#bb9b86','#495363','#b47a9d','#f5d77e'],
+        ['#a6b5d6','#c6b2de','#947ca9','#403c59','#dd996d','#dbeaa2'],
+        ['#c8b69a','#e4b39a','#bd816e','#53414a','#6f9f98','#f2d7a0'],
+        ['#b3c7de','#d5d78d','#a1a468','#404d55','#a07eb5','#f2b487']
+      ];
+      const [bg, skin, shade, ink, shirt, accent] = palettes[token % palettes.length];
+      const cells = Array.from({ length: 17 }, () => Array(17).fill(bg));
+      // Every block is mirrored around column 8, including the traits.
+      const block = (x, y, w, h, color) => {
+        for (let row = y; row < y + h; row++) {
+          for (let col = x; col < x + w; col++) {
+            if (row >= 0 && row < 17 && col >= 0 && col < 17) {
+              cells[row][col] = color;
+              cells[row][16 - col] = color;
+            }
+          }
         }
       };
-      const toggle = card => {
-        card.setAttribute('aria-pressed', String(card.getAttribute('aria-pressed') !== 'true'));
-        update();
-      };
-      grid.addEventListener('click', event => {
-        const card = event.target.closest('.c97fef1');
-        if (card && grid.contains(card)) toggle(card);
+      const kind = Math.floor(random() * 3);
+      const trait = Math.floor(random() * 6);
+      const glasses = random() > .52;
+      block(4, 14, 5, 3, ink); block(3, 15, 6, 2, ink);
+      block(4, 15, 5, 2, shirt); block(5, 14, 4, 1, shirt);
+      block(7, 12, 2, 3, shade); block(7, 14, 2, 1, skin);
+      block(5, 3, 4, 1, ink); block(4, 4, 5, 7, ink);
+      block(5, 11, 4, 2, ink); block(6, 13, 3, 1, ink);
+      block(5, 5, 4, 6, skin); block(6, 11, 3, 2, skin);
+      block(5, 5, 1, 6, shade); block(6, 12, 3, 1, shade);
+      block(3, 7, 1, 3, shade); block(3, 8, 1, 1, skin);
+      if (kind === 1) {
+        block(4, 2, 2, 3, ink); block(5, 3, 1, 2, accent);
+        block(6, 10, 3, 2, accent); block(8, 10, 1, 1, ink);
+      } else if (kind === 2) {
+        block(3, 6, 1, 4, ink); block(3, 7, 1, 2, accent);
+        block(8, 2, 1, 2, ink); block(8, 1, 1, 1, accent);
+        block(6, 5, 3, 1, shade);
+      } else {
+        block(5, 4, 4, 2, ink); block(5, 6, 1, 1, ink);
+      }
+      block(6, 7, 1, 2, ink); block(6, 7, 1, 1, '#f9eee1');
+      block(8, 9, 1, 1, shade); block(7, 11, 2, 1, ink);
+      if (random() > .55) block(8, 11, 1, 1, '#f9eee1');
+      if (trait === 0) { // Crown.
+        block(4, 2, 1, 3, accent); block(6, 3, 3, 2, accent);
+        block(8, 1, 1, 4, accent); block(5, 4, 4, 1, accent);
+        block(6, 4, 1, 1, shirt);
+      } else if (trait === 1) { // Knit cap.
+        block(6, 2, 3, 1, shirt); block(5, 3, 4, 2, shirt);
+        block(4, 5, 5, 1, accent); block(8, 3, 1, 1, accent);
+      } else if (trait === 2) { // Headphones.
+        block(5, 2, 4, 1, accent); block(4, 3, 1, 4, accent);
+        block(2, 7, 2, 3, ink); block(2, 7, 1, 3, shirt);
+      } else if (trait === 3) { // Halo.
+        block(5, 1, 4, 1, accent); block(4, 2, 1, 1, accent);
+        block(5, 3, 4, 1, accent);
+      } else if (trait === 4) { // Baseball cap.
+        block(6, 2, 3, 1, shirt); block(5, 3, 4, 2, shirt);
+        block(3, 5, 6, 1, ink); block(8, 3, 1, 1, accent);
+      } else { // Visor.
+        block(4, 7, 5, 2, ink); block(5, 7, 3, 1, accent);
+        block(5, 8, 1, 1, '#f9eee1');
+      }
+      if (glasses && trait !== 5) {
+        block(4, 7, 5, 1, ink); block(5, 8, 3, 1, ink);
+        block(5, 7, 1, 1, accent);
+      }
+      // Merge adjacent pixels into rectangles to keep inline SVG snapshots light.
+      const rects = [];
+      for (let y = 0; y < 17; y++) {
+        let x = 0;
+        while (x < 17) {
+          const color = cells[y][x];
+          let end = x + 1;
+          while (end < 17 && cells[y][end] === color) end++;
+          if (color !== bg) rects.push(`<rect x="${x}" y="${y}" width="${end - x}" height="1" fill="${color}"/>`);
+          x = end;
+        }
+      }
+      svg.innerHTML = `<rect x="-2" y="-1" width="21" height="19" fill="${bg}"/>` + rects.join('');
+    }
+
+    function update(animate = true) {
+      const selected = cards.filter(card => card.querySelector('input').checked);
+      const n = selected.length;
+      // Integer hundredths prevent floating point drift in bulk totals.
+      const amount = selected.reduce((sum, card) => sum + Number(card.dataset.ca3fd14), 0);
+      const value = (amount / 100).toFixed(2);
+      const cash = dollars.format(amount * 25.5);
+      document.getElementById('selection-count').textContent = n + ' selected';
+      document.getElementById('filter-count').textContent = n;
+      document.getElementById('sell-label').textContent = n ? `Sell ${n} ${n === 1 ? 'NFT' : 'NFTs'}` : 'Sell your NFTs';
+      eth.textContent = value;
+      usd.textContent = '~' + cash;
+      all.checked = n === cards.length;
+      all.indeterminate = n > 0 && n < cards.length;
+      cards.forEach(card => { card.hidden = filter === 'selected' && !card.querySelector('input').checked; });
+      empty.hidden = filter !== 'selected' || n > 0;
+      document.getElementById('selection-status').textContent = `${n} ${n === 1 ? 'NFT' : 'NFTs'} selected. Total payout: ${value} ETH, approximately ${cash}.`;
+      if (tick) tick.cancel();
+      if (animate && !reducedMotion.matches && eth.animate) {
+        tick = eth.animate([{ opacity: .4, transform: 'translateY(4px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 230, easing: 'ease-out' });
+      }
+    }
+    function setFilter(next) {
+      filter = next;
+      filters.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === next)));
+      update(false);
+    }
+    cards.forEach(card => {
+      avatar(card.querySelector('.cbab927'), Number(card.dataset.token));
+      card.querySelector('input').disabled = false;
+    });
+    grid.addEventListener('change', event => {
+      if (!event.target.matches('.c59d912')) return;
+      const active = event.target;
+      const visibleCards = cards.filter(card => !card.hidden);
+      const index = visibleCards.indexOf(active.closest('.c97fef1'));
+      update();
+      // Keep keyboard focus in the collection when the Selected filter hides a card.
+      if (filter === 'selected' && !active.checked) {
+        const next = visibleCards.slice(index + 1).find(card => !card.hidden) || visibleCards.find(card => !card.hidden);
+        (next ? next.querySelector('input') : document.getElementById('show-all')).focus({ preventScroll: true });
+      }
+    });
+    all.addEventListener('change', () => {
+      cards.forEach(card => { card.querySelector('input').checked = all.checked; });
+      update();
+    });
+    filters.forEach(button => {
+      button.disabled = false;
+      button.addEventListener('click', () => setFilter(button.dataset.filter));
+    });
+    sorts.forEach(button => {
+      button.disabled = false;
+      button.addEventListener('click', () => {
+        sorts.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+        const key = button.dataset.sort === 'offer' ? 'offer' : 'listed';
+        cards.sort((a, b) => Number(b.dataset[key]) - Number(a.dataset[key]));
+        cards.forEach(card => grid.insertBefore(card, empty));
       });
-      grid.addEventListener('keydown', event => {
-        if (event.key !== 'Enter' && event.key !== ' ') return;
-        const card = event.target.closest('.c97fef1');
-        if (!card) return;
-        event.preventDefault();
-        if (!event.repeat) toggle(card);
-      });
-      all.addEventListener('change', () => {
-        cards.forEach(card => card.setAttribute('aria-pressed', String(all.checked)));
-        update();
-      });
-      all.disabled = false;
-    })();
+    });
+    document.getElementById('show-all').addEventListener('click', () => {
+      setFilter('all');
+      filters[0].focus({ preventScroll: true });
+    });
+    all.disabled = false;
+    update(false);
+  })();
   </script>
 </body>
 </html>
